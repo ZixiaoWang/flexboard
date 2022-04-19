@@ -14,5 +14,11 @@
   },
   "dependencies": {
     "preact": "^10.7.1"
+  },
+  "scripts": {
+    "build": "parcel build --no-cache --no-source-maps --dist-dir=dist src/index.html",
+    "serve": "parcel serve --no-cache --no-source-maps --no-content-hash src/index.html",
+    "watch": "parcel watch --no-source-maps src/index.html",
+    "deploy": "rm -rf ./dist && yarn build && gh-pages --dist dist"
   }
 }
