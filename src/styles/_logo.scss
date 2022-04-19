@@ -1,0 +1,68 @@
+@import "variables";
+
+$logo-size: 45px;
+
+.logo {
+    &-container {
+        display: flex;
+        align-items: center;
+    }
+
+    &-icon {
+        width: $logo-size;
+        height: $logo-size;
+        display: block;
+        position: relative;
+    }
+
+    &-text {
+        font-size: 18px;
+        padding: 0px 12px;
+    }
+
+    &-card {
+        $height: 0.6;
+
+        display: block;
+        border-radius: 4px;
+        position: absolute;
+        animation: fadeout 6s ease-in-out infinite;
+
+        &.is-red {
+            $size: $logo-size * 0.67;
+            width: $size;
+            height: $size * $height;
+            background-color: $red30;
+            top: $logo-size * 0.1;
+            left: ($logo-size - $size) * 0.5;
+            animation-delay: 0ms;
+        }
+        &.is-blue {
+            $size: $logo-size * 0.85;
+            width: $size;
+            height: $size * $height;
+            background-color: $blue50;
+            top: $logo-size * 0.23;
+            left: ($logo-size - $size) * 0.5;
+            animation-delay: 333ms;
+        }
+        &.is-green {
+            $size: $logo-size;
+            width: $size;
+            height: $size * $height;
+            background-color: $green40;
+            bottom: 0px;
+            left: ($logo-size - $size) * 0.5;
+            animation-delay: 667ms;
+        }
+    }
+}
+
+@keyframes fadeout {
+    0% { opacity: 1; }
+    18% { opacity: 0.4; }
+    25% { opacity: 0; }
+    32% { opacity: 0.4; }
+    40% { opacity: 1; }
+    100% { opacity: 1; }
+}

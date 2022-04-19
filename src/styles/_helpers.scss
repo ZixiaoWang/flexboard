@@ -1,0 +1,30 @@
+.is {
+    &-flex { display: flex; }
+    &-vertical-center {
+        display: flex;
+        align-items: center;
+    }
+    &-horizontal-center {
+        display: flex;
+        justify-content: center;
+    }
+    &-all-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &-full-screen {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+.is {
+    &-text {
+        &-xs { font-size: 10px; }
+        &-s { font-size: 12px; }
+        &-m { font-size: 16px; }
+        &-l { font-size: 20px; }
+        &-xl { font-size: 28px; }
+    }
+}

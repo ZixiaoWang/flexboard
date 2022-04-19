@@ -1,0 +1,18 @@
+{
+  "name": "flexboard",
+  "version": "1.0.0",
+  "description": "Flexport news board",
+  "repository": "git@github.com:ZixiaoWang/flexboard.git",
+  "author": "Jacky Wang <zwang@flexport.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.4.1",
+    "gh-pages": "^3.2.3",
+    "parcel": "^2.4.1",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "preact": "^10.7.1"
+  }
+}
