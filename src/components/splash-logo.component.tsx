@@ -1,6 +1,6 @@
 import { h } from "preact";
 
-export const LogoComponent = () => {
+export const SplashLogoComponent = () => {
 
     return (
         <div className="logo-container">
