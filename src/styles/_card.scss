@@ -1,0 +1,33 @@
+@import "variables";
+
+.cards {
+    padding-top: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 128px;
+}
+
+.card {
+    display: block;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba($grey30, 1);
+    background-color: white;
+
+    &-img {
+        position: relative;
+        width: 100%;
+        height: 0px;
+        padding-top: 50%;
+        overflow: hidden;
+
+        & > img {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+        }
+    }
+
+    & + .card {
+        margin-top: 12px;
+    }
+}

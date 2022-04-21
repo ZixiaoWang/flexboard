@@ -1,4 +1,5 @@
 import { Fragment, h, render } from "preact";
+import { useState, useEffect } from "preact/hooks";
 import Router from "preact-router";
 import { createHashHistory } from "history";
 
@@ -23,14 +24,22 @@ declare module 'preact' {
 
 const App = () => {
     const hashHistory = createHashHistory();
-    const renderSplashPage = () => {
+    const [splashVisibility, setSplashVisibility] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setSplashVisibility(false);
+        }, Math.round(Math.random() * 5000));
+    }, [])
+
+    if (splashVisibility) {
         return <SplashPage />
     }
 
     return (
         <Fragment>
             <TabsComponent />
-            <div className="is-full-screen is-all-center">
+            <div className="container">
                 {/* @ts-ignore */}
                 <Router history={hashHistory}>
                     <SeedsPage path="/seeds" />

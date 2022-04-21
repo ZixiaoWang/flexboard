@@ -12,10 +12,17 @@
     padding: 4px 18px;
     border-radius: 8px;
     box-sizing: border-box;
+    background-color: white;
+    z-index: 99;
 
     .tab {
+        display: block;
         font-size: 28px;
         color: $grey40;
         padding: 8px;
+        color: $grey30;
+        &.is-active {
+            color: $grey50;
+        }
     }
 }

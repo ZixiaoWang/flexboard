@@ -28,3 +28,26 @@
         &-xl { font-size: 28px; }
     }
 }
+
+.has {
+    $space-unit: 4px;
+    @for $i from 1 through 8 {
+        $space: $i * $space-unit;
+
+        &-padding-#{$i} { padding: $space; }
+        &-padding-left-#{$i} { padding-left: $space; }
+        &-padding-right-#{$i} { padding-right: $space; }
+        &-padding-top-#{$i} { padding-top: $space; }
+        &-padding-bottom-#{$i} { padding-bottom: $space; }
+        &-padding-vertical-#{$i} { padding-top: $space; padding-bottom: $space;  }
+        &-padding-horizontal-#{$i} { padding-left: $space; padding-right: $space; }
+
+        &-margin-#{$i} { margin: $space; }
+        &-margin-left-#{$i} { margin-left: $space; }
+        &-margin-right-#{$i} { margin-right: $space; }
+        &-margin-top-#{$i} { margin-top: $space; }
+        &-margin-bottom-#{$i} { margin-bottom: $space; }
+        &-margin-vertical-#{$i} { margin-top: $space; margin-bottom: $space;  }
+        &-margin-horizontal-#{$i} { margin-left: $space; margin-right: $space; }
+    }
+}

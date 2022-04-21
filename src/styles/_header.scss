@@ -3,12 +3,11 @@
 .header {
     display: flex;
     width: 100%;
-    position: fixed;
-    top: 0px;
     padding: 4px;
     padding-top: 16px;
     box-sizing: border-box;
     background-color: white;
+    color: $grey60;
 
     &-logo {
         width: 100%;
