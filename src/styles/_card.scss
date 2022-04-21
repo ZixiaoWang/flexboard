@@ -1,17 +1,14 @@
 @import "variables";
 
 .cards {
-    padding-top: 24px;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-bottom: 128px;
+    padding-top: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
 }
 
 .card {
     display: block;
     border-radius: 8px;
-    box-shadow: 5px 5px 5px rgba($grey30, 1);
-    background-color: white;
 
     &-img {
         position: relative;
@@ -19,6 +16,7 @@
         height: 0px;
         padding-top: 50%;
         overflow: hidden;
+        border-radius: 8px;
 
         & > img {
             position: absolute;
@@ -27,7 +25,16 @@
         }
     }
 
+    &-title {
+        font-size: 14px;
+        color: black;
+        line-height: 18px;
+        font-weight: 500;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
     & + .card {
-        margin-top: 12px;
+        margin-top: 28px;
     }
 }

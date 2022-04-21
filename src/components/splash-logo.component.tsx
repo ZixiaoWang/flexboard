@@ -9,9 +9,14 @@ export const SplashLogoComponent = () => {
                 <div className="logo-card is-blue"></div>
                 <div className="logo-card is-green"></div>
             </div>
-            <div className="logo-text">
-                <div>FlexBoard</div>
-                <div className="is-text-xs grey40">A Hackthon Project</div>
+            <div className="logo-text grey50">
+                <div>
+                    <span>Flexboard</span>
+                    <span className="red40">.</span>
+                </div>
+                <div className="is-text-xs grey30">
+                    The news forwarder
+                </div>
             </div>
         </div>
     )

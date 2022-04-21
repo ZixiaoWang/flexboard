@@ -29,7 +29,7 @@ const App = () => {
     useEffect(() => {
         setTimeout(() => {
             setSplashVisibility(false);
-        }, Math.round(Math.random() * 5000));
+        }, Math.round(Math.random() * 1));
     }, [])
 
     if (splashVisibility) {

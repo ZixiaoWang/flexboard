@@ -1,12 +1,11 @@
 import { h } from "preact";
-import { LogoComponent } from "./logo.component";
 
-export const HeaderComponent = () => {
+export const HeaderComponent = (props: any) => {
 
     return (
         <div className="header">
             <div className="header-logo">
-                <LogoComponent />
+                { props.children }
             </div>
         </div>
     )

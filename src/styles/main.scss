@@ -6,6 +6,8 @@
 @import "header";
 @import "logo";
 @import "card";
+@import "page";
+@import "settings";
 
 html, body {
     margin: 0;
@@ -16,5 +18,5 @@ html, body {
     width: 100vw;
     height: 100vh;
     overflow: auto;
-    background-color: $grey20;
+    // background-color: $grey10;
 }

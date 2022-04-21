@@ -1,0 +1,18 @@
+@import "variables";
+
+.setting {
+    &-group {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        box-shadow: 1px 0px 1px $grey40;
+        margin-top: 24px;
+    }
+
+    &-item {
+        padding: 12px;
+        padding-left: 18px;
+        padding-right: 18px;
+        font-size: 14px;
+        color: $grey50;
+    }
+}
