@@ -7,13 +7,8 @@ const news = new Array(50).fill(0);
 export const SeedsPage = (props: RoutePage) => {
 
     return (
-        <div className="page">
-            <div className="cards">
-                {news.map(() => <CardComponent />)}
-            </div>
-            <HeaderComponent>
-                <LogoComponent fontSize="22px" />
-            </HeaderComponent>
+        <div className="cards">
+            {news.map(() => <CardComponent />)}
         </div>
     )
 }

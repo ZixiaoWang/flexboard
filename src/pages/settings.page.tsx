@@ -1,10 +1,9 @@
-import { h } from "preact";
-import { HeaderComponent } from "../components";
+import { Fragment, h } from "preact";
 import { RoutePage } from "../interfaces";
 
 export const SettingsPage = (props: RoutePage) => {
     return (
-        <div className="page">
+        <Fragment>
             <div className="setting-group">
                 <div className="setting-item">
                     Account
@@ -18,9 +17,6 @@ export const SettingsPage = (props: RoutePage) => {
                     About Flexboard
                 </div>
             </div>
-            <HeaderComponent>
-                Settings
-            </HeaderComponent>
-        </div>
+        </Fragment>
     )
 }

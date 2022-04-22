@@ -3,7 +3,7 @@ import { useState, useEffect } from "preact/hooks";
 import Router from "preact-router";
 import { createHashHistory } from "history";
 
-import { TabsComponent } from "./components";
+import { HeaderComponent, TabsComponent } from "./components";
 import { BookmarksPage, Redirect, SearchPage, SeedsPage, SettingsPage, SplashPage } from "./pages";
 /** @jsx h */
 
@@ -40,14 +40,17 @@ const App = () => {
         <Fragment>
             <TabsComponent />
             <div className="container">
-                {/* @ts-ignore */}
-                <Router history={hashHistory}>
-                    <SeedsPage path="/seeds" />
-                    <SearchPage path="/search" />
-                    <BookmarksPage path="/bookmarks" />
-                    <SettingsPage path="/settings" />
-                    <Redirect default to="/seeds" />
-                </Router>
+                <div className="page">
+                    {/* @ts-ignore */}
+                    <Router history={hashHistory}>
+                        <SeedsPage path="/seeds" />
+                        <SearchPage path="/search" />
+                        <BookmarksPage path="/bookmarks" />
+                        <SettingsPage path="/settings" />
+                        <Redirect default to="/seeds" />
+                    </Router>
+                <HeaderComponent />
+                </div>
             </div>
         </Fragment>
     )
