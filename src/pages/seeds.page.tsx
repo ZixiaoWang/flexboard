@@ -8,7 +8,12 @@ export const SeedsPage = (props: RoutePage) => {
 
     return (
         <div className="cards">
-            {news.map(() => <CardComponent />)}
+            {   news
+                .map((_: number, index: number) => {
+                    if (index === 0) return <CardComponent />
+                    return <CardComponent size="small" />
+                })
+            }
         </div>
     )
 }

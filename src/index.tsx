@@ -4,7 +4,7 @@ import Router from "preact-router";
 import { createHashHistory } from "history";
 
 import { HeaderComponent, TabsComponent } from "./components";
-import { BookmarksPage, Redirect, SearchPage, SeedsPage, SettingsPage, SplashPage } from "./pages";
+import { IndicesPage, MessagesPage, Redirect, SearchPage, SeedsPage, SettingsPage, SplashPage } from "./pages";
 /** @jsx h */
 
 import "./styles/main.scss"
@@ -45,7 +45,8 @@ const App = () => {
                     <Router history={hashHistory}>
                         <SeedsPage path="/seeds" />
                         <SearchPage path="/search" />
-                        <BookmarksPage path="/bookmarks" />
+                        <IndicesPage path="/indices" />
+                        <MessagesPage path="/messages" />
                         <SettingsPage path="/settings" />
                         <Redirect default to="/seeds" />
                     </Router>

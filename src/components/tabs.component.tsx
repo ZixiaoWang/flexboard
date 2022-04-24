@@ -23,8 +23,13 @@ export const TabsComponent = () => {
             </Link>
             <Link className="tab"
                 activeClassName="is-active" 
-                href="/bookmarks">
-                <ion-icon name="star"></ion-icon>
+                href="/messages">
+                <ion-icon name="at"></ion-icon>
+            </Link>
+            <Link className="tab"
+                activeClassName="is-active" 
+                href="/indices">
+                <ion-icon name="bar-chart"></ion-icon>
             </Link>
             <Link className="tab"
                 activeClassName="is-active" 

@@ -1,0 +1,53 @@
+@import "variables";
+
+.table {
+    &,
+    td,
+    th {
+        border: 1px solid $grey30;
+        border-collapse: collapse;
+        font-size: 12px;
+    }
+
+    th, td {
+        $padding: 4px;
+        padding-left: $padding;
+        padding-right: $padding;
+        background-color: white;
+
+        &.is-sticky-row {
+            position: sticky;
+            top: 0;
+            background-color: white;
+        }
+
+        &.is-sticky-col {
+            position: sticky;
+            left: 0;
+            background-color: $grey40;
+            color: white;
+            border-right: 1px solid white;
+
+        }
+    }
+
+    th {
+        $padding: 4px;
+        padding-top: $padding;
+        padding-bottom: $padding;
+        text-align: left;
+        background-color: $grey50 !important;
+        color: white;
+    }
+
+    td {
+        $padding: 4px;
+        display: table-cell;
+        width: fit-content;
+        min-height: 20px;
+        padding-top: $padding;
+        padding-bottom: $padding;
+        color: $grey50;
+        white-space: nowrap;
+    }
+}
