@@ -10,6 +10,9 @@
     "@parcel/packager-raw-url": "2.4.1",
     "@parcel/transformer-sass": "2.4.1",
     "@parcel/transformer-webmanifest": "2.4.1",
+    "axios": "^0.27.0",
+    "cheerio": "^1.0.0-rc.10",
+    "fs-extra": "^10.1.0",
     "gh-pages": "^3.2.3",
     "parcel": "^2.4.1",
     "typescript": "^4.6.3"
@@ -20,9 +23,9 @@
     "preact-router": "^4.0.1"
   },
   "scripts": {
-    "build": "parcel build --no-cache --no-source-maps --dist-dir=dist src/index.html",
-    "serve": "parcel serve --no-cache --no-source-maps src/index.html",
-    "watch": "parcel watch --no-source-maps src/index.html",
+    "build": "parcel build --no-cache --no-source-maps --dist-dir=dist frontend/index.html",
+    "serve": "parcel serve --no-cache --no-source-maps frontend/index.html",
+    "watch": "parcel watch --no-source-maps frontend/index.html",
     "deploy": "rm -rf ./dist && yarn build && gh-pages --dist dist"
   }
 }
