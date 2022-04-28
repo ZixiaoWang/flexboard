@@ -1,5 +1,4 @@
 import puppeteer, { Browser, Page } from "puppeteer";
-
 export interface Cache {
     browser: Browser | null,
     page: Page | null,

@@ -14,14 +14,27 @@
     "@types/colors": "^1.2.1",
     "@types/fs-extra": "^9.0.13",
     "@types/puppeteer": "^5.4.6",
+    "assert": "^2.0.0",
     "axios": "^0.27.0",
+    "browserify-zlib": "^0.2.0",
     "cheerio": "^1.0.0-rc.10",
     "colors": "^1.4.0",
+    "constants-browserify": "^1.0.0",
+    "events": "^3.3.0",
     "fs-extra": "^10.1.0",
     "gh-pages": "^3.2.3",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
     "parcel": "^2.4.1",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
     "puppeteer": "^13.6.0",
-    "typescript": "^4.6.3"
+    "querystring-es3": "^0.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "typescript": "^4.6.3",
+    "url": "^0.11.0",
+    "util": "^0.12.4"
   },
   "dependencies": {
     "history": "^5.3.0",
@@ -29,9 +42,12 @@
     "preact-router": "^4.0.1"
   },
   "scripts": {
-    "build": "parcel build --no-cache --no-source-maps --dist-dir=dist frontend/index.html",
-    "serve": "parcel serve --no-cache --no-source-maps frontend/index.html",
-    "watch": "parcel watch --no-source-maps frontend/index.html",
-    "deploy": "rm -rf ./dist && yarn build && gh-pages --dist dist"
+    "copy:data": "cp -R data/ dist/data/",
+    "build": "yarn copy:data && parcel build --no-cache --no-source-maps --dist-dir=dist frontend/index.html",
+    "serve": "yarn copy:data && parcel serve --no-cache --no-source-maps frontend/index.html",
+    "watch": "yarn copy:data && parcel watch --no-source-maps frontend/index.html",
+    "deploy": "rm -rf ./dist && yarn build && gh-pages --dist dist",
+    "build:backend": "yarn tsc --project tsconfig.backend.json",
+    "run:backend": "node backend-dist/index.js"
   }
 }

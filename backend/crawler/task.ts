@@ -1,17 +1,31 @@
 import { ElementHandle, Page } from "puppeteer";
-import path from "path";
-import fs from "fs-extra";
 
 import { getPage } from "./cache";
 import { IndicItem } from "./indices";
 
-export async function task(item: IndicItem) {
+export interface TaskResultCell {
+    colspan: number,
+    rowspan: number,
+    text: number
+}
+
+export interface TaskResultRow extends Array<TaskResultCell>{};
+
+export interface TaskResult {
+    indiceName: string,
+    indiceTableMeta: Array<TaskResultRow>,
+}
+
+export async function task(item: IndicItem): Promise<TaskResult> {
     const page: Page = await getPage();
 
     await page.goto(item.href);
     await page.waitForSelector("table.indiceslist");
     const table: ElementHandle<HTMLTableElement> | null = await page.$("table.indiceslist");
-    if (!table) return [];
+    
+    if (!table) {
+        throw new Error("Cannot find page in " + item.href);
+    }
 
     const trs = await table.$$("tr");
     const rows = [];
@@ -32,8 +46,8 @@ export async function task(item: IndicItem) {
         rows.push(row);
     }
 
-    await fs.writeJSON(
-        path.resolve(__dirname, "../../frontend/data/" + item.text + ".json"),
-        rows
-    );
+    return {
+        indiceName: item.text,
+        indiceTableMeta: rows
+    }
 }

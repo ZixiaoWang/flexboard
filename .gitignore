@@ -10,3 +10,4 @@ yarn-error.log
 
 # Dist directory
 /dist
+/backend-dist
