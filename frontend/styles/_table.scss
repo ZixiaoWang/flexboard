@@ -1,6 +1,8 @@
 @import "variables";
 
 .table {
+    min-width: 100vw;
+    
     &,
     td,
     th {
@@ -15,6 +17,14 @@
         padding-right: $padding;
         background-color: white;
 
+        &:first-of-type {
+            position: sticky;
+            left: 0;
+            background-color: $grey40;
+            color: white;
+            border-right: 1px solid white;
+        }
+        
         &.is-sticky-row {
             position: sticky;
             top: 0;

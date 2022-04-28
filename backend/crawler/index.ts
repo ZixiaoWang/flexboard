@@ -26,7 +26,7 @@ export async function crawl() {
     `if (!window.shanghaiFreightIndices) {` +
         `window.shanghaiFreightIndices = new Map();` + 
         `}` +
-        `window.shanghaiFreightIndices.set(${date}, ${JSON.stringify(shanghaiFreightIndices)});` +
+        `window.shanghaiFreightIndices.set("${date}", ${JSON.stringify(shanghaiFreightIndices)});` +
     `})();`;
 
     await fs.ensureFile(fileDir);

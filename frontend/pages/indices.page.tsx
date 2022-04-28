@@ -1,47 +1,114 @@
 
 import { h } from "preact";
+import { useState, useEffect } from "preact/hooks";
 import { RoutePage } from "../interfaces";
 
-const COL_NUMBER = 10;
-const ROW_NUMBER = 200;
-
-const SampleRow = () => {
-    const cols = new Array(COL_NUMBER - 1).fill(0);
-    return (
-        <tr>
-            <td className="is-sticky-col">Row property and data</td>
-            {cols.map(_ => <td>{(Math.random() * 1000).toFixed(4)}</td>)}
-        </tr>
-    )
+declare global {
+    interface Window {
+        shanghaiFreightIndices: any
+    }
 }
 
+const TODAY: string = new Date().toISOString().split("T")[0].replaceAll("-", "");
+
 export const IndicesPage = (props: RoutePage) => {
-    const rows = new Array(ROW_NUMBER).fill(0);
+    const [date, setDate] = useState(TODAY);
+    const [data, setData] = useState([]);
+    const [dataMap, setDataMap] = useState({}) as any;
+    const [indice, setIndice] = useState("CCFI");
+    const [indiceOptions, setIndiceOptions] = useState([]) as any;
+
+    const updateDataByDate = (targetDate: string): void => {
+        const map = window.shanghaiFreightIndices.get(targetDate);
+        const newData = map[indice] || [];
+        setDataMap(map);
+        setData(newData);
+        setIndiceOptions(Object.keys(map));
+    }
+
+    const queryData = (targetDate: string): void => {
+        if (!window.shanghaiFreightIndices || !window.shanghaiFreightIndices.has(targetDate)) {
+            const script: HTMLScriptElement = document.createElement("script");
+            script.onload = () => updateDataByDate(targetDate);
+            script.onerror = console.log;
+            script.src = "data/" + targetDate + ".js";
+            document.body.appendChild(script);
+        } else {
+            updateDataByDate(targetDate);
+        }
+    }
+
+    const updateDate = (event: any): void => {
+        const newDate: string = event?.target?.value || "";
+        if (/^\d{8}$|^\d{4}-\d{2}-\d{2}$/.test(newDate)) {
+            setDate(newDate.replaceAll("-", ""));
+        }
+    }
+
+    const updateIndice = (event: any): void => {
+        const newIndice: string = event?.target?.value || "CCFI";
+        setIndice(newIndice)
+    }
+
+    useEffect(() => {
+        if (date) {
+            queryData(date);
+        } else {
+            setDate(TODAY);
+        }
+    }, [date]);
+
+    useEffect(() => {
+        const newData = dataMap[indice] || [];
+        setData(newData);
+    }, [dataMap, indice]);
+
     return (
         <div className="indices">
+            <div className="indices-actions">
+                <div className="indices-action">
+                    <input type="date" name="date" id="date" onChange={updateDate} value={date}/>
+                </div>
+                <div className="indices-action">
+                    <select name="indices" id="indices" onChange={updateIndice}>
+                        { 
+                            indiceOptions.map((indiceLabel: string, index: number) => (
+                                <option label={indiceLabel} key={index}>{indiceLabel}</option>
+                            ))
+                        }
+                    </select>
+                </div>
+            </div>
             <div className="indices-header">
-                Sample table <br />
-                Lorem ipsum dolor sit amet.
+                { ((data[0]?.[0] || {}) as any).text }
             </div>
             <div className="indices-table">
                 <table className="table">
-                    <thead>
-                        <tr>
-                            <th className="is-sticky-col">Title</th>
-                            <th>Title</th>
-                            <th>Title</th>
-                            <th>Title</th>
-                            <th>Title</th>
-                            <th>Title</th>
-                            <th>Title</th>
-                            <th>Title</th>
-                            <th>Title</th>
-                            <th>Title</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { rows.map(_ => <SampleRow />) }
-                    </tbody>
+                    {
+                        data
+                            .slice(1)
+                            .map((row: any, rowIndex: number) => {
+                                return (
+                                    <tr key={`row${rowIndex}`}>
+                                        {
+                                            row.map((cell: any, cellIndex: number) => {
+                                                return cell.tag === "td" ?
+                                                <td key={`cell${cellIndex}`}
+                                                    colSpan={cell.colspan || 1}
+                                                    rowSpan={cell.rowspan || 1}>
+                                                    {cell.text}
+                                                </td> :
+                                                <th key={`cell${cellIndex}`}
+                                                    colSpan={cell.colspan || 1}
+                                                    rowSpan={cell.rowspan || 1}>
+                                                    {cell.text}
+                                                </th>
+                                            })
+                                        }
+                                    </tr>
+                                )
+                            })
+                    }
                 </table>
             </div>
             <div className="indices-footer">
