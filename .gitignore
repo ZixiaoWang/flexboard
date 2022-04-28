@@ -3,6 +3,7 @@ node_modules
 
 # Cache
 .parcel-cache
+.memo
 
 # Error Log
 yarn-error.log
