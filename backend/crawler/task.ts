@@ -17,11 +17,18 @@ export interface TaskResult {
     indiceTableMeta: Array<TaskResultRow>,
 }
 
+async function sleep(ms: number): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(true), ms);
+    });
+}
+
 export async function task(item: IndicItem): Promise<TaskResult> {
     const page: Page = await getPage();
 
     await page.goto(item.href);
     await page.waitForSelector("table.indiceslist");
+    await sleep(500);
     const table: ElementHandle<HTMLTableElement> | null = await page.$("table.indiceslist");
     
     if (!table) {

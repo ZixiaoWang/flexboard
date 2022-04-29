@@ -48,6 +48,7 @@
     "watch": "yarn copy:data && parcel watch --no-source-maps frontend/index.html",
     "deploy": "rm -rf ./dist && mkdir dist && yarn build && gh-pages --dist dist",
     "build:backend": "yarn tsc --project tsconfig.backend.json",
-    "run:backend": "node backend-dist/index.js"
+    "run:backend": "node backend-dist/index.js",
+    "backend": "yarn build:backend && yarn run:backend"
   }
 }

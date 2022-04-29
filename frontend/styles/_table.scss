@@ -2,13 +2,13 @@
 
 .table {
     min-width: 100vw;
-    
+
     &,
     td,
     th {
         border: 1px solid $grey30;
         border-collapse: collapse;
-        font-size: 12px;
+        font-size: 10px;
     }
 
     th, td {
@@ -23,6 +23,8 @@
             background-color: $grey40;
             color: white;
             border-right: 1px solid white;
+            max-width: 125px;
+            white-space: pre-wrap;
         }
         
         &.is-sticky-row {

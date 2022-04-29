@@ -9,7 +9,7 @@ declare global {
     }
 }
 
-const TODAY: string = new Date().toISOString().split("T")[0].replaceAll("-", "");
+const TODAY: string = new Date().toISOString().split("T")[0];
 
 export const IndicesPage = (props: RoutePage) => {
     const [date, setDate] = useState(TODAY);
@@ -26,7 +26,11 @@ export const IndicesPage = (props: RoutePage) => {
         setIndiceOptions(Object.keys(map));
     }
 
-    const queryData = (targetDate: string): void => {
+    const queryData = (newDate: string): void => {
+        let targetDate: string = newDate;
+        if (/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) {
+            targetDate = targetDate.replaceAll("-", "");
+        }
         if (!window.shanghaiFreightIndices || !window.shanghaiFreightIndices.has(targetDate)) {
             const script: HTMLScriptElement = document.createElement("script");
             script.onload = () => updateDataByDate(targetDate);
@@ -41,7 +45,7 @@ export const IndicesPage = (props: RoutePage) => {
     const updateDate = (event: any): void => {
         const newDate: string = event?.target?.value || "";
         if (/^\d{8}$|^\d{4}-\d{2}-\d{2}$/.test(newDate)) {
-            setDate(newDate.replaceAll("-", ""));
+            setDate(newDate);
         }
     }
 
@@ -49,6 +53,33 @@ export const IndicesPage = (props: RoutePage) => {
         const newIndice: string = event?.target?.value || "CCFI";
         setIndice(newIndice)
     }
+
+    const requestFullScreen = (): void => {
+        setTimeout(async () => {
+            if (window.innerHeight < window.innerWidth) {
+                console.log("Ready for full screen")
+                const indicesElement: HTMLElement | null = document.getElementById("indices");
+                const indicesTableElement: HTMLElement | null = document.querySelector("#indices .indices-table");
+                if (indicesElement) {
+                    try {
+                        await indicesElement.requestFullscreen();
+                        indicesTableElement?.classList?.add("is-full-screen");
+                    } catch (error) {}
+                }
+            } else {
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                    const indicesTableElement: HTMLElement | null = document.querySelector("#indices .indices-table");
+                    indicesTableElement?.classList?.remove("is-full-screen");
+                }
+            }
+        }, 50);
+    }
+
+    useEffect(() => {
+        requestFullScreen();
+        window.addEventListener("orientationchange", requestFullScreen);
+    }, []);
 
     useEffect(() => {
         if (date) {
@@ -64,13 +95,13 @@ export const IndicesPage = (props: RoutePage) => {
     }, [dataMap, indice]);
 
     return (
-        <div className="indices">
+        <div className="indices" id="indices">
             <div className="indices-actions">
                 <div className="indices-action">
-                    <input type="date" name="date" id="date" onChange={updateDate} value={date}/>
+                    <input type="date" name="date" id="indicesdate" onChange={updateDate} value={date}/>
                 </div>
                 <div className="indices-action">
-                    <select name="indices" id="indices" onChange={updateIndice}>
+                    <select name="indices" id="indicestype" onChange={updateIndice}>
                         { 
                             indiceOptions.map((indiceLabel: string, index: number) => (
                                 <option label={indiceLabel} key={index}>{indiceLabel}</option>
@@ -110,9 +141,6 @@ export const IndicesPage = (props: RoutePage) => {
                             })
                     }
                 </table>
-            </div>
-            <div className="indices-footer">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam repellendus nobis accusantium quae cumque.
             </div>
         </div>
     )
