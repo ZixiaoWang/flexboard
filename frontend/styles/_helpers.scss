@@ -17,6 +17,18 @@
         width: 100vw;
         height: 100vh;
     }
+    &-level {
+        display: flex;
+        align-items: center;
+        &-left {
+            justify-self: flex-start;
+            margin-right: auto;
+        }
+        &-right {
+            justify-self: flex-end;
+            margin-left: auto;
+        }
+    }
 }
 
 .is {

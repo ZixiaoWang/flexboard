@@ -57,14 +57,15 @@ export const IndicesPage = (props: RoutePage) => {
     const requestFullScreen = (): void => {
         setTimeout(async () => {
             if (window.innerHeight < window.innerWidth) {
-                console.log("Ready for full screen")
                 const indicesElement: HTMLElement | null = document.getElementById("indices");
                 const indicesTableElement: HTMLElement | null = document.querySelector("#indices .indices-table");
                 if (indicesElement) {
                     try {
                         await indicesElement.requestFullscreen();
                         indicesTableElement?.classList?.add("is-full-screen");
-                    } catch (error) {}
+                    } catch (error) {
+                        console.error(error)
+                    }
                 }
             } else {
                 if (document.fullscreenElement) {
@@ -73,7 +74,7 @@ export const IndicesPage = (props: RoutePage) => {
                     indicesTableElement?.classList?.remove("is-full-screen");
                 }
             }
-        }, 50);
+        }, 100);
     }
 
     useEffect(() => {

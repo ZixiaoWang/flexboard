@@ -1,14 +1,24 @@
-import { h } from "preact";
-
+import { h, VNode,  } from "preact";
+import { route } from "preact-router";
 export interface CardComponentProps {
-    size?: "small" | "medium" | "large"
+    size?: "small" | "medium" | "large",
+    title?: string,
+    thumbnail?: string,
+    date?: string,
+    bookmarked?: boolean,
+    read?: boolean,
+    id?: string,
 }
 
-export const CardComponent = (props: CardComponentProps) => {
+export const CardComponent = (props: CardComponentProps): VNode => {
+
+    const cardProps = {
+        onClick: () => route(`/seeds/${props.id}`)
+    }
 
     if (props.size === "small") {
         return (
-            <div className="card is-small">
+            <div className="card is-small" {...cardProps}>
                 <div className="card-row">
                     <div className="card-img">
                         <img src="http://placekitten.com/160/160" alt="cat" />
@@ -31,7 +41,7 @@ export const CardComponent = (props: CardComponentProps) => {
     }
 
     return (
-        <div className="card">
+        <div className="card" {...cardProps}>
             <div className="card-row has-padding-vertical-2">
                 <span className="grey40 is-text-s">
                     label

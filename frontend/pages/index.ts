@@ -5,3 +5,5 @@ export * from "./settings.page";
 export * from "./splash.page";
 export * from "./redirect.page";
 export * from "./messages.page";
+export * from "./articles.page";
+export * from "./route.page";
