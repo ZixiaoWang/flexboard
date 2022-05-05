@@ -13,6 +13,8 @@
 @import "messages";
 @import "table";
 @import "article";
+@import "widges";
+@import "seeds";
 
 html, body {
     margin: 0;
@@ -24,4 +26,13 @@ html, body {
     height: 100vh;
     overflow: auto;
     // background-color: $grey10;
+}
+
+hr {
+    margin-left: -18px;
+    margin-right: -18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0px;
+    border-top: 1px solid $grey30;
 }

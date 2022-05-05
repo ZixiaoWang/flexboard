@@ -7,7 +7,7 @@ export const SearchPage = (props: RoutePage) => {
         <div className="search">
             <div className="search-row">
                 <div className="search-input">
-                    <input placeholder="Try Flexport..." type="text" />
+                    <input placeholder="Try Ryan Peterson" type="text" />
                     <ion-icon name="search"></ion-icon>
                 </div>
             </div>
@@ -27,8 +27,13 @@ export const SearchPage = (props: RoutePage) => {
                 </div>
             </div>
             <div className="search-row">
-                <div className="search-title">
-                    Histories
+                <div className="search-title is-level">
+                    <div className="is-level-left">Histoires</div>
+                    <div className="is-level-right is-flex is-vertical-center">
+                        <span>Delete all</span>
+                        <span>&nbsp;</span>
+                        <ion-icon name="trash-sharp"></ion-icon>
+                    </div>
                 </div>
                 <div className="search-item">
                     abc

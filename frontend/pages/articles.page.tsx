@@ -1,6 +1,8 @@
 import { h } from "preact";
 import { RoutePage } from "../interfaces";
 
+import WSJIcon from "../icons/wsj.svg";
+
 export const ArticlePage = (props: any) => {
 
     const back = () => {
@@ -13,9 +15,14 @@ export const ArticlePage = (props: any) => {
                 <div className="is-level-left" onClick={back}>
                     <ion-icon name="chevron-back"></ion-icon>
                 </div>
-                <div className="is-level-right">
+                <div className="is-level-right is-flex is-vertical-center">
+                    <ion-icon name="share-outline"></ion-icon>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     <ion-icon name="bookmark-outline"></ion-icon>
                 </div>
+            </div>
+            <div className="article-reference">
+                <img src={WSJIcon} alt="WSJ" />
             </div>
             <div className="article-thumbnail">
                 <img src="http://placekitten.com/640/360" alt="cat" />

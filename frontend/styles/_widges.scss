@@ -1,0 +1,27 @@
+@import "variables";
+
+.widge {
+    padding: 6px 8px;
+    border: 1px solid $grey40;
+    border-radius: 16px;
+    color: $grey40;
+    font-size: 12px;
+    white-space: nowrap;
+
+    & + .widge {
+        margin-left: 10px;
+    }
+
+    &.is-selected {
+        background-color: $grey40;
+        color: white;
+    }
+}
+
+.widges {
+    width: 100%;
+    max-width: $max-width;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}

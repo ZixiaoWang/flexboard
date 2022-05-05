@@ -1,0 +1,18 @@
+@import "variables";
+
+.seed {
+    &-boxes {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-box {
+        height: 80px;
+        width: 48%;
+        border-radius: 8px;
+        background-color: $grey20;
+        padding: 12px;
+        box-sizing: border-box;
+    }
+}

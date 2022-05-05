@@ -1,5 +1,7 @@
-import { h, VNode,  } from "preact";
+import { h, VNode, } from "preact";
 import { route } from "preact-router";
+
+import CNNIcon from "../icons/cnn.svg";
 export interface CardComponentProps {
     size?: "small" | "medium" | "large",
     title?: string,
@@ -25,7 +27,7 @@ export const CardComponent = (props: CardComponentProps): VNode => {
                     </div>
                 </div>
                 <div className="card-row">
-                    <div className="blue50">
+                    <div className="grey50">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, excepturi.
                     </div>
                     <div className="is-text-xs grey40">
@@ -41,20 +43,15 @@ export const CardComponent = (props: CardComponentProps): VNode => {
     }
 
     return (
-        <div className="card" {...cardProps}>
-            <div className="card-row has-padding-vertical-2">
-                <span className="grey40 is-text-s">
-                    label
-                </span>
-            </div>
+        <div className="card is-large" style={{ backgroundImage: `url("http://placekitten.com/320/319")` }} {...cardProps}>
             <div className="card-row">
-                <div className="card-img">
-                    <img src="http://placekitten.com/160/160" alt="cat" />
-                </div>
-            </div>
-            <div className="card-row has-padding-vertical-2">
                 <div className="card-title">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis harum repellendus dignissimos amet temporibus!
+                    <div className="has-padding-top-3">
+                        <span className="is-text-s">
+                            25 Mar, 2022
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

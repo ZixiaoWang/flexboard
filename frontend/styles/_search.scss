@@ -15,12 +15,12 @@
         padding: 6px 0px 12px 12px;
         font-size: 14px;
         font-weight: 400;
-        color: $grey40;
+        color: $grey50;
     }
 
     &-title {
         font-size: 12px;
-        color: $grey30;
+        color: $grey40;
         padding: 0px 4px;
         margin-bottom: 18px;
     }
@@ -28,7 +28,8 @@
     &-input {
         display: flex;
         border-radius: 8px;
-        box-shadow: 0px 0px 12px rgba(black, 0.3);
+        box-shadow: 0px 0px 12px rgba(black, 0.1);
+        border: 1px solid $grey30;
         padding: 2px;
         
         & > input {

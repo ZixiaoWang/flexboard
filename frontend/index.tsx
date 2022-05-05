@@ -1,3 +1,5 @@
+/// <reference path="custom.d.ts" />
+
 import { Fragment, h, render } from "preact";
 import { useState, useEffect } from "preact/hooks";
 import Router from "preact-router";
@@ -7,7 +9,12 @@ import { HeaderComponent, TabsComponent } from "./components";
 import { ArticlePage, IndicesPage, MessagesPage, Redirect, SearchPage, SeedsPage, SettingsPage, SplashPage, Route } from "./pages";
 /** @jsx h */
 
-import "./styles/main.scss"
+import "./styles/main.scss";
+
+interface IonIconAttributes extends preact.JSX.HTMLAttributes<HTMLElement> {
+    name: string,
+    src?: string,
+}
 
 declare module 'preact' {
     namespace JSX {
@@ -15,10 +22,6 @@ declare module 'preact' {
             'ion-icon': IonIconAttributes
         }
     }
-}
-interface IonIconAttributes extends preact.JSX.HTMLAttributes<HTMLElement> {
-    name: string,
-    src?: string,
 }
 
 interface HomePageProps {
