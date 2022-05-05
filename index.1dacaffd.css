@@ -1316,7 +1316,7 @@
 }
 
 .article-actions {
-  width: inherit;
+  width: 100%;
   height: 74px;
   box-sizing: border-box;
   -webkit-backdrop-filter: blur(7px);
