@@ -1,4 +1,5 @@
 import { Fragment, h } from "preact";
+import { route } from "preact-router";
 import { RoutePage } from "../interfaces";
 
 export const SettingsPage = (props: RoutePage) => {
@@ -8,12 +9,9 @@ export const SettingsPage = (props: RoutePage) => {
                 <div className="setting-item">
                     Account
                 </div>
-                <div className="setting-item">
-                    Language
-                </div>
-            </div>
-            <div className="setting-group">
-                <div className="setting-item">
+                <div className="setting-item"
+                    onClick={() => route("/about")}
+                    onKeydown={() => route("/about")}>
                     About Flexboard
                 </div>
             </div>

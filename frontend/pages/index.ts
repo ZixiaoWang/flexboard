@@ -7,3 +7,4 @@ export * from "./redirect.page";
 export * from "./messages.page";
 export * from "./articles.page";
 export * from "./route.page";
+export * from "./about.page";
