@@ -619,15 +619,20 @@ const Home = (props)=>{
 const App = ()=>{
     const hashHistory = _history.createHashHistory();
     const [splashVisibility, setSplashVisibility] = _hooks.useState(true);
+    const loadingTime = Math.round(Math.random() * 2500);
     _hooks.useEffect(()=>{
         setTimeout(()=>{
+            const splashLogo = document.getElementById("splashlogo");
+            if (splashLogo) splashLogo.classList.add("is-fading");
+        }, loadingTime);
+        setTimeout(()=>{
             setSplashVisibility(false);
-        }, Math.round(Math.random() * 100));
+        }, loadingTime + 500);
     }, []);
     if (splashVisibility) return /*#__PURE__*/ _preact.h(_pages.SplashPage, {
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 71,
+            lineNumber: 78,
             columnNumber: 16
         },
         __self: undefined
@@ -635,7 +640,7 @@ const App = ()=>{
     return /*#__PURE__*/ _preact.h(_preact.Fragment, {
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 75,
+            lineNumber: 82,
             columnNumber: 9
         },
         __self: undefined
@@ -643,7 +648,7 @@ const App = ()=>{
         history: hashHistory,
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 77,
+            lineNumber: 84,
             columnNumber: 13
         },
         __self: undefined
@@ -651,7 +656,7 @@ const App = ()=>{
         path: "/seeds/:id",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 78,
+            lineNumber: 85,
             columnNumber: 17
         },
         __self: undefined
@@ -659,7 +664,7 @@ const App = ()=>{
         path: "/about",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 79,
+            lineNumber: 86,
             columnNumber: 17
         },
         __self: undefined
@@ -667,7 +672,7 @@ const App = ()=>{
         path: "/:rest*",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 80,
+            lineNumber: 87,
             columnNumber: 17
         },
         __self: undefined
@@ -676,7 +681,7 @@ const App = ()=>{
 _preact.render(/*#__PURE__*/ _preact.h(App, {
     __source: {
         fileName: "frontend/index.tsx",
-        lineNumber: 87,
+        lineNumber: 94,
         columnNumber: 5
     },
     __self: undefined
@@ -2130,6 +2135,7 @@ var _preact = require("preact");
 const SplashLogoComponent = ()=>{
     return /*#__PURE__*/ _preact.h("div", {
         className: "logo-container",
+        id: "splashlogo",
         __source: {
             fileName: "frontend/components/splash-logo.component.tsx",
             lineNumber: 6,
@@ -2153,7 +2159,7 @@ const SplashLogoComponent = ()=>{
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("div", {
-        className: "logo-card is-blue",
+        className: "logo-card is-white",
         __source: {
             fileName: "frontend/components/splash-logo.component.tsx",
             lineNumber: 9,
@@ -2169,7 +2175,7 @@ const SplashLogoComponent = ()=>{
         },
         __self: undefined
     })), /*#__PURE__*/ _preact.h("div", {
-        className: "logo-text grey50",
+        className: "logo-text white",
         __source: {
             fileName: "frontend/components/splash-logo.component.tsx",
             lineNumber: 12,
@@ -2199,7 +2205,7 @@ const SplashLogoComponent = ()=>{
         },
         __self: undefined
     }, ".")), /*#__PURE__*/ _preact.h("div", {
-        className: "is-text-xs grey30",
+        className: "is-text-xs grey40",
         __source: {
             fileName: "frontend/components/splash-logo.component.tsx",
             lineNumber: 17,
@@ -2264,24 +2270,6 @@ const TabsComponent = ()=>{
         __source: {
             fileName: "frontend/components/tabs.component.tsx",
             lineNumber: 22,
-            columnNumber: 17
-        },
-        __self: undefined
-    })), /*#__PURE__*/ _preact.h(_match.Link, {
-        className: "tab",
-        activeClassName: "is-active",
-        href: "/messages",
-        __source: {
-            fileName: "frontend/components/tabs.component.tsx",
-            lineNumber: 24,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "at",
-        __source: {
-            fileName: "frontend/components/tabs.component.tsx",
-            lineNumber: 27,
             columnNumber: 17
         },
         __self: undefined
@@ -2581,7 +2569,7 @@ const IndicesPage = (props)=>{
     };
     const queryData = (newDate)=>{
         let targetDate = newDate || "";
-        if (/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) targetDate = targetDate.replaceAll("-", "");
+        if (/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) targetDate = targetDate.replace(/-/g, "");
         if (!window.shanghaiFreightIndices || !window.shanghaiFreightIndices.has(targetDate)) {
             const script = document.createElement("script");
             script.onload = ()=>updateDataByDate(targetDate)
@@ -2707,11 +2695,27 @@ const IndicesPage = (props)=>{
             },
             __self: undefined
         }, indiceLabel)
-    )))), /*#__PURE__*/ _preact.h("div", {
-        className: "indices-table",
+    ))), /*#__PURE__*/ _preact.h("div", {
+        className: "indices-action is-expand",
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 116,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "expand-sharp",
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
             lineNumber: 117,
+            columnNumber: 21
+        },
+        __self: undefined
+    }))), /*#__PURE__*/ _preact.h("div", {
+        className: "indices-table",
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 120,
             columnNumber: 13
         },
         __self: undefined
@@ -2719,7 +2723,7 @@ const IndicesPage = (props)=>{
         className: "table",
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 118,
+            lineNumber: 121,
             columnNumber: 17
         },
         __self: undefined
@@ -2728,7 +2732,7 @@ const IndicesPage = (props)=>{
             key: `row${rowIndex}`,
             __source: {
                 fileName: "frontend/pages/indices.page.tsx",
-                lineNumber: 124,
+                lineNumber: 127,
                 columnNumber: 37
             },
             __self: undefined
@@ -2739,7 +2743,7 @@ const IndicesPage = (props)=>{
                 rowSpan: cell.rowspan || 1,
                 __source: {
                     fileName: "frontend/pages/indices.page.tsx",
-                    lineNumber: 128,
+                    lineNumber: 131,
                     columnNumber: 53
                 },
                 __self: undefined
@@ -2749,7 +2753,7 @@ const IndicesPage = (props)=>{
                 rowSpan: cell.rowspan || 1,
                 __source: {
                     fileName: "frontend/pages/indices.page.tsx",
-                    lineNumber: 133,
+                    lineNumber: 136,
                     columnNumber: 53
                 },
                 __self: undefined
@@ -2969,7 +2973,7 @@ const SearchPage = (props)=>{
             },
             __self: undefined
         }, /*#__PURE__*/ _preact.h("div", {
-            className: "has-margin-top-3",
+            className: "has-margin-top-6",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
                 lineNumber: 77,
@@ -3114,6 +3118,7 @@ const SearchPage = (props)=>{
         __self: undefined
     }, /*#__PURE__*/ _preact.h("input", {
         type: "text",
+        id: "searchinput",
         placeholder: "Try Ryan Petersen",
         value: keywords,
         onChange: (event)=>setKeywords(event?.target?.value)
@@ -3132,7 +3137,7 @@ const SearchPage = (props)=>{
         name: "search",
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 122,
+            lineNumber: 123,
             columnNumber: 21
         },
         __self: undefined
@@ -3382,7 +3387,45 @@ const SettingsPage = (props)=>{
             columnNumber: 17
         },
         __self: undefined
-    }, "Account"), /*#__PURE__*/ _preact.h("div", {
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "person-circle-sharp",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 10,
+            columnNumber: 21
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 11,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Account")), /*#__PURE__*/ _preact.h("div", {
+        className: "setting-item",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 13,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "bookmarks-sharp",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 14,
+            columnNumber: 21
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 15,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "My bookmarks")), /*#__PURE__*/ _preact.h("div", {
         className: "setting-item",
         onClick: ()=>_preactRouter.route("/about")
         ,
@@ -3390,11 +3433,26 @@ const SettingsPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 12,
+            lineNumber: 17,
             columnNumber: 17
         },
         __self: undefined
-    }, "About Flexboard")));
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "heart-sharp",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 20,
+            columnNumber: 25
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 21,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "About Flexboard"))));
 };
 
 },{"preact":"cwEwC","preact-router":"gXK85","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1gZMb":[function(require,module,exports) {
@@ -3406,7 +3464,7 @@ var _preact = require("preact");
 var _components = require("../components");
 const SplashPage = ()=>{
     return /*#__PURE__*/ _preact.h("div", {
-        className: "is-full-screen is-all-center",
+        className: "is-full-screen is-all-center bg-blue60",
         __source: {
             fileName: "frontend/pages/splash.page.tsx",
             lineNumber: 6,

@@ -355,6 +355,10 @@
   display: flex;
 }
 
+.logo-container.is-fading {
+  animation: fade .5s ease-in-out;
+}
+
 .logo-icon {
   width: 45px;
   height: 45px;
@@ -382,6 +386,15 @@
   animation-delay: 0s;
   top: 4.5px;
   left: 7.425px;
+}
+
+.logo-card.is-white {
+  width: 38.25px;
+  height: 22.95px;
+  background-color: #fff;
+  animation-delay: .333s;
+  top: 10.35px;
+  left: 3.375px;
 }
 
 .logo-card.is-blue {
@@ -425,6 +438,16 @@
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
@@ -1133,6 +1156,9 @@
 }
 
 .setting-group {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: #fff3;
   margin-top: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -1140,9 +1166,33 @@
 }
 
 .setting-item {
-  color: #4b5564;
-  padding: 12px 18px;
+  color: #dae3f3;
+  align-items: center;
+  padding: 18px 18px 18px 32px;
   font-size: 14px;
+  display: flex;
+  position: relative;
+}
+
+.setting-item ion-icon {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.setting-item:after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid #c5d2e7;
+  border-bottom: 1px solid #0000;
+  border-left: 1px solid #0000;
+  border-right: 2px solid #c5d2e7;
+  margin-top: -3px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 26px;
+  transform: rotate(45deg);
 }
 
 .search {
@@ -1170,7 +1220,7 @@
 }
 
 .search-input {
-  border: 1px solid #45dabe;
+  border: 2px solid #c5d2e7;
   border-radius: 8px;
   padding: 2px;
   display: flex;
@@ -1287,6 +1337,18 @@
   margin-left: 12px;
 }
 
+.indices-action.is-expand {
+  max-width: 45px;
+  height: 35px;
+  background-color: #fff;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  line-height: 35px;
+  display: flex;
+}
+
 .indices-header {
   text-align: center;
   color: #fff;
@@ -1358,7 +1420,7 @@
   text-align: left;
   padding: 12px;
   color: #fff !important;
-  background-color: #4b5564 !important;
+  background-color: #0f2943 !important;
 }
 
 .table td {
@@ -1370,7 +1432,7 @@
 }
 
 .table tr:nth-of-type(2n+1) td {
-  background-color: #dae3f3;
+  background-color: #f5fcff;
 }
 
 .article {
@@ -1476,6 +1538,43 @@
   background-color: #fff3;
   border-radius: 8px;
   padding: 12px;
+}
+
+.wave {
+  width: 1600px;
+  height: 198px;
+  z-index: -1;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg") repeat-x;
+  animation: wave 7s cubic-bezier(.36, .45, .63, .53) infinite;
+  position: absolute;
+  top: 198px;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  opacity: 1;
+  animation: wave 7s cubic-bezier(.36, .45, .63, .53) -.125s infinite, swell 7s -1.25s infinite;
+  top: 175px;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0, -25px, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
 }
 
 html, body {
