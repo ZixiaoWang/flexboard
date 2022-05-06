@@ -74,7 +74,7 @@ export const SearchPage = (props: RoutePage) => {
     const renderHistories = () => {
         return (
             <Fragment>
-                <div className="has-margin-top-3"></div>
+                <div className="has-margin-top-6"></div>
                 <div className="search-row">
                     <div className="search-title">
                         Featured Topics
@@ -114,6 +114,7 @@ export const SearchPage = (props: RoutePage) => {
             <div className="search-row">
                 <div className="search-input">
                     <input type="text"
+                        id="searchinput"
                         placeholder="Try Ryan Petersen"
                         value={keywords}
                         onChange={(event) => setKeywords(event?.target?.value)}

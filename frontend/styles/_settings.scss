@@ -6,13 +6,44 @@
         padding-bottom: 12px;
         box-shadow: 1px 0px 1px $grey40;
         margin-top: 24px;
+        background-color: rgba(white, 0.2);
+        backdrop-filter: blur(5px);
     }
 
     &-item {
-        padding: 12px;
-        padding-left: 18px;
+        padding: 18px;
+        padding-left: 32px;
         padding-right: 18px;
         font-size: 14px;
-        color: $grey50;
+        color: $grey20;
+        position: relative;
+
+        display: flex;
+        align-items: center;
+
+        ion-icon {
+            font-size: 18px;
+            margin-right: 12px;
+        }
+
+        &:after {
+            $size: 6px;
+
+            content: "";
+            display: block;
+            width: $size;
+            height: $size;
+            border-top: 2px solid $grey30;
+            border-right: 2px solid $grey30;
+            border-left: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+
+            position: absolute;
+            right: 26px;
+            top: 50%;
+            margin-top: -0.5 * $size;
+
+            transform: rotate(45deg);
+        }
     }
 }

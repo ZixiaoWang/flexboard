@@ -61,10 +61,17 @@ const App = () => {
     const hashHistory = createHashHistory();
     const [splashVisibility, setSplashVisibility] = useState(true);
 
+    const loadingTime: number = Math.round(Math.random() * 2500);
     useEffect(() => {
         setTimeout(() => {
+            const splashLogo: HTMLElement | null = document.getElementById("splashlogo");
+            if (splashLogo) {
+                splashLogo.classList.add("is-fading");
+            }
+        }, loadingTime);
+        setTimeout(() => {
             setSplashVisibility(false);
-        }, Math.round(Math.random() * 100));
+        } ,loadingTime + 500);
     }, [])
 
     if (splashVisibility) {

@@ -46,7 +46,7 @@
 
         padding: $padding;
         text-align: left;
-        background-color: $grey50 !important;
+        background-color: $blue60 !important;
         color: white !important;
     }
 
@@ -62,7 +62,7 @@
 
     tr:nth-of-type(odd) {
         td {
-            background-color: $grey20;
+            background-color: $blue10;
         }
     }
 }

@@ -21,11 +21,11 @@ export const TabsComponent = () => {
                 href="/search">
                 <ion-icon name="search"></ion-icon>
             </Link>
-            <Link className="tab"
+            {/* <Link className="tab"
                 activeClassName="is-active" 
                 href="/messages">
                 <ion-icon name="at"></ion-icon>
-            </Link>
+            </Link> */}
             <Link className="tab"
                 activeClassName="is-active" 
                 href="/indices">

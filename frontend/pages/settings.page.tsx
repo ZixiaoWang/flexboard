@@ -7,12 +7,18 @@ export const SettingsPage = (props: RoutePage) => {
         <Fragment>
             <div className="setting-group">
                 <div className="setting-item">
-                    Account
+                    <ion-icon name="person-circle-sharp"></ion-icon>
+                    <span>Account</span>
+                </div>
+                <div className="setting-item">
+                    <ion-icon name="bookmarks-sharp"></ion-icon>
+                    <span>My bookmarks</span>
                 </div>
                 <div className="setting-item"
                     onClick={() => route("/about")}
                     onKeydown={() => route("/about")}>
-                    About Flexboard
+                        <ion-icon name="heart-sharp"></ion-icon>
+                    <span>About Flexboard</span>
                 </div>
             </div>
         </Fragment>

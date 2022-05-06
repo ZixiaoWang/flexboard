@@ -6,6 +6,9 @@ $logo-size: 45px;
     &-container {
         display: flex;
         align-items: center;
+        &.is-fading {
+            animation: fade .5s ease-in-out;
+        }
     }
 
     &-icon {
@@ -38,6 +41,15 @@ $logo-size: 45px;
             left: ($logo-size - $size) * 0.5;
             animation-delay: 0ms;
         }
+        &.is-white {
+            $size: $logo-size * 0.85;
+            width: $size;
+            height: $size * $height;
+            background-color: $white;
+            top: $logo-size * 0.23;
+            left: ($logo-size - $size) * 0.5;
+            animation-delay: 333ms;
+        }
         &.is-blue {
             $size: $logo-size * 0.85;
             width: $size;
@@ -66,4 +78,9 @@ $logo-size: 45px;
     32% { opacity: 0.4; }
     40% { opacity: 1; }
     100% { opacity: 1; }
+}
+
+@keyframes fade {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }

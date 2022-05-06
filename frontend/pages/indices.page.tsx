@@ -29,7 +29,7 @@ export const IndicesPage = (props: RoutePage) => {
     const queryData = (newDate: string): void => {
         let targetDate: string = newDate || "";
         if (/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) {
-            targetDate = targetDate.replaceAll("-", "");
+            targetDate = targetDate.replace(/-/g, "");
         }
         if (!window.shanghaiFreightIndices || !window.shanghaiFreightIndices.has(targetDate)) {
             const script: HTMLScriptElement = document.createElement("script");
@@ -112,6 +112,9 @@ export const IndicesPage = (props: RoutePage) => {
                             ))
                         }
                     </select>
+                </div>
+                <div className="indices-action is-expand">
+                    <ion-icon name="expand-sharp"></ion-icon>
                 </div>
             </div>
             <div className="indices-table">
