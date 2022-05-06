@@ -114,7 +114,7 @@ export const SearchPage = (props: RoutePage) => {
             <div className="search-row">
                 <div className="search-input">
                     <input type="text"
-                        placeholder="Try Ryan Peterson"
+                        placeholder="Try Ryan Petersen"
                         value={keywords}
                         onChange={(event) => setKeywords(event?.target?.value)}
                         onFocus={() => setStatus(SearchPageEnum.SUGGESTIONS)}
