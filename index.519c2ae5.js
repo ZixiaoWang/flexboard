@@ -3114,7 +3114,7 @@ const SearchPage = (props)=>{
         __self: undefined
     }, /*#__PURE__*/ _preact.h("input", {
         type: "text",
-        placeholder: "Try Ryan Peterson",
+        placeholder: "Try Ryan Petersen",
         value: keywords,
         onChange: (event)=>setKeywords(event?.target?.value)
         ,
