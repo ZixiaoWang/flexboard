@@ -6,7 +6,6 @@
     &,
     td,
     th {
-        border: 1px solid $grey30;
         border-collapse: collapse;
         font-size: 10px;
     }
@@ -20,11 +19,10 @@
         &:first-of-type {
             position: sticky;
             left: 0;
-            background-color: $grey40;
-            color: white;
-            border-right: 1px solid white;
+            color: $blue50;
             max-width: 125px;
             white-space: pre-wrap;
+            font-weight: 600;
         }
         
         &.is-sticky-row {
@@ -44,22 +42,27 @@
     }
 
     th {
-        $padding: 4px;
-        padding-top: $padding;
-        padding-bottom: $padding;
+        $padding: 12px;
+
+        padding: $padding;
         text-align: left;
         background-color: $grey50 !important;
-        color: white;
+        color: white !important;
     }
 
     td {
-        $padding: 4px;
+        $padding: 8px;
+
         display: table-cell;
         width: fit-content;
-        min-height: 20px;
-        padding-top: $padding;
-        padding-bottom: $padding;
+        padding: $padding;
         color: $grey50;
         white-space: nowrap;
+    }
+
+    tr:nth-of-type(odd) {
+        td {
+            background-color: $grey20;
+        }
     }
 }

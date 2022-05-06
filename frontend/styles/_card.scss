@@ -10,6 +10,9 @@
     display: block;
     border-radius: 8px;
     position: relative;
+    padding: 8px 12px 8px 0px;
+    background-image: linear-gradient(275deg, $grey20, $grey10);
+    box-shadow: 0px 0px 12px rgba(black, 0.5);
 
     &-img {
         position: relative;
@@ -29,17 +32,16 @@
     &-title {
         width: 100%;
         font-size: 16px;
-        color: black;
         line-height: 18px;
         padding: 12px;
         color: white;
-        background-color: rgba(black, 0.6);
+        background-image: linear-gradient(180deg, transparent, black);
         backdrop-filter: blur(5px);
         box-sizing: border-box;
     }
 
     & + .card {
-        margin-top: 48px;
+        margin-top: 18px;
     }
 }
 
@@ -55,11 +57,13 @@
         padding: 0px;
         border-radius: 8px;
         overflow: hidden;
+        box-shadow: 0px 0px 12px rgba(black, 0.4);
 
         #{$card}-title {
-            font-size: 18px;
-            line-height: 22px;
-            font-weight: 300;
+            font-size: 26px;
+            line-height: 28px;
+            font-weight: 500;
+            color: white;
         }
     }
 }
@@ -80,10 +84,13 @@
         }
     
         #{$card}-img {
-            width: 100px;
+            width: 120px;
             height: 0px;
             padding-top: 100px;
-            border-radius: 4px;
+            border-radius: 0px !important;
+            border-top-right-radius: 4px !important;
+            border-bottom-left-radius: 4px !important;
+            box-shadow: 0px 2px 8px rgba(black, 0.3);
         }
     }
 }

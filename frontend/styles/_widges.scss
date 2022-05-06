@@ -2,9 +2,9 @@
 
 .widge {
     padding: 6px 8px;
-    border: 1px solid $grey40;
+    border: 1px solid $grey20;
     border-radius: 16px;
-    color: $grey40;
+    color: $grey20;
     font-size: 12px;
     white-space: nowrap;
 
@@ -13,7 +13,7 @@
     }
 
     &.is-selected {
-        background-color: $grey40;
+        background-color: $green50;
         color: white;
     }
 }
@@ -24,4 +24,7 @@
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }

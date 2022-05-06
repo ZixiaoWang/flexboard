@@ -27,7 +27,7 @@ export const IndicesPage = (props: RoutePage) => {
     }
 
     const queryData = (newDate: string): void => {
-        let targetDate: string = newDate;
+        let targetDate: string = newDate || "";
         if (/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) {
             targetDate = targetDate.replaceAll("-", "");
         }
@@ -97,13 +97,16 @@ export const IndicesPage = (props: RoutePage) => {
 
     return (
         <div className="indices" id="indices">
+            <div className="indices-header">
+                {((data[0]?.[0] || {}) as any).text}
+            </div>
             <div className="indices-actions">
                 <div className="indices-action">
-                    <input type="date" name="date" id="indicesdate" onChange={updateDate} value={date}/>
+                    <input type="date" name="date" id="indicesdate" onChange={updateDate} value={date} />
                 </div>
                 <div className="indices-action">
                     <select name="indices" id="indicestype" onChange={updateIndice}>
-                        { 
+                        {
                             indiceOptions.map((indiceLabel: string, index: number) => (
                                 <option label={indiceLabel} key={index}>{indiceLabel}</option>
                             ))
@@ -111,30 +114,27 @@ export const IndicesPage = (props: RoutePage) => {
                     </select>
                 </div>
             </div>
-            <div className="indices-header">
-                { ((data[0]?.[0] || {}) as any).text }
-            </div>
             <div className="indices-table">
                 <table className="table">
                     {
                         data
-                            .slice(1)
+                            .slice(1, data.length - 1)
                             .map((row: any, rowIndex: number) => {
                                 return (
                                     <tr key={`row${rowIndex}`}>
                                         {
                                             row.map((cell: any, cellIndex: number) => {
                                                 return cell.tag === "td" ?
-                                                <td key={`cell${cellIndex}`}
-                                                    colSpan={cell.colspan || 1}
-                                                    rowSpan={cell.rowspan || 1}>
-                                                    {cell.text}
-                                                </td> :
-                                                <th key={`cell${cellIndex}`}
-                                                    colSpan={cell.colspan || 1}
-                                                    rowSpan={cell.rowspan || 1}>
-                                                    {cell.text}
-                                                </th>
+                                                    <td key={`cell${cellIndex}`}
+                                                        colSpan={cell.colspan || 1}
+                                                        rowSpan={cell.rowspan || 1}>
+                                                        {cell.text}
+                                                    </td> :
+                                                    <th key={`cell${cellIndex}`}
+                                                        colSpan={cell.colspan || 1}
+                                                        rowSpan={cell.rowspan || 1}>
+                                                        {cell.text}
+                                                    </th>
                                             })
                                         }
                                     </tr>

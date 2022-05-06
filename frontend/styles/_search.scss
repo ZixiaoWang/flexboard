@@ -15,12 +15,12 @@
         padding: 6px 0px 12px 12px;
         font-size: 14px;
         font-weight: 400;
-        color: $grey50;
+        color: $grey20;
     }
 
     &-title {
         font-size: 12px;
-        color: $grey40;
+        color: $grey30;
         padding: 0px 4px;
         margin-bottom: 18px;
     }
@@ -29,7 +29,7 @@
         display: flex;
         border-radius: 8px;
         box-shadow: 0px 0px 12px rgba(black, 0.1);
-        border: 1px solid $grey30;
+        border: 1px solid $green40;
         padding: 2px;
         
         & > input {
@@ -39,12 +39,84 @@
             padding: 4px 12px;
             font-size: 16px;
             color: $grey50;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            background-color: $grey30;
         }
 
         & > ion-icon {
             font-size: 24px;
             padding: 8px;
+            color: $green40;
+        }
+    }
+
+    &-suggestions {
+        padding-top: 12px;
+        margin-left: -18px;
+        margin-right: -18px;
+    }
+
+    &-suggestion {
+        padding: 18px 26px;
+        color: $grey20;
+        border-bottom: 1px solid $grey30;
+        position: relative;
+        
+        &:after {
+            $size: 6px;
+
+            content: "";
+            display: block;
+            width: $size;
+            height: $size;
+            border-top: 2px solid $grey30;
+            border-right: 2px solid $grey30;
+            border-left: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+
+            position: absolute;
+            right: 26px;
+            top: 50%;
+            margin-top: -0.5 * $size;
+
+            transform: rotate(45deg);
+        }
+    }
+
+    &-results {
+        padding: 18px 0px;
+    }
+
+    &-result {
+        border: 1px solid $grey30;
+        padding: 12px 8px;
+        border-radius: 8px;
+        background-color: white;
+
+        &-url {
+            color: $grey50;
+            font-size: 10px;
+
+        }
+
+        &-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: $blue50;
+            margin: 8px 0px;
+        }
+
+        &-description {
+            font-size: 11px;
             color: $grey40;
+            b {
+                color: black;
+            }
+        }
+
+        & + .search-result {
+            margin-top: 12px;
         }
     }
 }

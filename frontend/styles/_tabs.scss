@@ -14,15 +14,14 @@
     border-radius: 8px;
     box-sizing: border-box;
     z-index: 99;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
     background-color: rgba(white, 0.7);
 
     .tab {
         display: block;
         font-size: 20px;
-        color: $grey40;
+        color: $blue60;
         padding: 10px;
-        color: $grey30;
         border-radius: 50%;
         &.is-active {
             color: white;

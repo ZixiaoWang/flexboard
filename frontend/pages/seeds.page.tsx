@@ -15,7 +15,7 @@ const Section = (props: SectionProps) => (
         {
             props.label &&
             <div className="has-padding-1">
-                <h3 className="red50">{props.label}</h3>
+                <h3 className="red30">{props.label}</h3>
             </div>
         }
         {props.children}
@@ -31,18 +31,18 @@ export const SeedsPage = (props: RoutePage) => {
             <div className="cards">
                 <div className="seed-boxes">
                     <div className="seed-box">
-                        <div className="is-text-s grey40">
+                        <div className="is-text-s white">
                             Current FBX
                         </div>
-                        <div className="is-text-xxl green60">
+                        <div className="is-text-xxl green30">
                             $5,430
                         </div>
                     </div>
                     <div className="seed-box">
-                        <div className="is-text-s grey40">
+                        <div className="is-text-s white">
                             Volatility
                         </div>
-                        <div className="is-text-xxl grey50">
+                        <div className="is-text-xxl red30">
                             1.23%
                         </div>
                     </div>

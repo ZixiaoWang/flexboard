@@ -27,16 +27,16 @@ export const CardComponent = (props: CardComponentProps): VNode => {
                     </div>
                 </div>
                 <div className="card-row">
-                    <div className="grey50">
+                    <div className="blue50">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, excepturi.
                     </div>
                     <div className="is-text-xs grey40">
                         24 Feb, 2022
                     </div>
                 </div>
-                <div className="card-row">
-                    <ion-icon name="bookmark-outline" />
-                    <ion-icon name="calendar-outline" />
+                <div className="card-row grey40">
+                    <ion-icon name="bookmark" />
+                    <ion-icon name="calendar" />
                 </div>
             </div>
         )
