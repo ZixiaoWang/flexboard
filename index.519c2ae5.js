@@ -3384,7 +3384,7 @@ const SettingsPage = (props)=>{
     const logout = ()=>{
         if (window.confirm("Are you sure you want to logout?")) {
             _helpers.userStore.clear();
-            googleAuth.invokeCallbacks();
+            location.reload();
         }
     };
     return /*#__PURE__*/ _preact.h(_preact.Fragment, {
