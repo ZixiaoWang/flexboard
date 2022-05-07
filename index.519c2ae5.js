@@ -3512,10 +3512,77 @@ const SettingsPage = (props)=>{
             columnNumber: 21
         },
         __self: undefined
-    }, "About Flexboard"))));
+    }, "About Flexboard")), /*#__PURE__*/ _preact.h("div", {
+        className: "setting-item",
+        onClick: ()=>_preactRouter.route("/about")
+        ,
+        onKeydown: ()=>_preactRouter.route("/about")
+        ,
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 62,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "alert-sharp",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 65,
+            columnNumber: 21
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 66,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Declaration"))), _helpers.userStore.hasCache() && /*#__PURE__*/ _preact.h("div", {
+        className: "setting-group",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 71,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "has-padding-vertical-3 is-flex is-all-center red30",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 72,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "log-out-sharp",
+        className: "is-text-l",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 73,
+            columnNumber: 25
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 74,
+            columnNumber: 25
+        },
+        __self: undefined
+    }, "\xa0\xa0"), /*#__PURE__*/ _preact.h("span", {
+        className: "is-text-m",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 75,
+            columnNumber: 25
+        },
+        __self: undefined
+    }, "Logout"))));
 };
 
-},{"preact":"cwEwC","preact-router":"gXK85","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","preact/hooks":"97VL9","../helpers":"dtOhO"}],"dtOhO":[function(require,module,exports) {
+},{"preact":"cwEwC","preact-router":"gXK85","preact/hooks":"97VL9","../helpers":"dtOhO","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"dtOhO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _decodeJWT = require("./decodeJWT");
