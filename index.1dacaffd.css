@@ -551,6 +551,18 @@
   font-size: 38px;
 }
 
+.is-text-left {
+  text-align: left;
+}
+
+.is-text-right {
+  text-align: right;
+}
+
+.is-text-center {
+  text-align: center;
+}
+
 .has-padding-1 {
   padding: 4px;
 }
@@ -1163,6 +1175,16 @@
   padding-top: 12px;
   padding-bottom: 12px;
   box-shadow: 1px 0 1px #67768d;
+}
+
+.setting-userinfo {
+  text-align: center;
+  padding: 16px 32px;
+}
+
+.setting-avatar > img {
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .setting-item {

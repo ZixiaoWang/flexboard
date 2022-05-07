@@ -619,7 +619,7 @@ const Home = (props)=>{
 const App = ()=>{
     const hashHistory = _history.createHashHistory();
     const [splashVisibility, setSplashVisibility] = _hooks.useState(true);
-    const loadingTime = Math.round(Math.random() * 2500);
+    const loadingTime = Math.round(Math.random() * 200);
     _hooks.useEffect(()=>{
         setTimeout(()=>{
             const splashLogo = document.getElementById("splashlogo");
@@ -2605,6 +2605,7 @@ const IndicesPage = (props)=>{
             }
         }, 100);
     };
+    const forceRequestFullScreen = ()=>{};
     _hooks.useEffect(()=>{
         requestFullScreen();
         window.addEventListener("orientationchange", requestFullScreen);
@@ -2627,7 +2628,7 @@ const IndicesPage = (props)=>{
         id: "indices",
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 99,
+            lineNumber: 103,
             columnNumber: 9
         },
         __self: undefined
@@ -2635,7 +2636,7 @@ const IndicesPage = (props)=>{
         className: "indices-header",
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 100,
+            lineNumber: 104,
             columnNumber: 13
         },
         __self: undefined
@@ -2643,7 +2644,7 @@ const IndicesPage = (props)=>{
         className: "indices-actions",
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 103,
+            lineNumber: 107,
             columnNumber: 13
         },
         __self: undefined
@@ -2651,7 +2652,7 @@ const IndicesPage = (props)=>{
         className: "indices-action",
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 104,
+            lineNumber: 108,
             columnNumber: 17
         },
         __self: undefined
@@ -2663,7 +2664,7 @@ const IndicesPage = (props)=>{
         value: date,
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 105,
+            lineNumber: 109,
             columnNumber: 21
         },
         __self: undefined
@@ -2671,7 +2672,7 @@ const IndicesPage = (props)=>{
         className: "indices-action",
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 107,
+            lineNumber: 111,
             columnNumber: 17
         },
         __self: undefined
@@ -2681,7 +2682,7 @@ const IndicesPage = (props)=>{
         onChange: updateIndice,
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 108,
+            lineNumber: 112,
             columnNumber: 21
         },
         __self: undefined
@@ -2690,16 +2691,18 @@ const IndicesPage = (props)=>{
             key: index,
             __source: {
                 fileName: "frontend/pages/indices.page.tsx",
-                lineNumber: 111,
+                lineNumber: 115,
                 columnNumber: 33
             },
             __self: undefined
         }, indiceLabel)
     ))), /*#__PURE__*/ _preact.h("div", {
         className: "indices-action is-expand",
+        onClick: requestFullScreen,
+        onKeyDown: requestFullScreen,
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 116,
+            lineNumber: 120,
             columnNumber: 17
         },
         __self: undefined
@@ -2707,7 +2710,7 @@ const IndicesPage = (props)=>{
         name: "expand-sharp",
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 117,
+            lineNumber: 121,
             columnNumber: 21
         },
         __self: undefined
@@ -2715,7 +2718,7 @@ const IndicesPage = (props)=>{
         className: "indices-table",
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 120,
+            lineNumber: 124,
             columnNumber: 13
         },
         __self: undefined
@@ -2723,7 +2726,7 @@ const IndicesPage = (props)=>{
         className: "table",
         __source: {
             fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 121,
+            lineNumber: 125,
             columnNumber: 17
         },
         __self: undefined
@@ -2732,7 +2735,7 @@ const IndicesPage = (props)=>{
             key: `row${rowIndex}`,
             __source: {
                 fileName: "frontend/pages/indices.page.tsx",
-                lineNumber: 127,
+                lineNumber: 131,
                 columnNumber: 37
             },
             __self: undefined
@@ -2743,7 +2746,7 @@ const IndicesPage = (props)=>{
                 rowSpan: cell.rowspan || 1,
                 __source: {
                     fileName: "frontend/pages/indices.page.tsx",
-                    lineNumber: 131,
+                    lineNumber: 135,
                     columnNumber: 53
                 },
                 __self: undefined
@@ -2753,7 +2756,7 @@ const IndicesPage = (props)=>{
                 rowSpan: cell.rowspan || 1,
                 __source: {
                     fileName: "frontend/pages/indices.page.tsx",
-                    lineNumber: 136,
+                    lineNumber: 140,
                     columnNumber: 53
                 },
                 __self: undefined
@@ -3363,19 +3366,99 @@ parcelHelpers.export(exports, "SettingsPage", ()=>SettingsPage
 );
 var _preact = require("preact");
 var _preactRouter = require("preact-router");
+var _hooks = require("preact/hooks");
+var _helpers = require("../helpers");
 const SettingsPage = (props)=>{
+    const { googleAuth , nounce  } = _helpers.useGoogleAuth();
+    _hooks.useEffect(()=>{
+        if (window.google) {
+            if (_helpers.userStore.hasCache()) {
+                if (_helpers.userStore.isExpired()) googleAuth.prompt();
+            } else {
+                googleAuth.renderButton();
+                googleAuth.prompt();
+            }
+        }
+    }, []);
     return /*#__PURE__*/ _preact.h(_preact.Fragment, {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 7,
+            lineNumber: 31,
             columnNumber: 9
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("div", {
         className: "setting-group",
+        key: nounce,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 8,
+            lineNumber: 32,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, _helpers.userStore.hasCache() && _helpers.userStore.isExpired() === false ? /*#__PURE__*/ _preact.h("div", {
+        className: "setting-userinfo",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 35,
+            columnNumber: 25
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "setting-avatar",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 36,
+            columnNumber: 29
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("img", {
+        src: _helpers.userStore.cache.picture,
+        alt: _helpers.userStore.cache.name,
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 37,
+            columnNumber: 33
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h("div", {
+        className: "has-margin-top-5",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 39,
+            columnNumber: 29
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "is-text-xl grey10",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 40,
+            columnNumber: 33
+        },
+        __self: undefined
+    }, _helpers.userStore.cache.name), /*#__PURE__*/ _preact.h("div", {
+        className: "is-text-s grey20",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 43,
+            columnNumber: 33
+        },
+        __self: undefined
+    }, _helpers.userStore.cache.email))) : /*#__PURE__*/ _preact.h("div", {
+        className: "is-flex is-vertical-center has-padding-vertical-2 has-padding-horizontal-7",
+        id: "gbuttondiv",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 48,
+            columnNumber: 25
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h("div", {
+        className: "setting-group",
+        __source: {
+            fileName: "frontend/pages/settings.page.tsx",
+            lineNumber: 51,
             columnNumber: 13
         },
         __self: undefined
@@ -3383,30 +3466,7 @@ const SettingsPage = (props)=>{
         className: "setting-item",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 9,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "person-circle-sharp",
-        __source: {
-            fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 10,
-            columnNumber: 21
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _preact.h("span", {
-        __source: {
-            fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 11,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "Account")), /*#__PURE__*/ _preact.h("div", {
-        className: "setting-item",
-        __source: {
-            fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 13,
+            lineNumber: 52,
             columnNumber: 17
         },
         __self: undefined
@@ -3414,14 +3474,14 @@ const SettingsPage = (props)=>{
         name: "bookmarks-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 14,
+            lineNumber: 53,
             columnNumber: 21
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 15,
+            lineNumber: 54,
             columnNumber: 21
         },
         __self: undefined
@@ -3433,7 +3493,7 @@ const SettingsPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 17,
+            lineNumber: 56,
             columnNumber: 17
         },
         __self: undefined
@@ -3441,21 +3501,140 @@ const SettingsPage = (props)=>{
         name: "heart-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 20,
-            columnNumber: 25
+            lineNumber: 59,
+            columnNumber: 21
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 21,
+            lineNumber: 60,
             columnNumber: 21
         },
         __self: undefined
     }, "About Flexboard"))));
 };
 
-},{"preact":"cwEwC","preact-router":"gXK85","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1gZMb":[function(require,module,exports) {
+},{"preact":"cwEwC","preact-router":"gXK85","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","preact/hooks":"97VL9","../helpers":"dtOhO"}],"dtOhO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _decodeJWT = require("./decodeJWT");
+parcelHelpers.exportAll(_decodeJWT, exports);
+var _googleAuth = require("./googleAuth");
+parcelHelpers.exportAll(_googleAuth, exports);
+var _userStore = require("./userStore");
+parcelHelpers.exportAll(_userStore, exports);
+
+},{"./decodeJWT":"1trgr","./googleAuth":"5PK59","./userStore":"cx4a0","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1trgr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "decodeJWT", ()=>decodeJWT
+);
+const decodeJWT = (token)=>{
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    return JSON.parse(jsonPayload);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"5PK59":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useGoogleAuth", ()=>useGoogleAuth
+);
+var _hooks = require("preact/hooks");
+var _userStore = require("./userStore");
+class GoogleAuth {
+    clientId = "646206867663-n5avbo6sap51864lno5vnrffc8jrlf45";
+    callbacks = new Set();
+    init() {
+        window.google.accounts.id.initialize({
+            client_id: "646206867663-n5avbo6sap51864lno5vnrffc8jrlf45",
+            callback: this.onSignInSuccess.bind(this)
+        });
+    }
+    onSignInSuccess(response) {
+        const credential = response.credential;
+        _userStore.userStore.setCache(credential);
+        const nounce = Math.random();
+        this.callbacks.forEach((callback)=>{
+            if (callback && typeof callback === "function") callback(nounce);
+        });
+    }
+    renderButton() {
+        window.google.accounts.id.renderButton(document.getElementById("gbuttondiv"), {
+            theme: "outline",
+            size: "large",
+            shape: "pill"
+        });
+    }
+    prompt() {
+        window.google.accounts.id.prompt();
+    }
+    setCallback(callback) {
+        if (this.callbacks.has(callback) === false) this.callbacks.add(callback);
+    }
+}
+const googleAuth = new GoogleAuth();
+const useGoogleAuth = ()=>{
+    const [nounce, setNounce] = _hooks.useState(Math.random());
+    _hooks.useEffect(()=>{
+        googleAuth.setCallback(setNounce);
+        googleAuth.init();
+    }, []);
+    return {
+        googleAuth,
+        nounce
+    };
+};
+
+},{"preact/hooks":"97VL9","./userStore":"cx4a0","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"cx4a0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "userStore", ()=>userStore
+);
+var _decodeJWT = require("./decodeJWT");
+class UserStore {
+    cache = null;
+    key = "FLEXBOARD_USER_ACCOUNT";
+    constructor(){
+        const account = this.parseCache(this.key);
+        if (account) this.cache = account;
+    }
+    isExpired() {
+        if (!this.cache) return true;
+        return Date.now() > this.cache.exp * 1000;
+    }
+    hasCache() {
+        return Boolean(this.cache);
+    }
+    setCache(value) {
+        localStorage.setItem(this.key, value);
+        this.cache = this.parseCache(this.key);
+    }
+    getCache() {
+        return this.cache;
+    }
+    parseCache(key) {
+        const cache = localStorage.getItem(key);
+        if (cache) try {
+            const accountJSON = _decodeJWT.decodeJWT(cache);
+            return accountJSON;
+        } catch (e) {
+            this.clear();
+            return null;
+        }
+        return null;
+    }
+    clear() {
+        localStorage.clear();
+    }
+}
+const userStore = new UserStore();
+
+},{"./decodeJWT":"1trgr","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1gZMb":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SplashPage", ()=>SplashPage
