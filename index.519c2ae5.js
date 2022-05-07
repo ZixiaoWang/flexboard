@@ -3541,6 +3541,7 @@ const SettingsPage = (props)=>{
         __self: undefined
     }, "Declaration"))), _helpers.userStore.hasCache() && /*#__PURE__*/ _preact.h("div", {
         className: "setting-group",
+        key: nounce,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
             lineNumber: 71,
