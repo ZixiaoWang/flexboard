@@ -3374,6 +3374,7 @@ const SettingsPage = (props)=>{
         if (window.google) {
             if (_helpers.userStore.hasCache()) {
                 if (_helpers.userStore.isExpired()) googleAuth.prompt();
+            // googleAuth.prompt();
             } else {
                 googleAuth.renderButton();
                 googleAuth.prompt();
@@ -3383,7 +3384,7 @@ const SettingsPage = (props)=>{
     return /*#__PURE__*/ _preact.h(_preact.Fragment, {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 31,
+            lineNumber: 33,
             columnNumber: 9
         },
         __self: undefined
@@ -3392,7 +3393,7 @@ const SettingsPage = (props)=>{
         key: nounce,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 32,
+            lineNumber: 34,
             columnNumber: 13
         },
         __self: undefined
@@ -3400,7 +3401,7 @@ const SettingsPage = (props)=>{
         className: "setting-userinfo",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 35,
+            lineNumber: 37,
             columnNumber: 25
         },
         __self: undefined
@@ -3408,7 +3409,7 @@ const SettingsPage = (props)=>{
         className: "setting-avatar",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 36,
+            lineNumber: 38,
             columnNumber: 29
         },
         __self: undefined
@@ -3417,7 +3418,7 @@ const SettingsPage = (props)=>{
         alt: _helpers.userStore.cache.name,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 37,
+            lineNumber: 39,
             columnNumber: 33
         },
         __self: undefined
@@ -3425,7 +3426,7 @@ const SettingsPage = (props)=>{
         className: "has-margin-top-5",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 39,
+            lineNumber: 41,
             columnNumber: 29
         },
         __self: undefined
@@ -3433,7 +3434,7 @@ const SettingsPage = (props)=>{
         className: "is-text-xl grey10",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 40,
+            lineNumber: 42,
             columnNumber: 33
         },
         __self: undefined
@@ -3441,7 +3442,7 @@ const SettingsPage = (props)=>{
         className: "is-text-s grey20",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 43,
+            lineNumber: 45,
             columnNumber: 33
         },
         __self: undefined
@@ -3450,7 +3451,7 @@ const SettingsPage = (props)=>{
         id: "gbuttondiv",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 48,
+            lineNumber: 50,
             columnNumber: 25
         },
         __self: undefined
@@ -3458,7 +3459,7 @@ const SettingsPage = (props)=>{
         className: "setting-group",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 51,
+            lineNumber: 53,
             columnNumber: 13
         },
         __self: undefined
@@ -3466,7 +3467,7 @@ const SettingsPage = (props)=>{
         className: "setting-item",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 52,
+            lineNumber: 54,
             columnNumber: 17
         },
         __self: undefined
@@ -3474,14 +3475,14 @@ const SettingsPage = (props)=>{
         name: "bookmarks-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 53,
+            lineNumber: 55,
             columnNumber: 21
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 54,
+            lineNumber: 56,
             columnNumber: 21
         },
         __self: undefined
@@ -3493,7 +3494,7 @@ const SettingsPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 56,
+            lineNumber: 58,
             columnNumber: 17
         },
         __self: undefined
@@ -3501,14 +3502,14 @@ const SettingsPage = (props)=>{
         name: "heart-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 59,
+            lineNumber: 61,
             columnNumber: 21
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 60,
+            lineNumber: 62,
             columnNumber: 21
         },
         __self: undefined
@@ -3520,7 +3521,7 @@ const SettingsPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 62,
+            lineNumber: 64,
             columnNumber: 17
         },
         __self: undefined
@@ -3528,14 +3529,14 @@ const SettingsPage = (props)=>{
         name: "alert-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 65,
+            lineNumber: 67,
             columnNumber: 21
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 66,
+            lineNumber: 68,
             columnNumber: 21
         },
         __self: undefined
@@ -3544,7 +3545,7 @@ const SettingsPage = (props)=>{
         key: nounce,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 71,
+            lineNumber: 73,
             columnNumber: 17
         },
         __self: undefined
@@ -3552,7 +3553,7 @@ const SettingsPage = (props)=>{
         className: "has-padding-vertical-3 is-flex is-all-center red30",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 72,
+            lineNumber: 74,
             columnNumber: 21
         },
         __self: undefined
@@ -3561,14 +3562,14 @@ const SettingsPage = (props)=>{
         className: "is-text-l",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 73,
+            lineNumber: 75,
             columnNumber: 25
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 74,
+            lineNumber: 76,
             columnNumber: 25
         },
         __self: undefined
@@ -3576,7 +3577,7 @@ const SettingsPage = (props)=>{
         className: "is-text-m",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 75,
+            lineNumber: 77,
             columnNumber: 25
         },
         __self: undefined
