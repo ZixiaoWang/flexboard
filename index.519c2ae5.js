@@ -3381,10 +3381,16 @@ const SettingsPage = (props)=>{
             }
         }
     }, []);
+    const logout = ()=>{
+        if (window.confirm("Are you sure you want to logout?")) {
+            _helpers.userStore.clear();
+            googleAuth.invokeCallbacks();
+        }
+    };
     return /*#__PURE__*/ _preact.h(_preact.Fragment, {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 33,
+            lineNumber: 40,
             columnNumber: 9
         },
         __self: undefined
@@ -3393,7 +3399,7 @@ const SettingsPage = (props)=>{
         key: nounce,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 34,
+            lineNumber: 41,
             columnNumber: 13
         },
         __self: undefined
@@ -3401,7 +3407,7 @@ const SettingsPage = (props)=>{
         className: "setting-userinfo",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 37,
+            lineNumber: 44,
             columnNumber: 25
         },
         __self: undefined
@@ -3409,7 +3415,7 @@ const SettingsPage = (props)=>{
         className: "setting-avatar",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 38,
+            lineNumber: 45,
             columnNumber: 29
         },
         __self: undefined
@@ -3418,7 +3424,7 @@ const SettingsPage = (props)=>{
         alt: _helpers.userStore.cache.name,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 39,
+            lineNumber: 46,
             columnNumber: 33
         },
         __self: undefined
@@ -3426,7 +3432,7 @@ const SettingsPage = (props)=>{
         className: "has-margin-top-5",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 41,
+            lineNumber: 48,
             columnNumber: 29
         },
         __self: undefined
@@ -3434,7 +3440,7 @@ const SettingsPage = (props)=>{
         className: "is-text-xl grey10",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 42,
+            lineNumber: 49,
             columnNumber: 33
         },
         __self: undefined
@@ -3442,7 +3448,7 @@ const SettingsPage = (props)=>{
         className: "is-text-s grey20",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 45,
+            lineNumber: 52,
             columnNumber: 33
         },
         __self: undefined
@@ -3451,7 +3457,7 @@ const SettingsPage = (props)=>{
         id: "gbuttondiv",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 50,
+            lineNumber: 57,
             columnNumber: 25
         },
         __self: undefined
@@ -3459,7 +3465,7 @@ const SettingsPage = (props)=>{
         className: "setting-group",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 53,
+            lineNumber: 60,
             columnNumber: 13
         },
         __self: undefined
@@ -3467,7 +3473,7 @@ const SettingsPage = (props)=>{
         className: "setting-item",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 54,
+            lineNumber: 61,
             columnNumber: 17
         },
         __self: undefined
@@ -3475,14 +3481,14 @@ const SettingsPage = (props)=>{
         name: "bookmarks-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 55,
+            lineNumber: 62,
             columnNumber: 21
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 56,
+            lineNumber: 63,
             columnNumber: 21
         },
         __self: undefined
@@ -3494,7 +3500,7 @@ const SettingsPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 58,
+            lineNumber: 65,
             columnNumber: 17
         },
         __self: undefined
@@ -3502,14 +3508,14 @@ const SettingsPage = (props)=>{
         name: "heart-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 61,
+            lineNumber: 68,
             columnNumber: 21
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 62,
+            lineNumber: 69,
             columnNumber: 21
         },
         __self: undefined
@@ -3521,7 +3527,7 @@ const SettingsPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 64,
+            lineNumber: 71,
             columnNumber: 17
         },
         __self: undefined
@@ -3529,14 +3535,14 @@ const SettingsPage = (props)=>{
         name: "alert-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 67,
+            lineNumber: 74,
             columnNumber: 21
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 68,
+            lineNumber: 75,
             columnNumber: 21
         },
         __self: undefined
@@ -3545,15 +3551,17 @@ const SettingsPage = (props)=>{
         key: nounce,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 73,
+            lineNumber: 80,
             columnNumber: 17
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("div", {
         className: "has-padding-vertical-3 is-flex is-all-center red30",
+        onClick: logout,
+        onKeydown: logout,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 74,
+            lineNumber: 81,
             columnNumber: 21
         },
         __self: undefined
@@ -3562,14 +3570,14 @@ const SettingsPage = (props)=>{
         className: "is-text-l",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 75,
+            lineNumber: 85,
             columnNumber: 25
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 76,
+            lineNumber: 86,
             columnNumber: 25
         },
         __self: undefined
@@ -3577,7 +3585,7 @@ const SettingsPage = (props)=>{
         className: "is-text-m",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 77,
+            lineNumber: 87,
             columnNumber: 25
         },
         __self: undefined
@@ -3627,10 +3635,7 @@ class GoogleAuth {
     onSignInSuccess(response) {
         const credential = response.credential;
         _userStore.userStore.setCache(credential);
-        const nounce = Math.random();
-        this.callbacks.forEach((callback)=>{
-            if (callback && typeof callback === "function") callback(nounce);
-        });
+        this.invokeCallbacks();
     }
     renderButton() {
         window.google.accounts.id.renderButton(document.getElementById("gbuttondiv"), {
@@ -3645,6 +3650,12 @@ class GoogleAuth {
     setCallback(callback) {
         if (this.callbacks.has(callback) === false) this.callbacks.add(callback);
     }
+    invokeCallbacks() {
+        const nounce = Math.random();
+        this.callbacks.forEach((callback)=>{
+            if (callback && typeof callback === "function") callback(nounce);
+        });
+    }
 }
 const googleAuth = new GoogleAuth();
 const useGoogleAuth = ()=>{
@@ -3655,7 +3666,8 @@ const useGoogleAuth = ()=>{
     }, []);
     return {
         googleAuth,
-        nounce
+        nounce,
+        setNounce
     };
 };
 
