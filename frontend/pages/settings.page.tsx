@@ -59,7 +59,23 @@ export const SettingsPage = (props: RoutePage) => {
                     <ion-icon name="heart-sharp"></ion-icon>
                     <span>About Flexboard</span>
                 </div>
+                <div className="setting-item"
+                    onClick={() => route("/about")}
+                    onKeydown={() => route("/about")}>
+                    <ion-icon name="alert-sharp"></ion-icon>
+                    <span>Declaration</span>
+                </div>
             </div>
+            {
+                userStore.hasCache() &&
+                <div className="setting-group" key={nounce}>
+                    <div className="has-padding-vertical-3 is-flex is-all-center red30">
+                        <ion-icon name="log-out-sharp" className="is-text-l"></ion-icon>
+                        <span>&nbsp;&nbsp;</span>
+                        <span className="is-text-m">Logout</span>
+                    </div>
+                </div>
+            }
         </Fragment>
     )
 }
