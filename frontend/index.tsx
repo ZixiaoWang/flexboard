@@ -61,7 +61,7 @@ const App = () => {
     const hashHistory = createHashHistory();
     const [splashVisibility, setSplashVisibility] = useState(true);
 
-    const loadingTime: number = Math.round(Math.random() * 2500);
+    const loadingTime: number = Math.round(Math.random() * 200);
     useEffect(() => {
         setTimeout(() => {
             const splashLogo: HTMLElement | null = document.getElementById("splashlogo");

@@ -43,6 +43,16 @@
         &-l { font-size: 20px; }
         &-xl { font-size: 28px; }
         &-xxl { font-size: 38px; }
+
+        &-left {
+            text-align: left;
+        }
+        &-right {
+            text-align: right;
+        }
+        &-center {
+            text-align: center;
+        }
     }
 }
 
