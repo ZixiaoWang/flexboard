@@ -1330,7 +1330,9 @@
 }
 
 .search-results {
+  max-height: calc(100vh - 320px);
   padding: 18px 0;
+  overflow: auto;
 }
 
 .search-result {

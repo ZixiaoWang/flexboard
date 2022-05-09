@@ -2565,7 +2565,7 @@ const CardComponent = (props)=>{
     }, "25 Mar, 2022")))));
 };
 
-},{"preact":"cwEwC","preact-router":"gXK85","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","../icons/cnn.svg":"6yyHW"}],"6yyHW":[function(require,module,exports) {
+},{"preact":"cwEwC","preact-router":"gXK85","../icons/cnn.svg":"6yyHW","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"6yyHW":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "cnn.4fd01197.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"hPpBg"}],"hPpBg":[function(require,module,exports) {
@@ -2851,173 +2851,116 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SearchPage", ()=>SearchPage
 );
 var _preact = require("preact");
+var _preactRouter = require("preact-router");
 var _hooks = require("preact/hooks");
+var _helpers = require("../helpers");
 let SearchPageEnum;
 (function(SearchPageEnum1) {
     SearchPageEnum1[SearchPageEnum1["HISTORIES"] = 0] = "HISTORIES";
     SearchPageEnum1[SearchPageEnum1["SUGGESTIONS"] = 1] = "SUGGESTIONS";
     SearchPageEnum1[SearchPageEnum1["RESULTS"] = 2] = "RESULTS";
+    SearchPageEnum1[SearchPageEnum1["LOADING"] = 3] = "LOADING";
 })(SearchPageEnum || (SearchPageEnum = {}));
 const SearchPage = (props)=>{
     const [status, setStatus] = _hooks.useState(SearchPageEnum.HISTORIES);
     const [keywords, setKeywords] = _hooks.useState("");
-    const [loading, setLoading] = _hooks.useState(false);
-    const [results, setResults] = _hooks.useState([]);
+    const [results, setResults] = _hooks.useState([
+        1,
+        2,
+        3,
+        4,
+        5
+    ]);
+    const { searchStore  } = _helpers.useSearchStore();
+    const deleteHistories = ()=>{
+        if (window.confirm("Do you want to delete all searching histories?")) searchStore.deleteAllHistory();
+    };
+    const search = (event)=>{
+        event.preventDefault();
+        setStatus(SearchPageEnum.LOADING);
+        setTimeout(()=>setStatus(SearchPageEnum.RESULTS)
+        , 2000);
+        searchStore.addHistory(keywords);
+    };
+    const renderLoading = ()=>{
+        return /*#__PURE__*/ _preact.h("div", {
+            className: "search-results",
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 35,
+                columnNumber: 13
+            },
+            __self: undefined
+        }, "loading...");
+    };
     const renderSearchResults = ()=>{
         return /*#__PURE__*/ _preact.h("div", {
             className: "search-results",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 19,
+                lineNumber: 43,
                 columnNumber: 13
             },
             __self: undefined
-        }, /*#__PURE__*/ _preact.h("div", {
-            className: "search-result",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 20,
-                columnNumber: 17
-            },
-            __self: undefined
-        }, /*#__PURE__*/ _preact.h("div", {
-            className: "search-result-url",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 21,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "https://placekittn.com/900/460"), /*#__PURE__*/ _preact.h("div", {
-            className: "search-result-title",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 22,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "Lorem ipsum dolor sit amet consectetur adipisicing elit."), /*#__PURE__*/ _preact.h("div", {
-            className: "search-result-description",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 25,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, deleniti vero officia ", /*#__PURE__*/ _preact.h("b", {
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 27,
-                columnNumber: 57
-            },
-            __self: undefined
-        }, "doloremque"), " maiores odit at incidunt, libero dignissimos fuga ", /*#__PURE__*/ _preact.h("b", {
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 28,
-                columnNumber: 62
-            },
-            __self: undefined
-        }, "facere"), "voluptate veniam totam omnis quos. Autem quaerat quas temporibus hic assumenda?")), /*#__PURE__*/ _preact.h("div", {
-            className: "search-result",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 34,
-                columnNumber: 17
-            },
-            __self: undefined
-        }, /*#__PURE__*/ _preact.h("div", {
-            className: "search-result-url",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 35,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "https://placekittn.com/900/460"), /*#__PURE__*/ _preact.h("div", {
-            className: "search-result-title",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 36,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "Lorem ipsum dolor sit amet consectetur adipisicing elit."), /*#__PURE__*/ _preact.h("div", {
-            className: "search-result-description",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 39,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, deleniti vero officia ", /*#__PURE__*/ _preact.h("b", {
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 41,
-                columnNumber: 57
-            },
-            __self: undefined
-        }, "doloremque"), " maiores odit at incidunt, libero dignissimos fuga ", /*#__PURE__*/ _preact.h("b", {
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 42,
-                columnNumber: 62
-            },
-            __self: undefined
-        }, "facere"), "voluptate veniam totam omnis quos. Autem quaerat quas temporibus hic assumenda?")), /*#__PURE__*/ _preact.h("div", {
-            className: "search-result",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 47,
-                columnNumber: 17
-            },
-            __self: undefined
-        }, /*#__PURE__*/ _preact.h("div", {
-            className: "search-result-url",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 48,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "https://placekittn.com/900/460"), /*#__PURE__*/ _preact.h("div", {
-            className: "search-result-title",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 49,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "Lorem ipsum dolor sit amet consectetur adipisicing elit."), /*#__PURE__*/ _preact.h("div", {
-            className: "search-result-description",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 52,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, deleniti vero officia ", /*#__PURE__*/ _preact.h("b", {
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 54,
-                columnNumber: 57
-            },
-            __self: undefined
-        }, "doloremque"), " maiores odit at incidunt, libero dignissimos fuga ", /*#__PURE__*/ _preact.h("b", {
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 55,
-                columnNumber: 62
-            },
-            __self: undefined
-        }, "facere"), "voluptate veniam totam omnis quos. Autem quaerat quas temporibus hic assumenda?")));
+        }, results.map((result, index)=>{
+            return /*#__PURE__*/ _preact.h("div", {
+                key: index,
+                className: "search-result",
+                onClick: ()=>_preactRouter.route("/seeds/" + result.toString())
+                ,
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 46,
+                    columnNumber: 25
+                },
+                __self: undefined
+            }, /*#__PURE__*/ _preact.h("div", {
+                className: "search-result-url",
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 49,
+                    columnNumber: 29
+                },
+                __self: undefined
+            }, "https://placekittn.com/900/460"), /*#__PURE__*/ _preact.h("div", {
+                className: "search-result-title",
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 50,
+                    columnNumber: 29
+                },
+                __self: undefined
+            }, "Lorem ipsum dolor sit amet consectetur adipisicing elit."), /*#__PURE__*/ _preact.h("div", {
+                className: "search-result-description",
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 53,
+                    columnNumber: 29
+                },
+                __self: undefined
+            }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, deleniti vero officia ", /*#__PURE__*/ _preact.h("b", {
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 55,
+                    columnNumber: 65
+                },
+                __self: undefined
+            }, "doloremque"), " maiores odit at incidunt, libero dignissimos fuga ", /*#__PURE__*/ _preact.h("b", {
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 56,
+                    columnNumber: 70
+                },
+                __self: undefined
+            }, "facere"), "voluptate veniam totam omnis quos. Autem quaerat quas temporibus hic assumenda?"));
+        }));
     };
     const renderSearchSuggestions = ()=>{
         return /*#__PURE__*/ _preact.h("div", {
             className: "search-suggestions",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 66,
+                lineNumber: 69,
                 columnNumber: 13
             },
             __self: undefined
@@ -3025,7 +2968,7 @@ const SearchPage = (props)=>{
             className: "search-suggestion",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 67,
+                lineNumber: 70,
                 columnNumber: 17
             },
             __self: undefined
@@ -3033,7 +2976,7 @@ const SearchPage = (props)=>{
             className: "search-suggestion",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 68,
+                lineNumber: 71,
                 columnNumber: 17
             },
             __self: undefined
@@ -3041,7 +2984,7 @@ const SearchPage = (props)=>{
             className: "search-suggestion",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 69,
+                lineNumber: 72,
                 columnNumber: 17
             },
             __self: undefined
@@ -3051,7 +2994,7 @@ const SearchPage = (props)=>{
         return /*#__PURE__*/ _preact.h(_preact.Fragment, {
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 76,
+                lineNumber: 79,
                 columnNumber: 13
             },
             __self: undefined
@@ -3059,7 +3002,7 @@ const SearchPage = (props)=>{
             className: "has-margin-top-6",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 77,
+                lineNumber: 80,
                 columnNumber: 17
             },
             __self: undefined
@@ -3067,7 +3010,7 @@ const SearchPage = (props)=>{
             className: "search-row",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 78,
+                lineNumber: 81,
                 columnNumber: 17
             },
             __self: undefined
@@ -3075,7 +3018,7 @@ const SearchPage = (props)=>{
             className: "search-title",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 79,
+                lineNumber: 82,
                 columnNumber: 21
             },
             __self: undefined
@@ -3083,7 +3026,7 @@ const SearchPage = (props)=>{
             className: "search-item",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 82,
+                lineNumber: 85,
                 columnNumber: 21
             },
             __self: undefined
@@ -3091,7 +3034,7 @@ const SearchPage = (props)=>{
             className: "search-item",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 85,
+                lineNumber: 88,
                 columnNumber: 21
             },
             __self: undefined
@@ -3099,7 +3042,7 @@ const SearchPage = (props)=>{
             className: "search-item",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 88,
+                lineNumber: 91,
                 columnNumber: 21
             },
             __self: undefined
@@ -3107,7 +3050,7 @@ const SearchPage = (props)=>{
             className: "search-row",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 92,
+                lineNumber: 95,
                 columnNumber: 17
             },
             __self: undefined
@@ -3115,7 +3058,7 @@ const SearchPage = (props)=>{
             className: "search-title is-level",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 93,
+                lineNumber: 96,
                 columnNumber: 21
             },
             __self: undefined
@@ -3123,29 +3066,31 @@ const SearchPage = (props)=>{
             className: "is-level-left",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 94,
+                lineNumber: 97,
                 columnNumber: 25
             },
             __self: undefined
         }, "Histoires"), /*#__PURE__*/ _preact.h("div", {
             className: "is-level-right is-flex is-vertical-center",
+            onClick: deleteHistories,
+            onKeyDown: deleteHistories,
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 95,
+                lineNumber: 98,
                 columnNumber: 25
             },
             __self: undefined
         }, /*#__PURE__*/ _preact.h("span", {
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 96,
+                lineNumber: 101,
                 columnNumber: 29
             },
             __self: undefined
         }, "Delete all"), /*#__PURE__*/ _preact.h("span", {
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 97,
+                lineNumber: 102,
                 columnNumber: 29
             },
             __self: undefined
@@ -3153,33 +3098,26 @@ const SearchPage = (props)=>{
             name: "trash-sharp",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 98,
+                lineNumber: 103,
                 columnNumber: 29
             },
             __self: undefined
-        }))), /*#__PURE__*/ _preact.h("div", {
-            className: "search-item",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 101,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "abc"), /*#__PURE__*/ _preact.h("div", {
-            className: "search-item",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 104,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "bbc")));
+        }))), searchStore.getHistories().map((history)=>/*#__PURE__*/ _preact.h("div", {
+                className: "search-item",
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 110,
+                    columnNumber: 33
+                },
+                __self: undefined
+            }, history)
+        )));
     };
     return /*#__PURE__*/ _preact.h("div", {
         className: "search",
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 113,
+            lineNumber: 121,
             columnNumber: 9
         },
         __self: undefined
@@ -3187,16 +3125,24 @@ const SearchPage = (props)=>{
         className: "search-row",
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 114,
+            lineNumber: 122,
             columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("form", {
+        onSubmit: search,
+        __source: {
+            fileName: "frontend/pages/search.page.tsx",
+            lineNumber: 123,
+            columnNumber: 17
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("div", {
         className: "search-input",
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 115,
-            columnNumber: 17
+            lineNumber: 124,
+            columnNumber: 21
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("input", {
@@ -3212,22 +3158,213 @@ const SearchPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 116,
-            columnNumber: 21
+            lineNumber: 125,
+            columnNumber: 25
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("ion-icon", {
         name: "search",
+        onClick: search,
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 123,
-            columnNumber: 21
+            lineNumber: 132,
+            columnNumber: 25
         },
         __self: undefined
-    }))), status === SearchPageEnum.HISTORIES && renderHistories(), status === SearchPageEnum.SUGGESTIONS && renderSearchSuggestions(), status === SearchPageEnum.RESULTS && renderSearchResults());
+    })))), status === SearchPageEnum.LOADING && renderLoading(), status === SearchPageEnum.HISTORIES && renderHistories(), status === SearchPageEnum.SUGGESTIONS && renderSearchSuggestions(), status === SearchPageEnum.RESULTS && renderSearchResults());
 };
 
-},{"preact":"cwEwC","preact/hooks":"97VL9","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"8BcV2":[function(require,module,exports) {
+},{"preact":"cwEwC","preact/hooks":"97VL9","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","../helpers":"dtOhO","preact-router":"gXK85"}],"dtOhO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _decodeJWT = require("./decodeJWT");
+parcelHelpers.exportAll(_decodeJWT, exports);
+var _googleAuth = require("./googleAuth");
+parcelHelpers.exportAll(_googleAuth, exports);
+var _userStore = require("./userStore");
+parcelHelpers.exportAll(_userStore, exports);
+var _searchStore = require("./searchStore");
+parcelHelpers.exportAll(_searchStore, exports);
+
+},{"./decodeJWT":"1trgr","./googleAuth":"5PK59","./userStore":"cx4a0","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./searchStore":"6TqAD"}],"1trgr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "decodeJWT", ()=>decodeJWT
+);
+const decodeJWT = (token)=>{
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    return JSON.parse(jsonPayload);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"5PK59":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useGoogleAuth", ()=>useGoogleAuth
+);
+var _hooks = require("preact/hooks");
+var _userStore = require("./userStore");
+var _hookClass = require("./hookClass");
+class GoogleAuth extends _hookClass.HookClass {
+    clientId = "646206867663-n5avbo6sap51864lno5vnrffc8jrlf45";
+    init() {
+        window.google.accounts.id.initialize({
+            client_id: "646206867663-n5avbo6sap51864lno5vnrffc8jrlf45",
+            callback: this.onSignInSuccess.bind(this)
+        });
+    }
+    onSignInSuccess(response) {
+        const credential = response.credential;
+        _userStore.userStore.setCache(credential);
+        this.invokeCallbacks();
+    }
+    renderButton() {
+        window.google.accounts.id.renderButton(document.getElementById("gbuttondiv"), {
+            theme: "outline",
+            size: "large",
+            shape: "pill"
+        });
+    }
+    prompt() {
+        window.google.accounts.id.prompt();
+    }
+}
+const googleAuth = new GoogleAuth();
+const useGoogleAuth = ()=>{
+    const [nounce, setNounce] = _hooks.useState(Math.random());
+    _hooks.useEffect(()=>{
+        googleAuth.setCallback(setNounce);
+        googleAuth.init();
+    }, []);
+    return {
+        googleAuth,
+        nounce,
+        setNounce
+    };
+};
+
+},{"preact/hooks":"97VL9","./userStore":"cx4a0","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./hookClass":"3IghV"}],"cx4a0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "userStore", ()=>userStore
+);
+var _decodeJWT = require("./decodeJWT");
+class UserStore {
+    cache = null;
+    key = "FLEXBOARD_USER_ACCOUNT";
+    constructor(){
+        const account = this.parseCache(this.key);
+        if (account) this.cache = account;
+    }
+    isExpired() {
+        if (!this.cache) return true;
+        return Date.now() > this.cache.exp * 1000;
+    }
+    hasCache() {
+        return Boolean(this.cache);
+    }
+    setCache(value) {
+        localStorage.setItem(this.key, value);
+        this.cache = this.parseCache(this.key);
+    }
+    getCache() {
+        return this.cache;
+    }
+    parseCache(key) {
+        const cache = localStorage.getItem(key);
+        if (cache) try {
+            const accountJSON = _decodeJWT.decodeJWT(cache);
+            return accountJSON;
+        } catch (e) {
+            this.clear();
+            return null;
+        }
+        return null;
+    }
+    clear() {
+        localStorage.clear();
+    }
+}
+const userStore = new UserStore();
+
+},{"./decodeJWT":"1trgr","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"3IghV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "HookClass", ()=>HookClass
+);
+class HookClass {
+    callbacks = new Set();
+    setCallback(callback) {
+        if (this.callbacks.has(callback) === false) this.callbacks.add(callback);
+    }
+    invokeCallbacks() {
+        const nounce = Math.random();
+        this.callbacks.forEach((callback)=>{
+            if (callback && typeof callback === "function") callback(nounce);
+        });
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"6TqAD":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useSearchStore", ()=>useSearchStore
+);
+var _hooks = require("preact/hooks");
+var _hookClass = require("./hookClass");
+class SearchStore extends _hookClass.HookClass {
+    key = "FLEXBOARD_SEARCH_HISTORIES";
+    historySet = new Set();
+    constructor(){
+        super();
+        this.historySet = new Set(this.readHistories());
+    }
+    getHistories() {
+        return Array.from(this.historySet);
+    }
+    addHistory(history) {
+        this.historySet.add(history);
+        this.updateCache();
+    }
+    deleteHistory(history) {
+        this.historySet.delete(history);
+        this.updateCache();
+    }
+    deleteAllHistory() {
+        this.historySet = new Set();
+        this.updateCache();
+    }
+    readHistories() {
+        const historyString = localStorage.getItem(this.key) || "";
+        if (!historyString) return [];
+        return historyString.split(",").map((str)=>str.trim()
+        ).map((str)=>atob(str)
+        );
+    }
+    updateCache() {
+        const historyString = Array.from(this.historySet).map((history)=>btoa(history)
+        ).join(",");
+        localStorage.setItem(this.key, historyString);
+        this.invokeCallbacks();
+    }
+}
+const searchStore = new SearchStore();
+const useSearchStore = ()=>{
+    const [nounce, setNounce] = _hooks.useState(Math.random());
+    _hooks.useEffect(()=>{
+        searchStore.setCallback(setNounce);
+    }, []);
+    return {
+        searchStore,
+        nounce,
+        setNounce
+    };
+};
+
+},{"preact/hooks":"97VL9","./hookClass":"3IghV","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"8BcV2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SeedsPage", ()=>SeedsPage
@@ -3672,130 +3809,7 @@ const SettingsPage = (props)=>{
     }, "Logout"))));
 };
 
-},{"preact":"cwEwC","preact-router":"gXK85","preact/hooks":"97VL9","../helpers":"dtOhO","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"dtOhO":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _decodeJWT = require("./decodeJWT");
-parcelHelpers.exportAll(_decodeJWT, exports);
-var _googleAuth = require("./googleAuth");
-parcelHelpers.exportAll(_googleAuth, exports);
-var _userStore = require("./userStore");
-parcelHelpers.exportAll(_userStore, exports);
-
-},{"./decodeJWT":"1trgr","./googleAuth":"5PK59","./userStore":"cx4a0","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1trgr":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "decodeJWT", ()=>decodeJWT
-);
-const decodeJWT = (token)=>{
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-    return JSON.parse(jsonPayload);
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"5PK59":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useGoogleAuth", ()=>useGoogleAuth
-);
-var _hooks = require("preact/hooks");
-var _userStore = require("./userStore");
-class GoogleAuth {
-    clientId = "646206867663-n5avbo6sap51864lno5vnrffc8jrlf45";
-    callbacks = new Set();
-    init() {
-        window.google.accounts.id.initialize({
-            client_id: "646206867663-n5avbo6sap51864lno5vnrffc8jrlf45",
-            callback: this.onSignInSuccess.bind(this)
-        });
-    }
-    onSignInSuccess(response) {
-        const credential = response.credential;
-        _userStore.userStore.setCache(credential);
-        this.invokeCallbacks();
-    }
-    renderButton() {
-        window.google.accounts.id.renderButton(document.getElementById("gbuttondiv"), {
-            theme: "outline",
-            size: "large",
-            shape: "pill"
-        });
-    }
-    prompt() {
-        window.google.accounts.id.prompt();
-    }
-    setCallback(callback) {
-        if (this.callbacks.has(callback) === false) this.callbacks.add(callback);
-    }
-    invokeCallbacks() {
-        const nounce = Math.random();
-        this.callbacks.forEach((callback)=>{
-            if (callback && typeof callback === "function") callback(nounce);
-        });
-    }
-}
-const googleAuth = new GoogleAuth();
-const useGoogleAuth = ()=>{
-    const [nounce, setNounce] = _hooks.useState(Math.random());
-    _hooks.useEffect(()=>{
-        googleAuth.setCallback(setNounce);
-        googleAuth.init();
-    }, []);
-    return {
-        googleAuth,
-        nounce,
-        setNounce
-    };
-};
-
-},{"preact/hooks":"97VL9","./userStore":"cx4a0","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"cx4a0":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "userStore", ()=>userStore
-);
-var _decodeJWT = require("./decodeJWT");
-class UserStore {
-    cache = null;
-    key = "FLEXBOARD_USER_ACCOUNT";
-    constructor(){
-        const account = this.parseCache(this.key);
-        if (account) this.cache = account;
-    }
-    isExpired() {
-        if (!this.cache) return true;
-        return Date.now() > this.cache.exp * 1000;
-    }
-    hasCache() {
-        return Boolean(this.cache);
-    }
-    setCache(value) {
-        localStorage.setItem(this.key, value);
-        this.cache = this.parseCache(this.key);
-    }
-    getCache() {
-        return this.cache;
-    }
-    parseCache(key) {
-        const cache = localStorage.getItem(key);
-        if (cache) try {
-            const accountJSON = _decodeJWT.decodeJWT(cache);
-            return accountJSON;
-        } catch (e) {
-            this.clear();
-            return null;
-        }
-        return null;
-    }
-    clear() {
-        localStorage.clear();
-    }
-}
-const userStore = new UserStore();
-
-},{"./decodeJWT":"1trgr","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1gZMb":[function(require,module,exports) {
+},{"preact":"cwEwC","preact-router":"gXK85","preact/hooks":"97VL9","../helpers":"dtOhO","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1gZMb":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SplashPage", ()=>SplashPage
