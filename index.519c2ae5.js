@@ -2388,6 +2388,8 @@ parcelHelpers.export(exports, "CardComponent", ()=>CardComponent
 );
 var _preact = require("preact");
 var _preactRouter = require("preact-router");
+var _cnnSvg = require("../icons/cnn.svg");
+var _cnnSvgDefault = parcelHelpers.interopDefault(_cnnSvg);
 const CardComponent = (props)=>{
     const cardProps = {
         onClick: ()=>_preactRouter.route(`/seeds/${props.id}`)
@@ -2435,18 +2437,35 @@ const CardComponent = (props)=>{
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("div", {
-        className: "blue50",
+        className: "card-reference",
         __source: {
             fileName: "frontend/components/card.component.tsx",
             lineNumber: 30,
             columnNumber: 21
         },
         __self: undefined
-    }, "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, excepturi."), /*#__PURE__*/ _preact.h("div", {
-        className: "is-text-xs grey40",
+    }, /*#__PURE__*/ _preact.h("img", {
+        src: _cnnSvgDefault.default,
+        alt: "Cnn News",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 31,
+            columnNumber: 25
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h("div", {
+        className: "blue50 is-text-bold",
         __source: {
             fileName: "frontend/components/card.component.tsx",
             lineNumber: 33,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, excepturi."), /*#__PURE__*/ _preact.h("div", {
+        className: "is-text-xs grey40 has-margin-top-1",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 36,
             columnNumber: 21
         },
         __self: undefined
@@ -2454,7 +2473,7 @@ const CardComponent = (props)=>{
         className: "card-row grey40",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 37,
+            lineNumber: 40,
             columnNumber: 17
         },
         __self: undefined
@@ -2462,7 +2481,7 @@ const CardComponent = (props)=>{
         name: "bookmark",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 38,
+            lineNumber: 41,
             columnNumber: 21
         },
         __self: undefined
@@ -2470,7 +2489,7 @@ const CardComponent = (props)=>{
         name: "calendar",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 39,
+            lineNumber: 42,
             columnNumber: 21
         },
         __self: undefined
@@ -2483,7 +2502,7 @@ const CardComponent = (props)=>{
         ...cardProps,
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 46,
+            lineNumber: 49,
             columnNumber: 9
         },
         __self: undefined
@@ -2491,7 +2510,7 @@ const CardComponent = (props)=>{
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 47,
+            lineNumber: 50,
             columnNumber: 13
         },
         __self: undefined
@@ -2499,15 +2518,39 @@ const CardComponent = (props)=>{
         className: "card-title",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 48,
+            lineNumber: 51,
             columnNumber: 17
         },
         __self: undefined
-    }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis harum repellendus dignissimos amet temporibus!", /*#__PURE__*/ _preact.h("div", {
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "card-reference",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 52,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("img", {
+        src: _cnnSvgDefault.default,
+        alt: "Cnn News",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 53,
+            columnNumber: 25
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 55,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis harum repellendus dignissimos amet temporibus!"), /*#__PURE__*/ _preact.h("div", {
         className: "has-padding-top-3",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 50,
+            lineNumber: 56,
             columnNumber: 21
         },
         __self: undefined
@@ -2515,14 +2558,51 @@ const CardComponent = (props)=>{
         className: "is-text-s",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 51,
+            lineNumber: 57,
             columnNumber: 25
         },
         __self: undefined
     }, "25 Mar, 2022")))));
 };
 
-},{"preact":"cwEwC","preact-router":"gXK85","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"9RWB4":[function(require,module,exports) {
+},{"preact":"cwEwC","preact-router":"gXK85","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","../icons/cnn.svg":"6yyHW"}],"6yyHW":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "cnn.4fd01197.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"hPpBg"}],"hPpBg":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"9RWB4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _indicesPage = require("./indices.page");
@@ -3453,7 +3533,7 @@ const SettingsPage = (props)=>{
         },
         __self: undefined
     }, _helpers.userStore.cache.email))) : /*#__PURE__*/ _preact.h("div", {
-        className: "is-flex is-vertical-center has-padding-vertical-2 has-padding-horizontal-7",
+        className: "setting-google-btn-container",
         id: "gbuttondiv",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
@@ -3977,41 +4057,7 @@ const ArticlePage = (props)=>{
 },{"preact":"cwEwC","../icons/wsj.svg":"7Siaj","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"7Siaj":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "wsj.73f5e3d4.svg" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"hPpBg"}],"hPpBg":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"hCEyC":[function(require,module,exports) {
+},{"./helpers/bundle-url":"hPpBg"}],"hCEyC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Route", ()=>Route

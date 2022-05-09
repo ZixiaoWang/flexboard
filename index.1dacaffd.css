@@ -563,6 +563,14 @@
   text-align: center;
 }
 
+.is-text-bold {
+  font-weight: 600;
+}
+
+.is-text-bolder {
+  font-weight: 700;
+}
+
 .has-padding-1 {
   padding: 4px;
 }
@@ -1114,6 +1122,14 @@
   line-height: 18px;
 }
 
+.card-reference {
+  margin-bottom: 8px;
+}
+
+.card-reference > img {
+  max-height: 20px;
+}
+
 .card + .card {
   margin-top: 18px;
 }
@@ -1155,9 +1171,18 @@
 .card.is-small .card-img {
   width: 120px;
   height: 0;
-  padding-top: 100px;
+  padding-top: 120px;
   box-shadow: 0 2px 8px #0000004d;
   border-radius: 0 4px 4px 0 !important;
+}
+
+.card.is-small .card-reference {
+  margin-bottom: 2px;
+}
+
+.card.is-small .card-reference > img {
+  height: auto;
+  max-height: 14px;
 }
 
 .page {
@@ -1216,6 +1241,13 @@
   top: 50%;
   right: 26px;
   transform: rotate(45deg);
+}
+
+.setting-google-btn-container {
+  height: 56px;
+  align-items: center;
+  padding: 8px 28px;
+  display: flex;
 }
 
 .search {
