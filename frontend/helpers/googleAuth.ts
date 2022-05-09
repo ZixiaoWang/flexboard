@@ -1,4 +1,4 @@
-import { useEffect, useState } from "preact/hooks";
+import { StateUpdater, useEffect, useState } from "preact/hooks";
 import { GoogleSignInResponse } from "../interfaces";
 import { userStore } from "./userStore";
 
@@ -23,12 +23,7 @@ class GoogleAuth {
     onSignInSuccess(response: GoogleSignInResponse): void {
         const credential: string = response.credential;
         userStore.setCache(credential);
-        const nounce: number = Math.random();
-        this.callbacks.forEach((callback: Function) => {
-            if (callback && typeof callback === "function") {
-                callback(nounce);
-            }
-        })
+        this.invokeCallbacks();
     }
 
     renderButton(): void {
@@ -51,11 +46,20 @@ class GoogleAuth {
             this.callbacks.add(callback);
         }
     }
+
+    invokeCallbacks() {
+        const nounce: number = Math.random();
+        this.callbacks.forEach((callback: Function) => {
+            if (callback && typeof callback === "function") {
+                callback(nounce);
+            }
+        })
+    }
 }
 
 const googleAuth: GoogleAuth = new GoogleAuth();
 
-export const useGoogleAuth = (): { googleAuth: GoogleAuth, nounce: number } => {
+export const useGoogleAuth = (): { googleAuth: GoogleAuth, nounce: number, setNounce: StateUpdater<number> } => {
     const [nounce, setNounce] = useState(Math.random());
 
     useEffect(() => {
@@ -63,5 +67,5 @@ export const useGoogleAuth = (): { googleAuth: GoogleAuth, nounce: number } => {
         googleAuth.init();
     }, []);
 
-    return {googleAuth, nounce};
+    return {googleAuth, nounce, setNounce};
 }

@@ -40,6 +40,14 @@
         box-sizing: border-box;
     }
 
+    &-reference {
+        margin-bottom: 8px;
+        
+        & > img {
+            max-height: 20px;
+        }
+    }
+
     & + .card {
         margin-top: 18px;
     }
@@ -86,11 +94,20 @@
         #{$card}-img {
             width: 120px;
             height: 0px;
-            padding-top: 100px;
+            padding-top: 120px;
             border-radius: 0px !important;
             border-top-right-radius: 4px !important;
             border-bottom-left-radius: 4px !important;
             box-shadow: 0px 2px 8px rgba(black, 0.3);
+        }
+
+        #{$card}-reference {
+            margin-bottom: 2px;
+
+            & > img {
+                height: auto;
+                max-height: 14px;
+            }
         }
     }
 }

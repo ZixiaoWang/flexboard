@@ -19,6 +19,8 @@ export const SettingsPage = (props: RoutePage) => {
             if (userStore.hasCache()) {
                 if (userStore.isExpired()) {
                     googleAuth.prompt();
+                } else {
+                    // googleAuth.prompt();
                 }
             } else {
                 googleAuth.renderButton();
@@ -26,6 +28,13 @@ export const SettingsPage = (props: RoutePage) => {
             }
         }
     }, []);
+
+    const logout = () => {
+        if(window.confirm("Are you sure you want to logout?")) {
+            userStore.clear();
+            location.reload();
+        }
+    }
 
     return (
         <Fragment>
@@ -45,7 +54,7 @@ export const SettingsPage = (props: RoutePage) => {
                                 </div>
                             </div>
                         </div> :
-                        <div className="is-flex is-vertical-center has-padding-vertical-2 has-padding-horizontal-7" id="gbuttondiv"></div>
+                        <div className="setting-google-btn-container" id="gbuttondiv"></div>
                 }
             </div>
             <div className="setting-group">
@@ -69,7 +78,10 @@ export const SettingsPage = (props: RoutePage) => {
             {
                 userStore.hasCache() &&
                 <div className="setting-group" key={nounce}>
-                    <div className="has-padding-vertical-3 is-flex is-all-center red30">
+                    <div 
+                        className="has-padding-vertical-3 is-flex is-all-center red30"
+                        onClick={logout}
+                        onKeydown={logout}>
                         <ion-icon name="log-out-sharp" className="is-text-l"></ion-icon>
                         <span>&nbsp;&nbsp;</span>
                         <span className="is-text-m">Logout</span>

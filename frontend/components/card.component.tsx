@@ -27,10 +27,13 @@ export const CardComponent = (props: CardComponentProps): VNode => {
                     </div>
                 </div>
                 <div className="card-row">
-                    <div className="blue50">
+                    <div className="card-reference">
+                        <img src={CNNIcon} alt="Cnn News" />
+                    </div>
+                    <div className="blue50 is-text-bold">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, excepturi.
                     </div>
-                    <div className="is-text-xs grey40">
+                    <div className="is-text-xs grey40 has-margin-top-1">
                         24 Feb, 2022
                     </div>
                 </div>
@@ -46,7 +49,10 @@ export const CardComponent = (props: CardComponentProps): VNode => {
         <div className="card is-large" style={{ backgroundImage: `url("http://placekitten.com/320/319")` }} {...cardProps}>
             <div className="card-row">
                 <div className="card-title">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis harum repellendus dignissimos amet temporibus!
+                    <div className="card-reference">
+                        <img src={CNNIcon} alt="Cnn News" />
+                    </div>
+                    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis harum repellendus dignissimos amet temporibus!</span>
                     <div className="has-padding-top-3">
                         <span className="is-text-s">
                             25 Mar, 2022

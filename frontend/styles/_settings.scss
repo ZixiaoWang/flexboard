@@ -11,6 +11,7 @@
     }
 
     &-userinfo {
+        height: 163px;
         padding: 16px 32px;
         text-align: center;
     }
@@ -57,5 +58,12 @@
 
             transform: rotate(45deg);
         }
+    }
+
+    &-google-btn-container {
+        display: flex;
+        align-items: center;
+        padding: 8px 28px;
+        height: 56px;
     }
 }

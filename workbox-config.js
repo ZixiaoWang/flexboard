@@ -8,5 +8,9 @@ module.exports = {
 		/^utm_/,
 		/^fbclid$/
 	],
-	sourcemap: false
+	sourcemap: false,
+	cleanupOutdatedCaches: true,
+	runtimeCaching: [
+		"NetworkFirst"
+	]
 };
