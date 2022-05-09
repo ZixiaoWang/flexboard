@@ -10,7 +10,11 @@ module.exports = {
 	],
 	sourcemap: false,
 	cleanupOutdatedCaches: true,
-	runtimeCaching: [
-		"NetworkFirst"
-	]
+	runtimeCaching: [{
+		urlPattern: /\.css$|\.png$|\.jpeg$|\.jpg$/,
+		handler: "CacheFirst"
+	}, {
+		urlPattern: /\.html$|\.js$/,
+		handler: "NetworkFirst"
+	}]
 };

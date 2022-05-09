@@ -1,6 +1,7 @@
 import { StateUpdater, useEffect, useState } from "preact/hooks";
 import { GoogleSignInResponse } from "../interfaces";
 import { userStore } from "./userStore";
+import { HookClass } from "./hookClass";
 
 declare global {
     interface Window {
@@ -9,9 +10,8 @@ declare global {
     }
 }
 
-class GoogleAuth {
+class GoogleAuth extends HookClass {
     private clientId: string = "646206867663-n5avbo6sap51864lno5vnrffc8jrlf45";
-    private callbacks: Set<Function> = new Set();
 
     init() {
         window.google.accounts.id.initialize({
@@ -39,21 +39,6 @@ class GoogleAuth {
 
     prompt(): void {
         window.google.accounts.id.prompt();
-    }
-
-    setCallback(callback: Function): void {
-        if (this.callbacks.has(callback) === false) {
-            this.callbacks.add(callback);
-        }
-    }
-
-    invokeCallbacks() {
-        const nounce: number = Math.random();
-        this.callbacks.forEach((callback: Function) => {
-            if (callback && typeof callback === "function") {
-                callback(nounce);
-            }
-        })
     }
 }
 
