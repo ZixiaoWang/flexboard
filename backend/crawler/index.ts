@@ -39,3 +39,5 @@ export async function crawl() {
     const browser = await getBrowser();
     browser.close();
 }
+
+export * from "./freightwaves";

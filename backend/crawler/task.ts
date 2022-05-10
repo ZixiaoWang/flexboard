@@ -2,7 +2,7 @@ import { ElementHandle, Page } from "puppeteer";
 
 import { getPage } from "./cache";
 import { IndicItem } from "./indices";
-
+import { sleep } from "../helpers";
 export interface TaskResultCell {
     tag: string,
     colspan: number,
@@ -15,12 +15,6 @@ export interface TaskResultRow extends Array<TaskResultCell>{};
 export interface TaskResult {
     indiceName: string,
     indiceTableMeta: Array<TaskResultRow>,
-}
-
-async function sleep(ms: number): Promise<boolean> {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(true), ms);
-    });
 }
 
 export async function task(item: IndicItem): Promise<TaskResult> {
