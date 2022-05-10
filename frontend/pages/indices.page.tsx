@@ -35,7 +35,7 @@ export const IndicesPage = (props: RoutePage) => {
             const script: HTMLScriptElement = document.createElement("script");
             script.onload = () => updateDataByDate(targetDate);
             script.onerror = console.log;
-            script.src = "data/" + targetDate + ".js";
+            script.src = "data/indices/" + targetDate + ".js";
             document.body.appendChild(script);
         } else {
             updateDataByDate(targetDate);
@@ -78,7 +78,8 @@ export const IndicesPage = (props: RoutePage) => {
     }
 
     const forceRequestFullScreen = () => {
-        
+        const indicesElement: HTMLElement | null = document.getElementById("indices");
+        const indicesTableElement: HTMLElement | null = document.querySelector("#indices .indices-table");
     }
 
     useEffect(() => {

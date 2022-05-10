@@ -44,6 +44,7 @@
   },
   "scripts": {
     "ensure:dist": "mkdir -p dist",
+    "analysis:data": "",
     "copy:data": "cp -R data/ dist/data/",
     "build": "yarn ensure:dist && yarn copy:data && parcel build --no-cache --no-source-maps --dist-dir=dist frontend/index.html && yarn workbox generateSW workbox-config.js ",
     "serve": "yarn ensure:dist && yarn copy:data && parcel serve --no-cache --no-source-maps frontend/index.html && yarn workbox generateSW workbox-config.js ",

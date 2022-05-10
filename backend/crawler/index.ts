@@ -21,7 +21,7 @@ export async function crawl() {
     }
 
     const date: string = new Date().toISOString().split("T")[0].replace(/-/g, '');
-    const fileDir: string = path.resolve(__dirname, "../../data/" + date + ".js");
+    const fileDir: string = path.resolve(__dirname, "../../data/indices/" + date + ".js");
     const fileContent: string = `(() => {` +
     `if (!window.shanghaiFreightIndices) {` +
         `window.shanghaiFreightIndices = new Map();` + 

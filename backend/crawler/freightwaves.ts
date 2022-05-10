@@ -81,7 +81,7 @@ async function crawlFreightWaves() {
     const browser: Browser = await getBrowser();
     const visitingHistory: Set<string> = new Set();
     const listMeta: Array<any> = [];
-    const filedir: string = path.resolve(__dirname, "../../articles/freightwaves");
+    const filedir: string = path.resolve(__dirname, "../../data/articles/freightwaves");
     await fs.ensureDir(filedir);
 
     for await (let index of getIndexes()) {
@@ -115,7 +115,7 @@ async function crawlFreightWaves() {
                 const subtitle: string = await newPage.$eval(selector.subtitle, e => e.textContent).catch(e => Promise.resolve(""));
                 const author: string = await newPage.$eval(selector.author, e => e.textContent);
                 const date: string = await newPage.$eval(selector.date, e => e.textContent);
-                const banner: string = await newPage.$eval(selector.title, e => e.getAttribute("src"));
+                const banner: string = await newPage.$eval(selector.banner, e => e.getAttribute("src"));
                 const caption: string = await newPage.$eval(selector.caption, e => e.textContent).catch(e => Promise.resolve(""));
                 const content: string = await newPage.$eval(selector.content, e => e.innerHTML);
 
