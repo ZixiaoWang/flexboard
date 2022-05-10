@@ -664,11 +664,19 @@ const App = ()=>{
             columnNumber: 17
         },
         __self: undefined
+    }), /*#__PURE__*/ _preact.h(_pages.DisclaimerPage, {
+        path: "/disclaimer",
+        __source: {
+            fileName: "frontend/index.tsx",
+            lineNumber: 90,
+            columnNumber: 17
+        },
+        __self: undefined
     }), /*#__PURE__*/ _preact.h(_pages.AboutPage, {
         path: "/about",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 90,
+            lineNumber: 91,
             columnNumber: 17
         },
         __self: undefined
@@ -676,7 +684,7 @@ const App = ()=>{
         path: "/:rest*",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 91,
+            lineNumber: 92,
             columnNumber: 17
         },
         __self: undefined
@@ -685,13 +693,13 @@ const App = ()=>{
 _preact.render(/*#__PURE__*/ _preact.h(App, {
     __source: {
         fileName: "frontend/index.tsx",
-        lineNumber: 98,
+        lineNumber: 99,
         columnNumber: 5
     },
     __self: undefined
 }), document.getElementById("root"));
 
-},{"preact":"cwEwC","preact/hooks":"97VL9","preact-router":"gXK85","history":"5vYEI","./components":"1IJMQ","./pages":"9RWB4","./styles/main.scss":"8qykB","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./helpers":"dtOhO"}],"cwEwC":[function(require,module,exports) {
+},{"preact":"cwEwC","preact/hooks":"97VL9","preact-router":"gXK85","history":"5vYEI","./helpers":"dtOhO","./components":"1IJMQ","./pages":"9RWB4","./styles/main.scss":"8qykB","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"cwEwC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "render", ()=>S
@@ -2025,1115 +2033,7 @@ function _extends() {
 }
 exports.default = _extends;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1IJMQ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _loaderComponent = require("./loader.component");
-parcelHelpers.exportAll(_loaderComponent, exports);
-var _logoComponent = require("./logo.component");
-parcelHelpers.exportAll(_logoComponent, exports);
-var _splashLogoComponent = require("./splash-logo.component");
-parcelHelpers.exportAll(_splashLogoComponent, exports);
-var _tabsComponent = require("./tabs.component");
-parcelHelpers.exportAll(_tabsComponent, exports);
-var _headerComponent = require("./header.component");
-parcelHelpers.exportAll(_headerComponent, exports);
-var _cardComponent = require("./card.component");
-parcelHelpers.exportAll(_cardComponent, exports);
-
-},{"./loader.component":"7ODzE","./logo.component":"5Z8AW","./splash-logo.component":"dkFkE","./tabs.component":"1gJUA","./header.component":"kGp3O","./card.component":"6YJcz","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"7ODzE":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Loader", ()=>Loader
-);
-var _preact = require("preact");
-const Loader = ()=>{
-    return /*#__PURE__*/ _preact.h("div", {
-        className: "is-all-center",
-        __source: {
-            fileName: "frontend/components/loader.component.tsx",
-            lineNumber: 6,
-            columnNumber: 9
-        },
-        __self: undefined
-    });
-};
-
-},{"preact":"cwEwC","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"5Z8AW":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LogoComponent", ()=>LogoComponent
-);
-var _preact = require("preact");
-const LogoComponent = (props)=>{
-    return /*#__PURE__*/ _preact.h("div", {
-        className: "logo",
-        style: {
-            ...props
-        },
-        __source: {
-            fileName: "frontend/components/logo.component.tsx",
-            lineNumber: 10,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("span", {
-        __source: {
-            fileName: "frontend/components/logo.component.tsx",
-            lineNumber: 11,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, "Flex"), /*#__PURE__*/ _preact.h("span", {
-        __source: {
-            fileName: "frontend/components/logo.component.tsx",
-            lineNumber: 12,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, "b"), /*#__PURE__*/ _preact.h("span", {
-        __source: {
-            fileName: "frontend/components/logo.component.tsx",
-            lineNumber: 13,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, "o"), /*#__PURE__*/ _preact.h("span", {
-        __source: {
-            fileName: "frontend/components/logo.component.tsx",
-            lineNumber: 14,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, "a"), /*#__PURE__*/ _preact.h("span", {
-        __source: {
-            fileName: "frontend/components/logo.component.tsx",
-            lineNumber: 15,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, "r"), /*#__PURE__*/ _preact.h("span", {
-        __source: {
-            fileName: "frontend/components/logo.component.tsx",
-            lineNumber: 16,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, "d"), /*#__PURE__*/ _preact.h("span", {
-        className: "red40",
-        __source: {
-            fileName: "frontend/components/logo.component.tsx",
-            lineNumber: 17,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, "."));
-};
-
-},{"preact":"cwEwC","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"dkFkE":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "SplashLogoComponent", ()=>SplashLogoComponent
-);
-var _preact = require("preact");
-const SplashLogoComponent = ()=>{
-    return /*#__PURE__*/ _preact.h("div", {
-        className: "logo-container",
-        id: "splashlogo",
-        __source: {
-            fileName: "frontend/components/splash-logo.component.tsx",
-            lineNumber: 6,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "logo-icon",
-        __source: {
-            fileName: "frontend/components/splash-logo.component.tsx",
-            lineNumber: 7,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "logo-card is-red",
-        __source: {
-            fileName: "frontend/components/splash-logo.component.tsx",
-            lineNumber: 8,
-            columnNumber: 17
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _preact.h("div", {
-        className: "logo-card is-white",
-        __source: {
-            fileName: "frontend/components/splash-logo.component.tsx",
-            lineNumber: 9,
-            columnNumber: 17
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _preact.h("div", {
-        className: "logo-card is-green",
-        __source: {
-            fileName: "frontend/components/splash-logo.component.tsx",
-            lineNumber: 10,
-            columnNumber: 17
-        },
-        __self: undefined
-    })), /*#__PURE__*/ _preact.h("div", {
-        className: "logo-text white",
-        __source: {
-            fileName: "frontend/components/splash-logo.component.tsx",
-            lineNumber: 12,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        __source: {
-            fileName: "frontend/components/splash-logo.component.tsx",
-            lineNumber: 13,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("span", {
-        __source: {
-            fileName: "frontend/components/splash-logo.component.tsx",
-            lineNumber: 14,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "Flexboard"), /*#__PURE__*/ _preact.h("span", {
-        className: "red40",
-        __source: {
-            fileName: "frontend/components/splash-logo.component.tsx",
-            lineNumber: 15,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, ".")), /*#__PURE__*/ _preact.h("div", {
-        className: "is-text-xs grey40",
-        __source: {
-            fileName: "frontend/components/splash-logo.component.tsx",
-            lineNumber: 17,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, "The news forwarder")));
-};
-
-},{"preact":"cwEwC","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1gJUA":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "TabsComponent", ()=>TabsComponent
-);
-var _preact = require("preact");
-var _preactRouter = require("preact-router");
-var _match = require("preact-router/match");
-const TabsComponent = ()=>{
-    const navigateTo = (destination)=>{
-        return ()=>{
-            _preactRouter.route(destination);
-        };
-    };
-    return /*#__PURE__*/ _preact.h("div", {
-        className: "tabs",
-        __source: {
-            fileName: "frontend/components/tabs.component.tsx",
-            lineNumber: 13,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h(_match.Link, {
-        className: "tab",
-        activeClassName: "is-active",
-        href: "/seeds",
-        __source: {
-            fileName: "frontend/components/tabs.component.tsx",
-            lineNumber: 14,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "newspaper",
-        __source: {
-            fileName: "frontend/components/tabs.component.tsx",
-            lineNumber: 17,
-            columnNumber: 17
-        },
-        __self: undefined
-    })), /*#__PURE__*/ _preact.h(_match.Link, {
-        className: "tab",
-        activeClassName: "is-active",
-        href: "/search",
-        __source: {
-            fileName: "frontend/components/tabs.component.tsx",
-            lineNumber: 19,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "search",
-        __source: {
-            fileName: "frontend/components/tabs.component.tsx",
-            lineNumber: 22,
-            columnNumber: 17
-        },
-        __self: undefined
-    })), /*#__PURE__*/ _preact.h(_match.Link, {
-        className: "tab",
-        activeClassName: "is-active",
-        href: "/indices",
-        __source: {
-            fileName: "frontend/components/tabs.component.tsx",
-            lineNumber: 29,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "bar-chart",
-        __source: {
-            fileName: "frontend/components/tabs.component.tsx",
-            lineNumber: 32,
-            columnNumber: 17
-        },
-        __self: undefined
-    })), /*#__PURE__*/ _preact.h(_match.Link, {
-        className: "tab",
-        activeClassName: "is-active",
-        href: "/settings",
-        __source: {
-            fileName: "frontend/components/tabs.component.tsx",
-            lineNumber: 34,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "menu",
-        __source: {
-            fileName: "frontend/components/tabs.component.tsx",
-            lineNumber: 37,
-            columnNumber: 17
-        },
-        __self: undefined
-    })));
-};
-
-},{"preact":"cwEwC","preact-router":"gXK85","preact-router/match":"k3hhw","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"k3hhw":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Link", ()=>c
-);
-parcelHelpers.export(exports, "Match", ()=>l
-);
-parcelHelpers.export(exports, "default", ()=>l
-);
-var _preact = require("preact");
-var _preactRouter = require("preact-router");
-var s = [
-    "className",
-    "activeClass",
-    "activeClassName",
-    "path"
-];
-function l(a) {
-    var e = _preactRouter.useRouter()[0];
-    return a.children({
-        url: e.url,
-        path: e.path,
-        matches: !1 !== _preactRouter.exec(e.path || e.url, a.path, {})
-    });
-}
-function c(l1) {
-    var c1 = l1.className, n = l1.activeClass, u = l1.activeClassName, i = l1.path, p = function(a, t) {
-        if (null == a) return {};
-        var r, e, s1 = {}, l2 = Object.keys(a);
-        for(e = 0; e < l2.length; e++)t.indexOf(r = l2[e]) >= 0 || (s1[r] = a[r]);
-        return s1;
-    }(l1, s), h = _preactRouter.useRouter()[0], f = i && h.path && _preactRouter.exec(h.path, i, {}) || _preactRouter.exec(h.url, p.href, {}), o = p.class || c1 || "", m = f && (n || u) || "";
-    return p.class = o + (o && m && " ") + m, _preact.h(_preactRouter.Link, p);
-}
-
-},{"preact":"cwEwC","preact-router":"gXK85","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"kGp3O":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "HeaderComponent", ()=>HeaderComponent
-);
-var _preact = require("preact");
-var _logoComponent = require("./logo.component");
-const HeaderComponent = (props)=>{
-    return /*#__PURE__*/ _preact.h("div", {
-        className: "header",
-        __source: {
-            fileName: "frontend/components/header.component.tsx",
-            lineNumber: 6,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "header-logo",
-        __source: {
-            fileName: "frontend/components/header.component.tsx",
-            lineNumber: 7,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h(_logoComponent.LogoComponent, {
-        __source: {
-            fileName: "frontend/components/header.component.tsx",
-            lineNumber: 8,
-            columnNumber: 17
-        },
-        __self: undefined
-    })));
-};
-
-},{"preact":"cwEwC","./logo.component":"5Z8AW","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"6YJcz":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "CardComponent", ()=>CardComponent
-);
-/// <reference path="../custom.d.ts" />
-var _preact = require("preact");
-var _preactRouter = require("preact-router");
-var _freightwavesPng = require("../icons/freightwaves.png");
-var _freightwavesPngDefault = parcelHelpers.interopDefault(_freightwavesPng);
-const CardComponent = (props)=>{
-    const seed = props.seed;
-    const base64url = window.btoa(seed.detailurl);
-    const cardProps = {
-        onClick: ()=>_preactRouter.route(`/seeds/${base64url}`)
-    };
-    if (props.size === "small") return /*#__PURE__*/ _preact.h("div", {
-        className: "card is-small",
-        ...cardProps,
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 24,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, seed.thumbnail ? /*#__PURE__*/ _preact.h("div", {
-        className: "card-row",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 27,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "card-img",
-        style: {
-            backgroundImage: `url(${seed.thumbnail})`
-        },
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 28,
-            columnNumber: 25
-        },
-        __self: undefined
-    })) : /*#__PURE__*/ _preact.h("div", {
-        className: "card-row",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 30,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "card-img-placeholder",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 31,
-            columnNumber: 25
-        },
-        __self: undefined
-    }, "\xa0")), /*#__PURE__*/ _preact.h("div", {
-        className: "card-row",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 36,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "card-reference",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 37,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("img", {
-        src: _freightwavesPngDefault.default,
-        alt: "Freight Waves",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 38,
-            columnNumber: 25
-        },
-        __self: undefined
-    })), /*#__PURE__*/ _preact.h("div", {
-        className: "blue50 is-text-bold",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 40,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, seed.title), /*#__PURE__*/ _preact.h("div", {
-        className: "is-text-xs grey40 has-margin-top-1",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 43,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, seed.date)), /*#__PURE__*/ _preact.h("div", {
-        className: "card-row grey40",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 47,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "bookmark",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 48,
-            columnNumber: 21
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "calendar",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 49,
-            columnNumber: 21
-        },
-        __self: undefined
-    })));
-    return /*#__PURE__*/ _preact.h("div", {
-        className: "card is-large",
-        style: {
-            backgroundImage: `url(${seed.thumbnail})`
-        },
-        ...cardProps,
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 56,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "card-row",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 57,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "card-title",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 58,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "card-reference",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 59,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("img", {
-        src: _freightwavesPngDefault.default,
-        alt: "Freight Waves",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 60,
-            columnNumber: 25
-        },
-        __self: undefined
-    })), /*#__PURE__*/ _preact.h("span", {
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 62,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, seed.title), /*#__PURE__*/ _preact.h("div", {
-        className: "has-padding-top-3",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 63,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("span", {
-        className: "is-text-s",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 64,
-            columnNumber: 25
-        },
-        __self: undefined
-    }, seed.date)))));
-};
-
-},{"preact":"cwEwC","preact-router":"gXK85","../icons/freightwaves.png":"aiuzK","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"aiuzK":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "freightwaves.a156c0ae.png" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"hPpBg"}],"hPpBg":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"9RWB4":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _indicesPage = require("./indices.page");
-parcelHelpers.exportAll(_indicesPage, exports);
-var _searchPage = require("./search.page");
-parcelHelpers.exportAll(_searchPage, exports);
-var _seedsPage = require("./seeds.page");
-parcelHelpers.exportAll(_seedsPage, exports);
-var _settingsPage = require("./settings.page");
-parcelHelpers.exportAll(_settingsPage, exports);
-var _splashPage = require("./splash.page");
-parcelHelpers.exportAll(_splashPage, exports);
-var _redirectPage = require("./redirect.page");
-parcelHelpers.exportAll(_redirectPage, exports);
-var _messagesPage = require("./messages.page");
-parcelHelpers.exportAll(_messagesPage, exports);
-var _articlesPage = require("./articles.page");
-parcelHelpers.exportAll(_articlesPage, exports);
-var _routePage = require("./route.page");
-parcelHelpers.exportAll(_routePage, exports);
-var _aboutPage = require("./about.page");
-parcelHelpers.exportAll(_aboutPage, exports);
-
-},{"./indices.page":"7FZOO","./search.page":"j27CE","./seeds.page":"8BcV2","./settings.page":"76mfA","./splash.page":"1gZMb","./redirect.page":"7ph5y","./messages.page":"2FU79","./articles.page":"kpakG","./route.page":"hCEyC","./about.page":"hV32b","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"7FZOO":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "IndicesPage", ()=>IndicesPage
-);
-var _preact = require("preact");
-var _hooks = require("preact/hooks");
-const TODAY = new Date().toISOString().split("T")[0];
-const IndicesPage = (props)=>{
-    const [date, setDate] = _hooks.useState(TODAY);
-    const [data, setData] = _hooks.useState([]);
-    const [dataMap, setDataMap] = _hooks.useState({});
-    const [indice, setIndice] = _hooks.useState("CCFI");
-    const [indiceOptions, setIndiceOptions] = _hooks.useState([]);
-    const updateDataByDate = (targetDate)=>{
-        const map = window.shanghaiFreightIndices.get(targetDate);
-        const newData = map[indice] || [];
-        setDataMap(map);
-        setData(newData);
-        setIndiceOptions(Object.keys(map));
-    };
-    const queryData = (newDate)=>{
-        let targetDate = newDate || "";
-        if (/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) targetDate = targetDate.replace(/-/g, "");
-        if (!window.shanghaiFreightIndices || !window.shanghaiFreightIndices.has(targetDate)) {
-            const script = document.createElement("script");
-            script.onload = ()=>updateDataByDate(targetDate)
-            ;
-            script.onerror = console.log;
-            script.src = "data/indices/" + targetDate + ".js";
-            document.body.appendChild(script);
-        } else updateDataByDate(targetDate);
-    };
-    const updateDate = (event)=>{
-        const newDate = event?.target?.value || "";
-        if (/^\d{8}$|^\d{4}-\d{2}-\d{2}$/.test(newDate)) setDate(newDate);
-    };
-    const updateIndice = (event)=>{
-        const newIndice = event?.target?.value || "CCFI";
-        setIndice(newIndice);
-    };
-    const requestFullScreen = ()=>{
-        setTimeout(async ()=>{
-            if (window.innerHeight < window.innerWidth) {
-                const indicesElement = document.getElementById("indices");
-                const indicesTableElement = document.querySelector("#indices .indices-table");
-                if (indicesElement) try {
-                    await indicesElement.requestFullscreen();
-                    indicesTableElement?.classList?.add("is-full-screen");
-                } catch (error) {
-                    console.error(error);
-                }
-            } else if (document.fullscreenElement) {
-                document.exitFullscreen();
-                const indicesTableElement = document.querySelector("#indices .indices-table");
-                indicesTableElement?.classList?.remove("is-full-screen");
-            }
-        }, 100);
-    };
-    const forceRequestFullScreen = ()=>{
-        const indicesElement = document.getElementById("indices");
-        const indicesTableElement = document.querySelector("#indices .indices-table");
-    };
-    _hooks.useEffect(()=>{
-        requestFullScreen();
-        window.addEventListener("orientationchange", requestFullScreen);
-    }, []);
-    _hooks.useEffect(()=>{
-        if (date) queryData(date);
-        else setDate(TODAY);
-    }, [
-        date
-    ]);
-    _hooks.useEffect(()=>{
-        const newData = dataMap[indice] || [];
-        setData(newData);
-    }, [
-        dataMap,
-        indice
-    ]);
-    return /*#__PURE__*/ _preact.h("div", {
-        className: "indices",
-        id: "indices",
-        __source: {
-            fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 104,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "indices-header",
-        __source: {
-            fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 105,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, (data[0]?.[0] || {}).text), /*#__PURE__*/ _preact.h("div", {
-        className: "indices-actions",
-        __source: {
-            fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 108,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "indices-action",
-        __source: {
-            fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 109,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("input", {
-        type: "date",
-        name: "date",
-        id: "indicesdate",
-        onChange: updateDate,
-        value: date,
-        __source: {
-            fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 110,
-            columnNumber: 21
-        },
-        __self: undefined
-    })), /*#__PURE__*/ _preact.h("div", {
-        className: "indices-action",
-        __source: {
-            fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 112,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("select", {
-        name: "indices",
-        id: "indicestype",
-        onChange: updateIndice,
-        __source: {
-            fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 113,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, indiceOptions.map((indiceLabel, index)=>/*#__PURE__*/ _preact.h("option", {
-            label: indiceLabel,
-            key: index,
-            __source: {
-                fileName: "frontend/pages/indices.page.tsx",
-                lineNumber: 116,
-                columnNumber: 33
-            },
-            __self: undefined
-        }, indiceLabel)
-    ))), /*#__PURE__*/ _preact.h("div", {
-        className: "indices-action is-expand",
-        onClick: requestFullScreen,
-        onKeyDown: requestFullScreen,
-        __source: {
-            fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 121,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "expand-sharp",
-        __source: {
-            fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 122,
-            columnNumber: 21
-        },
-        __self: undefined
-    }))), /*#__PURE__*/ _preact.h("div", {
-        className: "indices-table",
-        __source: {
-            fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 125,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("table", {
-        className: "table",
-        __source: {
-            fileName: "frontend/pages/indices.page.tsx",
-            lineNumber: 126,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, data.slice(1, data.length - 1).map((row, rowIndex)=>{
-        return /*#__PURE__*/ _preact.h("tr", {
-            key: `row${rowIndex}`,
-            __source: {
-                fileName: "frontend/pages/indices.page.tsx",
-                lineNumber: 132,
-                columnNumber: 37
-            },
-            __self: undefined
-        }, row.map((cell, cellIndex)=>{
-            return cell.tag === "td" ? /*#__PURE__*/ _preact.h("td", {
-                key: `cell${cellIndex}`,
-                colSpan: cell.colspan || 1,
-                rowSpan: cell.rowspan || 1,
-                __source: {
-                    fileName: "frontend/pages/indices.page.tsx",
-                    lineNumber: 136,
-                    columnNumber: 53
-                },
-                __self: undefined
-            }, cell.text) : /*#__PURE__*/ _preact.h("th", {
-                key: `cell${cellIndex}`,
-                colSpan: cell.colspan || 1,
-                rowSpan: cell.rowspan || 1,
-                __source: {
-                    fileName: "frontend/pages/indices.page.tsx",
-                    lineNumber: 141,
-                    columnNumber: 53
-                },
-                __self: undefined
-            }, cell.text);
-        }));
-    }))));
-};
-
-},{"preact":"cwEwC","preact/hooks":"97VL9","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"j27CE":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "SearchPage", ()=>SearchPage
-);
-var _preact = require("preact");
-var _preactRouter = require("preact-router");
-var _hooks = require("preact/hooks");
-var _helpers = require("../helpers");
-let SearchPageEnum;
-(function(SearchPageEnum1) {
-    SearchPageEnum1[SearchPageEnum1["HISTORIES"] = 0] = "HISTORIES";
-    SearchPageEnum1[SearchPageEnum1["RESULTS"] = 1] = "RESULTS";
-    SearchPageEnum1[SearchPageEnum1["LOADING"] = 2] = "LOADING";
-})(SearchPageEnum || (SearchPageEnum = {}));
-const FEATURED_TOPICS = [
-    "ukrainian",
-    "covid",
-    "volume",
-    "trucking"
-];
-const SearchPage = (props)=>{
-    const [status, setStatus] = _hooks.useState(SearchPageEnum.HISTORIES);
-    const [keywords, setKeywords] = _hooks.useState("");
-    const [results, setResults] = _hooks.useState([]);
-    const { searchStore  } = _helpers.useSearchStore();
-    const { seedsStore  } = _helpers.useSeedsStore();
-    const deleteHistories = ()=>{
-        if (window.confirm("Do you want to delete all searching histories?")) searchStore.deleteAllHistory();
-    };
-    const search = (event)=>{
-        event.preventDefault();
-        setStatus(SearchPageEnum.LOADING);
-        setTimeout(()=>{
-            const resultArr = seedsStore.findByKeywords(keywords);
-            setResults(resultArr);
-            setStatus(SearchPageEnum.RESULTS);
-        }, 1000 + Math.floor(Math.random() * 1000));
-        searchStore.addHistory(keywords);
-    };
-    const directSearch = (keyword)=>{
-        setKeywords(keyword);
-        setStatus(SearchPageEnum.LOADING);
-        setTimeout(()=>{
-            const resultArr = seedsStore.findByKeywords(keyword);
-            setResults(resultArr);
-            setStatus(SearchPageEnum.RESULTS);
-        }, 1000 + Math.floor(Math.random() * 1000));
-        searchStore.addHistory(keywords);
-    };
-    const renderLoading = ()=>{
-        return /*#__PURE__*/ _preact.h("div", {
-            className: "search-results",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 57,
-                columnNumber: 13
-            },
-            __self: undefined
-        }, "loading...");
-    };
-    const renderSearchResults = ()=>{
-        return /*#__PURE__*/ _preact.h("div", {
-            className: "search-results",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 65,
-                columnNumber: 13
-            },
-            __self: undefined
-        }, results.map((result, index)=>{
-            return /*#__PURE__*/ _preact.h("div", {
-                key: index,
-                className: "search-result",
-                onClick: ()=>_preactRouter.route("/seeds/" + window.btoa(result.detailurl))
-                ,
-                __source: {
-                    fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 68,
-                    columnNumber: 25
-                },
-                __self: undefined
-            }, /*#__PURE__*/ _preact.h("div", {
-                className: "search-result-url",
-                __source: {
-                    fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 71,
-                    columnNumber: 29
-                },
-                __self: undefined
-            }, result.url), /*#__PURE__*/ _preact.h("div", {
-                className: "search-result-title",
-                __source: {
-                    fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 74,
-                    columnNumber: 29
-                },
-                __self: undefined
-            }, result.title));
-        }));
-    };
-    const renderHistories = ()=>{
-        return /*#__PURE__*/ _preact.h(_preact.Fragment, {
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 86,
-                columnNumber: 13
-            },
-            __self: undefined
-        }, /*#__PURE__*/ _preact.h("div", {
-            className: "has-margin-top-6",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 87,
-                columnNumber: 17
-            },
-            __self: undefined
-        }), /*#__PURE__*/ _preact.h("div", {
-            className: "search-row",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 88,
-                columnNumber: 17
-            },
-            __self: undefined
-        }, /*#__PURE__*/ _preact.h("div", {
-            className: "search-title",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 89,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "Featured Topics"), FEATURED_TOPICS.map((topic)=>/*#__PURE__*/ _preact.h("div", {
-                className: "search-item",
-                onClick: ()=>directSearch(topic)
-                ,
-                __source: {
-                    fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 94,
-                    columnNumber: 29
-                },
-                __self: undefined
-            }, topic)
-        )), /*#__PURE__*/ _preact.h("div", {
-            className: "search-row",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 100,
-                columnNumber: 17
-            },
-            __self: undefined
-        }, /*#__PURE__*/ _preact.h("div", {
-            className: "search-title is-level",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 101,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, /*#__PURE__*/ _preact.h("div", {
-            className: "is-level-left",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 102,
-                columnNumber: 25
-            },
-            __self: undefined
-        }, "Histoires"), /*#__PURE__*/ _preact.h("div", {
-            className: "is-level-right is-flex is-vertical-center",
-            onClick: deleteHistories,
-            onKeyDown: deleteHistories,
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 103,
-                columnNumber: 25
-            },
-            __self: undefined
-        }, /*#__PURE__*/ _preact.h("span", {
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 106,
-                columnNumber: 29
-            },
-            __self: undefined
-        }, "Delete all"), /*#__PURE__*/ _preact.h("span", {
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 107,
-                columnNumber: 29
-            },
-            __self: undefined
-        }, "\xa0"), /*#__PURE__*/ _preact.h("ion-icon", {
-            name: "trash-sharp",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 108,
-                columnNumber: 29
-            },
-            __self: undefined
-        }))), searchStore.getHistories().map((history)=>/*#__PURE__*/ _preact.h("div", {
-                className: "search-item",
-                __source: {
-                    fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 115,
-                    columnNumber: 33
-                },
-                __self: undefined
-            }, history)
-        )));
-    };
-    return /*#__PURE__*/ _preact.h("div", {
-        className: "search",
-        __source: {
-            fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 126,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "search-row",
-        __source: {
-            fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 127,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("form", {
-        onSubmit: search,
-        __source: {
-            fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 128,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "search-input",
-        __source: {
-            fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 129,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("input", {
-        type: "text",
-        id: "searchinput",
-        placeholder: "Try Ryan Petersen",
-        value: keywords,
-        onChange: (event)=>setKeywords(event.target.value)
-        ,
-        __source: {
-            fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 130,
-            columnNumber: 25
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "search",
-        onClick: search,
-        __source: {
-            fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 135,
-            columnNumber: 25
-        },
-        __self: undefined
-    })))), status === SearchPageEnum.LOADING && renderLoading(), status === SearchPageEnum.HISTORIES && renderHistories(), status === SearchPageEnum.RESULTS && renderSearchResults());
-};
-
-},{"preact":"cwEwC","preact-router":"gXK85","preact/hooks":"97VL9","../helpers":"dtOhO","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"dtOhO":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"dtOhO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _decodeJWT = require("./decodeJWT");
@@ -3146,8 +2046,10 @@ var _searchStore = require("./searchStore");
 parcelHelpers.exportAll(_searchStore, exports);
 var _seedsStore = require("./seedsStore");
 parcelHelpers.exportAll(_seedsStore, exports);
+var _bookmarkStore = require("./bookmarkStore");
+parcelHelpers.exportAll(_bookmarkStore, exports);
 
-},{"./decodeJWT":"1trgr","./googleAuth":"5PK59","./userStore":"cx4a0","./searchStore":"6TqAD","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./seedsStore":"ixOWY"}],"1trgr":[function(require,module,exports) {
+},{"./decodeJWT":"1trgr","./googleAuth":"5PK59","./userStore":"cx4a0","./searchStore":"6TqAD","./seedsStore":"ixOWY","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./bookmarkStore":"1crXd"}],"1trgr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "decodeJWT", ()=>decodeJWT
@@ -3223,6 +2125,9 @@ class UserStore {
     isExpired() {
         if (!this.cache) return true;
         return Date.now() > this.cache.exp * 1000;
+    }
+    isAvailable() {
+        return this.hasCache() && !this.isExpired();
     }
     hasCache() {
         return Boolean(this.cache);
@@ -3384,7 +2289,7 @@ const useSeedsStore = ()=>{
     };
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./hookClass":"3IghV","axios":"gIwns","preact/hooks":"97VL9"}],"gIwns":[function(require,module,exports) {
+},{"axios":"gIwns","preact/hooks":"97VL9","./hookClass":"3IghV","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"gIwns":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"lNH3U"}],"lNH3U":[function(require,module,exports) {
@@ -7591,7 +6496,1198 @@ var utils = require('./../utils');
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-},{"./../utils":"lbtnr"}],"8BcV2":[function(require,module,exports) {
+},{"./../utils":"lbtnr"}],"1crXd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useBookmarkStore", ()=>useBookmarkStore
+);
+var _hookClass = require("./hookClass");
+var _hooks = require("preact/hooks");
+class BookmarkStore extends _hookClass.HookClass {
+    bookmarks = new Set();
+    key = "FLEXBOARD_BOOKMARKS";
+    init() {
+        const rawbookmarks = localStorage.getItem(this.key);
+        if (rawbookmarks) {
+            this.bookmarks = new Set(rawbookmarks.split(";").map((base64bookmark)=>atob(base64bookmark)
+            ));
+            this.invokeCallbacks();
+        }
+    }
+    hasBookmark(bookmark) {
+        return this.bookmarks.has(bookmark);
+    }
+    toggleBookmark(bookmark) {
+        if (this.bookmarks.has(bookmark)) this.bookmarks.delete(bookmark);
+        else this.bookmarks.add(bookmark);
+        this.updateBookmarks();
+    }
+    updateBookmarks() {
+        const bookmarksString = Array.from(this.bookmarks).map((bookmark)=>window.btoa(bookmark)
+        ).join(";");
+        localStorage.setItem(this.key, bookmarksString);
+        this.invokeCallbacks();
+    }
+}
+const bookmarkStore = new BookmarkStore();
+const useBookmarkStore = ()=>{
+    const [nounce, setNounce] = _hooks.useState(Math.random());
+    _hooks.useEffect(()=>{
+        bookmarkStore.setCallback(setNounce);
+        bookmarkStore.init();
+    }, []);
+    return {
+        bookmarkStore,
+        nounce,
+        setNounce
+    };
+};
+
+},{"./hookClass":"3IghV","preact/hooks":"97VL9","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1IJMQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _loaderComponent = require("./loader.component");
+parcelHelpers.exportAll(_loaderComponent, exports);
+var _logoComponent = require("./logo.component");
+parcelHelpers.exportAll(_logoComponent, exports);
+var _splashLogoComponent = require("./splash-logo.component");
+parcelHelpers.exportAll(_splashLogoComponent, exports);
+var _tabsComponent = require("./tabs.component");
+parcelHelpers.exportAll(_tabsComponent, exports);
+var _headerComponent = require("./header.component");
+parcelHelpers.exportAll(_headerComponent, exports);
+var _cardComponent = require("./card.component");
+parcelHelpers.exportAll(_cardComponent, exports);
+
+},{"./loader.component":"7ODzE","./logo.component":"5Z8AW","./splash-logo.component":"dkFkE","./tabs.component":"1gJUA","./header.component":"kGp3O","./card.component":"6YJcz","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"7ODzE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Loader", ()=>Loader
+);
+var _preact = require("preact");
+const Loader = ()=>{
+    return /*#__PURE__*/ _preact.h("div", {
+        className: "is-all-center",
+        __source: {
+            fileName: "frontend/components/loader.component.tsx",
+            lineNumber: 6,
+            columnNumber: 9
+        },
+        __self: undefined
+    });
+};
+
+},{"preact":"cwEwC","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"5Z8AW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LogoComponent", ()=>LogoComponent
+);
+var _preact = require("preact");
+const LogoComponent = (props)=>{
+    return /*#__PURE__*/ _preact.h("div", {
+        className: "logo",
+        style: {
+            ...props
+        },
+        __source: {
+            fileName: "frontend/components/logo.component.tsx",
+            lineNumber: 10,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/components/logo.component.tsx",
+            lineNumber: 11,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, "Flex"), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/components/logo.component.tsx",
+            lineNumber: 12,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, "b"), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/components/logo.component.tsx",
+            lineNumber: 13,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, "o"), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/components/logo.component.tsx",
+            lineNumber: 14,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, "a"), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/components/logo.component.tsx",
+            lineNumber: 15,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, "r"), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/components/logo.component.tsx",
+            lineNumber: 16,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, "d"), /*#__PURE__*/ _preact.h("span", {
+        className: "red40",
+        __source: {
+            fileName: "frontend/components/logo.component.tsx",
+            lineNumber: 17,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, "."));
+};
+
+},{"preact":"cwEwC","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"dkFkE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SplashLogoComponent", ()=>SplashLogoComponent
+);
+var _preact = require("preact");
+const SplashLogoComponent = ()=>{
+    return /*#__PURE__*/ _preact.h("div", {
+        className: "logo-container",
+        id: "splashlogo",
+        __source: {
+            fileName: "frontend/components/splash-logo.component.tsx",
+            lineNumber: 6,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "logo-icon",
+        __source: {
+            fileName: "frontend/components/splash-logo.component.tsx",
+            lineNumber: 7,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "logo-card is-red",
+        __source: {
+            fileName: "frontend/components/splash-logo.component.tsx",
+            lineNumber: 8,
+            columnNumber: 17
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _preact.h("div", {
+        className: "logo-card is-white",
+        __source: {
+            fileName: "frontend/components/splash-logo.component.tsx",
+            lineNumber: 9,
+            columnNumber: 17
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _preact.h("div", {
+        className: "logo-card is-green",
+        __source: {
+            fileName: "frontend/components/splash-logo.component.tsx",
+            lineNumber: 10,
+            columnNumber: 17
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h("div", {
+        className: "logo-text white",
+        __source: {
+            fileName: "frontend/components/splash-logo.component.tsx",
+            lineNumber: 12,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        __source: {
+            fileName: "frontend/components/splash-logo.component.tsx",
+            lineNumber: 13,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/components/splash-logo.component.tsx",
+            lineNumber: 14,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Flexboard"), /*#__PURE__*/ _preact.h("span", {
+        className: "red40",
+        __source: {
+            fileName: "frontend/components/splash-logo.component.tsx",
+            lineNumber: 15,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, ".")), /*#__PURE__*/ _preact.h("div", {
+        className: "is-text-xs grey40",
+        __source: {
+            fileName: "frontend/components/splash-logo.component.tsx",
+            lineNumber: 17,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, "The news forwarder")));
+};
+
+},{"preact":"cwEwC","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1gJUA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "TabsComponent", ()=>TabsComponent
+);
+var _preact = require("preact");
+var _preactRouter = require("preact-router");
+var _match = require("preact-router/match");
+const TabsComponent = ()=>{
+    const navigateTo = (destination)=>{
+        return ()=>{
+            _preactRouter.route(destination);
+        };
+    };
+    return /*#__PURE__*/ _preact.h("div", {
+        className: "tabs",
+        __source: {
+            fileName: "frontend/components/tabs.component.tsx",
+            lineNumber: 13,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h(_match.Link, {
+        className: "tab",
+        activeClassName: "is-active",
+        href: "/seeds",
+        __source: {
+            fileName: "frontend/components/tabs.component.tsx",
+            lineNumber: 14,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "newspaper",
+        __source: {
+            fileName: "frontend/components/tabs.component.tsx",
+            lineNumber: 17,
+            columnNumber: 17
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h(_match.Link, {
+        className: "tab",
+        activeClassName: "is-active",
+        href: "/search",
+        __source: {
+            fileName: "frontend/components/tabs.component.tsx",
+            lineNumber: 19,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "search",
+        __source: {
+            fileName: "frontend/components/tabs.component.tsx",
+            lineNumber: 22,
+            columnNumber: 17
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h(_match.Link, {
+        className: "tab",
+        activeClassName: "is-active",
+        href: "/indices",
+        __source: {
+            fileName: "frontend/components/tabs.component.tsx",
+            lineNumber: 29,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "bar-chart",
+        __source: {
+            fileName: "frontend/components/tabs.component.tsx",
+            lineNumber: 32,
+            columnNumber: 17
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h(_match.Link, {
+        className: "tab",
+        activeClassName: "is-active",
+        href: "/settings",
+        __source: {
+            fileName: "frontend/components/tabs.component.tsx",
+            lineNumber: 34,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "menu",
+        __source: {
+            fileName: "frontend/components/tabs.component.tsx",
+            lineNumber: 37,
+            columnNumber: 17
+        },
+        __self: undefined
+    })));
+};
+
+},{"preact":"cwEwC","preact-router":"gXK85","preact-router/match":"k3hhw","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"k3hhw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Link", ()=>c
+);
+parcelHelpers.export(exports, "Match", ()=>l
+);
+parcelHelpers.export(exports, "default", ()=>l
+);
+var _preact = require("preact");
+var _preactRouter = require("preact-router");
+var s = [
+    "className",
+    "activeClass",
+    "activeClassName",
+    "path"
+];
+function l(a) {
+    var e = _preactRouter.useRouter()[0];
+    return a.children({
+        url: e.url,
+        path: e.path,
+        matches: !1 !== _preactRouter.exec(e.path || e.url, a.path, {})
+    });
+}
+function c(l1) {
+    var c1 = l1.className, n = l1.activeClass, u = l1.activeClassName, i = l1.path, p = function(a, t) {
+        if (null == a) return {};
+        var r, e, s1 = {}, l2 = Object.keys(a);
+        for(e = 0; e < l2.length; e++)t.indexOf(r = l2[e]) >= 0 || (s1[r] = a[r]);
+        return s1;
+    }(l1, s), h = _preactRouter.useRouter()[0], f = i && h.path && _preactRouter.exec(h.path, i, {}) || _preactRouter.exec(h.url, p.href, {}), o = p.class || c1 || "", m = f && (n || u) || "";
+    return p.class = o + (o && m && " ") + m, _preact.h(_preactRouter.Link, p);
+}
+
+},{"preact":"cwEwC","preact-router":"gXK85","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"kGp3O":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "HeaderComponent", ()=>HeaderComponent
+);
+var _preact = require("preact");
+var _logoComponent = require("./logo.component");
+const HeaderComponent = (props)=>{
+    return /*#__PURE__*/ _preact.h("div", {
+        className: "header",
+        __source: {
+            fileName: "frontend/components/header.component.tsx",
+            lineNumber: 6,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "header-logo",
+        __source: {
+            fileName: "frontend/components/header.component.tsx",
+            lineNumber: 7,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h(_logoComponent.LogoComponent, {
+        __source: {
+            fileName: "frontend/components/header.component.tsx",
+            lineNumber: 8,
+            columnNumber: 17
+        },
+        __self: undefined
+    })));
+};
+
+},{"preact":"cwEwC","./logo.component":"5Z8AW","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"6YJcz":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CardComponent", ()=>CardComponent
+);
+/// <reference path="../custom.d.ts" />
+var _preact = require("preact");
+var _preactRouter = require("preact-router");
+var _helpers = require("../helpers");
+var _freightwavesPng = require("../icons/freightwaves.png");
+var _freightwavesPngDefault = parcelHelpers.interopDefault(_freightwavesPng);
+const CardComponent = (props)=>{
+    const { bookmarkStore  } = _helpers.useBookmarkStore();
+    const seed = props.seed;
+    const base64url = window.btoa(seed.detailurl);
+    const cardProps = {
+        onClick: ()=>_preactRouter.route(`/seeds/${base64url}`)
+    };
+    if (props.size === "small") return /*#__PURE__*/ _preact.h("div", {
+        className: "card is-small",
+        ...cardProps,
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 25,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, seed.thumbnail ? /*#__PURE__*/ _preact.h("div", {
+        className: "card-row",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 28,
+            columnNumber: 25
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "card-img",
+        style: {
+            backgroundImage: `url(${seed.thumbnail})`
+        },
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 29,
+            columnNumber: 29
+        },
+        __self: undefined
+    })) : /*#__PURE__*/ _preact.h("div", {
+        className: "card-row",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 31,
+            columnNumber: 25
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "card-img-placeholder",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 32,
+            columnNumber: 29
+        },
+        __self: undefined
+    }, "\xa0")), /*#__PURE__*/ _preact.h("div", {
+        className: "card-row",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 37,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "card-reference",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 38,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("img", {
+        src: _freightwavesPngDefault.default,
+        alt: "Freight Waves",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 39,
+            columnNumber: 25
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h("div", {
+        className: "blue50 is-text-bold",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 41,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, seed.title), /*#__PURE__*/ _preact.h("div", {
+        className: "is-text-xs grey40 has-margin-top-1",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 44,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, seed.date)), /*#__PURE__*/ _preact.h("div", {
+        className: "card-row",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 48,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, bookmarkStore.hasBookmark(seed.url) ? /*#__PURE__*/ _preact.h("span", {
+        className: "red30",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 51,
+            columnNumber: 29
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "bookmark",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 52,
+            columnNumber: 33
+        },
+        __self: undefined
+    })) : /*#__PURE__*/ _preact.h("span", {
+        className: "grey40",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 54,
+            columnNumber: 29
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "bookmark-outline",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 55,
+            columnNumber: 33
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h("span", {
+        className: "grey40",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 58,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "calendar",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 59,
+            columnNumber: 25
+        },
+        __self: undefined
+    }))));
+    return /*#__PURE__*/ _preact.h("div", {
+        className: "card is-large",
+        style: {
+            backgroundImage: `url(${seed.thumbnail})`
+        },
+        ...cardProps,
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 67,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "card-row",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 68,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "card-title",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 69,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "card-reference",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 70,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("img", {
+        src: _freightwavesPngDefault.default,
+        alt: "Freight Waves",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 71,
+            columnNumber: 25
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 73,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, seed.title), /*#__PURE__*/ _preact.h("div", {
+        className: "has-padding-top-3",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 74,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("span", {
+        className: "is-text-s",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 75,
+            columnNumber: 25
+        },
+        __self: undefined
+    }, seed.date)))));
+};
+
+},{"preact":"cwEwC","preact-router":"gXK85","../icons/freightwaves.png":"aiuzK","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","../helpers":"dtOhO"}],"aiuzK":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "freightwaves.a156c0ae.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"hPpBg"}],"hPpBg":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"9RWB4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _indicesPage = require("./indices.page");
+parcelHelpers.exportAll(_indicesPage, exports);
+var _searchPage = require("./search.page");
+parcelHelpers.exportAll(_searchPage, exports);
+var _seedsPage = require("./seeds.page");
+parcelHelpers.exportAll(_seedsPage, exports);
+var _settingsPage = require("./settings.page");
+parcelHelpers.exportAll(_settingsPage, exports);
+var _splashPage = require("./splash.page");
+parcelHelpers.exportAll(_splashPage, exports);
+var _redirectPage = require("./redirect.page");
+parcelHelpers.exportAll(_redirectPage, exports);
+var _messagesPage = require("./messages.page");
+parcelHelpers.exportAll(_messagesPage, exports);
+var _articlesPage = require("./articles.page");
+parcelHelpers.exportAll(_articlesPage, exports);
+var _routePage = require("./route.page");
+parcelHelpers.exportAll(_routePage, exports);
+var _aboutPage = require("./about.page");
+parcelHelpers.exportAll(_aboutPage, exports);
+var _disclaimerPage = require("./disclaimer.page");
+parcelHelpers.exportAll(_disclaimerPage, exports);
+
+},{"./indices.page":"7FZOO","./search.page":"j27CE","./seeds.page":"8BcV2","./settings.page":"76mfA","./splash.page":"1gZMb","./redirect.page":"7ph5y","./messages.page":"2FU79","./articles.page":"kpakG","./route.page":"hCEyC","./about.page":"hV32b","./disclaimer.page":"8eDiM","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"7FZOO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "IndicesPage", ()=>IndicesPage
+);
+var _preact = require("preact");
+var _hooks = require("preact/hooks");
+const TODAY = new Date().toISOString().split("T")[0];
+const IndicesPage = (props)=>{
+    const [date, setDate] = _hooks.useState(TODAY);
+    const [data, setData] = _hooks.useState([]);
+    const [dataMap, setDataMap] = _hooks.useState({});
+    const [indice, setIndice] = _hooks.useState("CCFI");
+    const [indiceOptions, setIndiceOptions] = _hooks.useState([]);
+    const updateDataByDate = (targetDate)=>{
+        const map = window.shanghaiFreightIndices.get(targetDate);
+        const newData = map[indice] || [];
+        setDataMap(map);
+        setData(newData);
+        setIndiceOptions(Object.keys(map));
+    };
+    const queryData = (newDate)=>{
+        let targetDate = newDate || "";
+        if (/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) targetDate = targetDate.replace(/-/g, "");
+        if (!window.shanghaiFreightIndices || !window.shanghaiFreightIndices.has(targetDate)) {
+            const script = document.createElement("script");
+            script.onload = ()=>updateDataByDate(targetDate)
+            ;
+            script.onerror = console.log;
+            script.src = "data/indices/" + targetDate + ".js";
+            document.body.appendChild(script);
+        } else updateDataByDate(targetDate);
+    };
+    const updateDate = (event)=>{
+        const newDate = event?.target?.value || "";
+        if (/^\d{8}$|^\d{4}-\d{2}-\d{2}$/.test(newDate)) setDate(newDate);
+    };
+    const updateIndice = (event)=>{
+        const newIndice = event?.target?.value || "CCFI";
+        setIndice(newIndice);
+    };
+    const requestFullScreen = ()=>{
+        setTimeout(async ()=>{
+            if (window.innerHeight < window.innerWidth) {
+                const indicesElement = document.getElementById("indices");
+                const indicesTableElement = document.querySelector("#indices .indices-table");
+                if (indicesElement) try {
+                    await indicesElement.requestFullscreen();
+                    indicesTableElement?.classList?.add("is-full-screen");
+                } catch (error) {
+                    console.error(error);
+                }
+            } else if (document.fullscreenElement) {
+                document.exitFullscreen();
+                const indicesTableElement = document.querySelector("#indices .indices-table");
+                indicesTableElement?.classList?.remove("is-full-screen");
+            }
+        }, 100);
+    };
+    const forceRequestFullScreen = ()=>{
+        const indicesElement = document.getElementById("indices");
+        const indicesTableElement = document.querySelector("#indices .indices-table");
+    };
+    _hooks.useEffect(()=>{
+        requestFullScreen();
+        window.addEventListener("orientationchange", requestFullScreen);
+    }, []);
+    _hooks.useEffect(()=>{
+        if (date) queryData(date);
+        else setDate(TODAY);
+    }, [
+        date
+    ]);
+    _hooks.useEffect(()=>{
+        const newData = dataMap[indice] || [];
+        setData(newData);
+    }, [
+        dataMap,
+        indice
+    ]);
+    return /*#__PURE__*/ _preact.h("div", {
+        className: "indices",
+        id: "indices",
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 104,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "indices-header",
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 105,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, (data[0]?.[0] || {}).text), /*#__PURE__*/ _preact.h("div", {
+        className: "indices-actions",
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 108,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "indices-action",
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 109,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("input", {
+        type: "date",
+        name: "date",
+        id: "indicesdate",
+        onChange: updateDate,
+        value: date,
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 110,
+            columnNumber: 21
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h("div", {
+        className: "indices-action",
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 112,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("select", {
+        name: "indices",
+        id: "indicestype",
+        onChange: updateIndice,
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 113,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, indiceOptions.map((indiceLabel, index)=>/*#__PURE__*/ _preact.h("option", {
+            label: indiceLabel,
+            key: index,
+            __source: {
+                fileName: "frontend/pages/indices.page.tsx",
+                lineNumber: 116,
+                columnNumber: 33
+            },
+            __self: undefined
+        }, indiceLabel)
+    ))), /*#__PURE__*/ _preact.h("div", {
+        className: "indices-action is-expand",
+        onClick: requestFullScreen,
+        onKeyDown: requestFullScreen,
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 121,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "expand-sharp",
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 122,
+            columnNumber: 21
+        },
+        __self: undefined
+    }))), /*#__PURE__*/ _preact.h("div", {
+        className: "indices-table",
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 125,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("table", {
+        className: "table",
+        __source: {
+            fileName: "frontend/pages/indices.page.tsx",
+            lineNumber: 126,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, data.slice(1, data.length - 1).map((row, rowIndex)=>{
+        return /*#__PURE__*/ _preact.h("tr", {
+            key: `row${rowIndex}`,
+            __source: {
+                fileName: "frontend/pages/indices.page.tsx",
+                lineNumber: 132,
+                columnNumber: 37
+            },
+            __self: undefined
+        }, row.map((cell, cellIndex)=>{
+            return cell.tag === "td" ? /*#__PURE__*/ _preact.h("td", {
+                key: `cell${cellIndex}`,
+                colSpan: cell.colspan || 1,
+                rowSpan: cell.rowspan || 1,
+                __source: {
+                    fileName: "frontend/pages/indices.page.tsx",
+                    lineNumber: 136,
+                    columnNumber: 53
+                },
+                __self: undefined
+            }, cell.text) : /*#__PURE__*/ _preact.h("th", {
+                key: `cell${cellIndex}`,
+                colSpan: cell.colspan || 1,
+                rowSpan: cell.rowspan || 1,
+                __source: {
+                    fileName: "frontend/pages/indices.page.tsx",
+                    lineNumber: 141,
+                    columnNumber: 53
+                },
+                __self: undefined
+            }, cell.text);
+        }));
+    }))));
+};
+
+},{"preact":"cwEwC","preact/hooks":"97VL9","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"j27CE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SearchPage", ()=>SearchPage
+);
+var _preact = require("preact");
+var _preactRouter = require("preact-router");
+var _hooks = require("preact/hooks");
+var _helpers = require("../helpers");
+let SearchPageEnum;
+(function(SearchPageEnum1) {
+    SearchPageEnum1[SearchPageEnum1["HISTORIES"] = 0] = "HISTORIES";
+    SearchPageEnum1[SearchPageEnum1["RESULTS"] = 1] = "RESULTS";
+    SearchPageEnum1[SearchPageEnum1["LOADING"] = 2] = "LOADING";
+})(SearchPageEnum || (SearchPageEnum = {}));
+const FEATURED_TOPICS = [
+    "ukrainian",
+    "covid",
+    "volume",
+    "trucking"
+];
+const SearchPage = (props)=>{
+    const [status, setStatus] = _hooks.useState(SearchPageEnum.HISTORIES);
+    const [keywords, setKeywords] = _hooks.useState("");
+    const [results, setResults] = _hooks.useState([]);
+    const { searchStore  } = _helpers.useSearchStore();
+    const { seedsStore  } = _helpers.useSeedsStore();
+    const deleteHistories = ()=>{
+        if (window.confirm("Do you want to delete all searching histories?")) searchStore.deleteAllHistory();
+    };
+    const search = (event)=>{
+        event.preventDefault();
+        setStatus(SearchPageEnum.LOADING);
+        setTimeout(()=>{
+            const resultArr = seedsStore.findByKeywords(keywords);
+            setResults(resultArr);
+            setStatus(SearchPageEnum.RESULTS);
+        }, 1000 + Math.floor(Math.random() * 1000));
+        searchStore.addHistory(keywords);
+    };
+    const directSearch = (keyword)=>{
+        setKeywords(keyword);
+        setStatus(SearchPageEnum.LOADING);
+        setTimeout(()=>{
+            const resultArr = seedsStore.findByKeywords(keyword);
+            setResults(resultArr);
+            setStatus(SearchPageEnum.RESULTS);
+        }, 1000 + Math.floor(Math.random() * 1000));
+        searchStore.addHistory(keyword);
+    };
+    const renderLoading = ()=>{
+        return /*#__PURE__*/ _preact.h("div", {
+            className: "search-results",
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 57,
+                columnNumber: 13
+            },
+            __self: undefined
+        }, "loading...");
+    };
+    const renderSearchResults = ()=>{
+        return /*#__PURE__*/ _preact.h("div", {
+            className: "search-results",
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 65,
+                columnNumber: 13
+            },
+            __self: undefined
+        }, results.map((result, index)=>{
+            return /*#__PURE__*/ _preact.h("div", {
+                key: index,
+                className: "search-result",
+                onClick: ()=>_preactRouter.route("/seeds/" + window.btoa(result.detailurl))
+                ,
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 68,
+                    columnNumber: 25
+                },
+                __self: undefined
+            }, /*#__PURE__*/ _preact.h("div", {
+                className: "search-result-url",
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 71,
+                    columnNumber: 29
+                },
+                __self: undefined
+            }, result.url), /*#__PURE__*/ _preact.h("div", {
+                className: "search-result-title",
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 74,
+                    columnNumber: 29
+                },
+                __self: undefined
+            }, result.title));
+        }));
+    };
+    const renderHistories = ()=>{
+        return /*#__PURE__*/ _preact.h(_preact.Fragment, {
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 86,
+                columnNumber: 13
+            },
+            __self: undefined
+        }, /*#__PURE__*/ _preact.h("div", {
+            className: "has-margin-top-6",
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 87,
+                columnNumber: 17
+            },
+            __self: undefined
+        }), /*#__PURE__*/ _preact.h("div", {
+            className: "search-row",
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 88,
+                columnNumber: 17
+            },
+            __self: undefined
+        }, /*#__PURE__*/ _preact.h("div", {
+            className: "search-title",
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 89,
+                columnNumber: 21
+            },
+            __self: undefined
+        }, "Featured Topics"), FEATURED_TOPICS.map((topic)=>/*#__PURE__*/ _preact.h("div", {
+                className: "search-item",
+                onClick: ()=>directSearch(topic)
+                ,
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 94,
+                    columnNumber: 29
+                },
+                __self: undefined
+            }, topic)
+        )), /*#__PURE__*/ _preact.h("div", {
+            className: "search-row",
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 100,
+                columnNumber: 17
+            },
+            __self: undefined
+        }, /*#__PURE__*/ _preact.h("div", {
+            className: "search-title is-level",
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 101,
+                columnNumber: 21
+            },
+            __self: undefined
+        }, /*#__PURE__*/ _preact.h("div", {
+            className: "is-level-left",
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 102,
+                columnNumber: 25
+            },
+            __self: undefined
+        }, "Histoires"), /*#__PURE__*/ _preact.h("div", {
+            className: "is-level-right is-flex is-vertical-center",
+            onClick: deleteHistories,
+            onKeyDown: deleteHistories,
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 103,
+                columnNumber: 25
+            },
+            __self: undefined
+        }, /*#__PURE__*/ _preact.h("span", {
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 106,
+                columnNumber: 29
+            },
+            __self: undefined
+        }, "Delete all"), /*#__PURE__*/ _preact.h("span", {
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 107,
+                columnNumber: 29
+            },
+            __self: undefined
+        }, "\xa0"), /*#__PURE__*/ _preact.h("ion-icon", {
+            name: "trash-sharp",
+            __source: {
+                fileName: "frontend/pages/search.page.tsx",
+                lineNumber: 108,
+                columnNumber: 29
+            },
+            __self: undefined
+        }))), searchStore.getHistories().map((history)=>/*#__PURE__*/ _preact.h("div", {
+                className: "search-item",
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 115,
+                    columnNumber: 33
+                },
+                __self: undefined
+            }, history)
+        )));
+    };
+    return /*#__PURE__*/ _preact.h("div", {
+        className: "search",
+        __source: {
+            fileName: "frontend/pages/search.page.tsx",
+            lineNumber: 126,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "search-row",
+        __source: {
+            fileName: "frontend/pages/search.page.tsx",
+            lineNumber: 127,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("form", {
+        onSubmit: search,
+        __source: {
+            fileName: "frontend/pages/search.page.tsx",
+            lineNumber: 128,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "search-input",
+        __source: {
+            fileName: "frontend/pages/search.page.tsx",
+            lineNumber: 129,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("input", {
+        type: "text",
+        id: "searchinput",
+        placeholder: "Try Ryan Petersen",
+        value: keywords,
+        onChange: (event)=>setKeywords(event.target.value)
+        ,
+        __source: {
+            fileName: "frontend/pages/search.page.tsx",
+            lineNumber: 130,
+            columnNumber: 25
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "search",
+        onClick: search,
+        __source: {
+            fileName: "frontend/pages/search.page.tsx",
+            lineNumber: 135,
+            columnNumber: 25
+        },
+        __self: undefined
+    })))), status === SearchPageEnum.LOADING && renderLoading(), status === SearchPageEnum.HISTORIES && renderHistories(), status === SearchPageEnum.RESULTS && renderSearchResults());
+};
+
+},{"preact":"cwEwC","preact-router":"gXK85","preact/hooks":"97VL9","../helpers":"dtOhO","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"8BcV2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SeedsPage", ()=>SeedsPage
@@ -7820,7 +7916,7 @@ const SeedsPage = (props)=>{
     ))));
 };
 
-},{"preact":"cwEwC","../components":"1IJMQ","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","../helpers":"dtOhO","preact/hooks":"97VL9"}],"76mfA":[function(require,module,exports) {
+},{"preact":"cwEwC","preact/hooks":"97VL9","../components":"1IJMQ","../helpers":"dtOhO","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"76mfA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SettingsPage", ()=>SettingsPage
@@ -7835,7 +7931,7 @@ const SettingsPage = (props)=>{
         if (window.google) {
             if (_helpers.userStore.hasCache()) {
                 if (_helpers.userStore.isExpired()) googleAuth.prompt();
-            // googleAuth.prompt();
+                else googleAuth.prompt();
             } else {
                 googleAuth.renderButton();
                 googleAuth.prompt();
@@ -7864,7 +7960,7 @@ const SettingsPage = (props)=>{
             columnNumber: 13
         },
         __self: undefined
-    }, _helpers.userStore.hasCache() && _helpers.userStore.isExpired() === false ? /*#__PURE__*/ _preact.h("div", {
+    }, _helpers.userStore.isAvailable() ? /*#__PURE__*/ _preact.h("div", {
         className: "setting-userinfo",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
@@ -7930,27 +8026,27 @@ const SettingsPage = (props)=>{
             columnNumber: 13
         },
         __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
+    }, _helpers.userStore.isAvailable() && /*#__PURE__*/ _preact.h("div", {
         className: "setting-item",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 61,
-            columnNumber: 17
+            lineNumber: 63,
+            columnNumber: 21
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("ion-icon", {
         name: "bookmarks-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 62,
-            columnNumber: 21
+            lineNumber: 64,
+            columnNumber: 25
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 63,
-            columnNumber: 21
+            lineNumber: 65,
+            columnNumber: 25
         },
         __self: undefined
     }, "My bookmarks")), /*#__PURE__*/ _preact.h("div", {
@@ -7961,7 +8057,7 @@ const SettingsPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 65,
+            lineNumber: 68,
             columnNumber: 17
         },
         __self: undefined
@@ -7969,26 +8065,26 @@ const SettingsPage = (props)=>{
         name: "heart-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 68,
+            lineNumber: 71,
             columnNumber: 21
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 69,
+            lineNumber: 72,
             columnNumber: 21
         },
         __self: undefined
     }, "About Flexboard")), /*#__PURE__*/ _preact.h("div", {
         className: "setting-item",
-        onClick: ()=>_preactRouter.route("/about")
+        onClick: ()=>_preactRouter.route("/disclaimer")
         ,
-        onKeydown: ()=>_preactRouter.route("/about")
+        onKeydown: ()=>_preactRouter.route("/disclaimer")
         ,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 71,
+            lineNumber: 74,
             columnNumber: 17
         },
         __self: undefined
@@ -7996,14 +8092,14 @@ const SettingsPage = (props)=>{
         name: "alert-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 74,
+            lineNumber: 77,
             columnNumber: 21
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 75,
+            lineNumber: 78,
             columnNumber: 21
         },
         __self: undefined
@@ -8012,7 +8108,7 @@ const SettingsPage = (props)=>{
         key: nounce,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 80,
+            lineNumber: 83,
             columnNumber: 17
         },
         __self: undefined
@@ -8022,7 +8118,7 @@ const SettingsPage = (props)=>{
         onKeydown: logout,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 81,
+            lineNumber: 84,
             columnNumber: 21
         },
         __self: undefined
@@ -8031,14 +8127,14 @@ const SettingsPage = (props)=>{
         className: "is-text-l",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 85,
+            lineNumber: 88,
             columnNumber: 25
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 86,
+            lineNumber: 89,
             columnNumber: 25
         },
         __self: undefined
@@ -8046,7 +8142,7 @@ const SettingsPage = (props)=>{
         className: "is-text-m",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 87,
+            lineNumber: 90,
             columnNumber: 25
         },
         __self: undefined
@@ -8116,8 +8212,10 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ArticlePage", ()=>ArticlePage
 );
+/// <reference path="../custom.d.ts" />
 var _preact = require("preact");
 var _hooks = require("preact/hooks");
+var _helpers = require("../helpers");
 var _freightwavesPng = require("../icons/freightwaves.png");
 var _freightwavesPngDefault = parcelHelpers.interopDefault(_freightwavesPng);
 var _axios = require("axios");
@@ -8126,6 +8224,7 @@ const ArticlePage = (props)=>{
     const url = window.atob(props.base64url);
     const [loading, setLoading] = _hooks.useState(true);
     const [article, setArticle] = _hooks.useState(null);
+    const { bookmarkStore  } = _helpers.useBookmarkStore();
     _hooks.useEffect(()=>{
         _axiosDefault.default.get(url).then((response)=>{
             const data = response.data;
@@ -8146,7 +8245,7 @@ const ArticlePage = (props)=>{
     if (loading) return /*#__PURE__*/ _preact.h("div", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 41,
+            lineNumber: 44,
             columnNumber: 16
         },
         __self: undefined
@@ -8155,7 +8254,7 @@ const ArticlePage = (props)=>{
         className: "article",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 46,
+            lineNumber: 49,
             columnNumber: 9
         },
         __self: undefined
@@ -8163,7 +8262,7 @@ const ArticlePage = (props)=>{
         className: "article-actions is-level",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 47,
+            lineNumber: 50,
             columnNumber: 13
         },
         __self: undefined
@@ -8172,7 +8271,7 @@ const ArticlePage = (props)=>{
         onClick: back,
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 48,
+            lineNumber: 51,
             columnNumber: 17
         },
         __self: undefined
@@ -8180,7 +8279,7 @@ const ArticlePage = (props)=>{
         name: "chevron-back",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 49,
+            lineNumber: 52,
             columnNumber: 21
         },
         __self: undefined
@@ -8188,14 +8287,14 @@ const ArticlePage = (props)=>{
         className: "is-level-right is-flex is-vertical-center",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 51,
+            lineNumber: 54,
             columnNumber: 17
         },
         __self: undefined
     }, window.navigator.share && /*#__PURE__*/ _preact.h(_preact.Fragment, {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 54,
+            lineNumber: 57,
             columnNumber: 25
         },
         __self: undefined
@@ -8204,30 +8303,32 @@ const ArticlePage = (props)=>{
         onClick: share,
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 55,
+            lineNumber: 58,
             columnNumber: 29
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 56,
+            lineNumber: 59,
             columnNumber: 29
         },
         __self: undefined
-    }, "\xa0\xa0\xa0\xa0")), /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "bookmark-outline",
+    }, "\xa0\xa0\xa0\xa0")), _helpers.userStore.isAvailable() && /*#__PURE__*/ _preact.h("ion-icon", {
+        onClick: ()=>bookmarkStore.toggleBookmark(article.url)
+        ,
+        name: bookmarkStore.hasBookmark(article.url) ? "bookmark" : "bookmark-outline",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 59,
-            columnNumber: 21
+            lineNumber: 64,
+            columnNumber: 25
         },
         __self: undefined
     }))), /*#__PURE__*/ _preact.h("div", {
         className: "article-reference",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 62,
+            lineNumber: 71,
             columnNumber: 13
         },
         __self: undefined
@@ -8236,7 +8337,7 @@ const ArticlePage = (props)=>{
         alt: "Freight Waves",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 63,
+            lineNumber: 72,
             columnNumber: 17
         },
         __self: undefined
@@ -8247,7 +8348,7 @@ const ArticlePage = (props)=>{
         },
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 67,
+            lineNumber: 76,
             columnNumber: 17
         },
         __self: undefined
@@ -8255,7 +8356,7 @@ const ArticlePage = (props)=>{
         className: "article-title",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 69,
+            lineNumber: 78,
             columnNumber: 13
         },
         __self: undefined
@@ -8263,28 +8364,28 @@ const ArticlePage = (props)=>{
         className: "article-label",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 72,
+            lineNumber: 81,
             columnNumber: 13
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("div", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 73,
+            lineNumber: 82,
             columnNumber: 17
         },
         __self: undefined
     }, "Author: ", article.author), /*#__PURE__*/ _preact.h("div", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 74,
+            lineNumber: 83,
             columnNumber: 17
         },
         __self: undefined
     }, "Published at: ", article.date)), /*#__PURE__*/ _preact.h("hr", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 76,
+            lineNumber: 85,
             columnNumber: 13
         },
         __self: undefined
@@ -8295,21 +8396,21 @@ const ArticlePage = (props)=>{
         },
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 77,
+            lineNumber: 86,
             columnNumber: 13
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("hr", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 78,
+            lineNumber: 87,
             columnNumber: 13
         },
         __self: undefined
     }));
 };
 
-},{"preact":"cwEwC","preact/hooks":"97VL9","../icons/freightwaves.png":"aiuzK","axios":"gIwns","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"hCEyC":[function(require,module,exports) {
+},{"preact":"cwEwC","preact/hooks":"97VL9","../icons/freightwaves.png":"aiuzK","axios":"gIwns","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","../helpers":"dtOhO"}],"hCEyC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Route", ()=>Route
@@ -8404,6 +8505,143 @@ const AboutPage = (props)=>{
         },
         __self: undefined
     }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius fugiat natus dicta eum officiis non sint dolor maiores, inventore aliquid excepturi consequuntur cum veritatis, assumenda porro numquam consectetur nemo doloremque deserunt quibusdam reprehenderit necessitatibus itaque saepe quae. Qui a debitis provident amet eius repudiandae atque laudantium harum natus non. Rerum, facilis aperiam. Facere harum similique, maxime in minus corrupti pariatur corporis est culpa saepe, beatae accusantium, praesentium tempora? Sequi temporibus tempore vel labore officiis adipisci est cumque, nisi alias quam laboriosam ipsum neque perspiciatis possimus dolore, non voluptas, ab voluptates! Expedita iure ea eos, harum magnam libero vel odio enim.")));
+};
+
+},{"preact":"cwEwC","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"8eDiM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DisclaimerPage", ()=>DisclaimerPage
+);
+var _preact = require("preact");
+const DisclaimerPage = (props)=>{
+    return /*#__PURE__*/ _preact.h("div", {
+        className: "article",
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 6,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "article-actions is-level",
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 7,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "is-level-left",
+        onClick: ()=>history.back()
+        ,
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 8,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "chevron-back",
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 9,
+            columnNumber: 21
+        },
+        __self: undefined
+    }))), /*#__PURE__*/ _preact.h("h2", {
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 12,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, "Disclaimer"), /*#__PURE__*/ _preact.h("div", {
+        className: "grey40",
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 13,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("p", {
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 14,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("b", {
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 15,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Flexboard"), " is a Flexport 2022 Hackathon project. The usages of colors and certain styles come from the Flexport ", /*#__PURE__*/ _preact.h("b", {
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 17,
+            columnNumber: 30
+        },
+        __self: undefined
+    }, "Latitude"), " design system. The contents or statistics are not associated with any Flexport businesses."), /*#__PURE__*/ _preact.h("p", {
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 20,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, "The media and news contents are extracted from external news sources. The content in this site does not represent the views of Flexport."), /*#__PURE__*/ _preact.h("hr", {
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 25,
+            columnNumber: 17
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h("h2", {
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 27,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, "\u58F0\u660E"), /*#__PURE__*/ _preact.h("div", {
+        className: "grey40",
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 28,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("p", {
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 29,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("b", {
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 30,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Flexboard"), " \u662F\u98DE\u534F\u535A2022\u9ED1\u5BA2\u9A6C\u62C9\u677E\u9879\u76EE\u4E4B\u4E00\u3002\u9879\u76EE\u4E2D\u4F7F\u7528\u7684\u989C\u8272\u548C\u7279\u5B9A\u7684\u8BBE\u8BA1\u6A21\u5F0F\u5747\u6765\u81EA\u98DE\u534F\u535A", /*#__PURE__*/ _preact.h("b", {
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 30,
+            columnNumber: 78
+        },
+        __self: undefined
+    }, "Latitude"), "\u8BBE\u8BA1\u7CFB\u7EDF\u3002 \u5176\u4E2D\u7684\u5185\u5BB9\u548C\u6570\u636E\u4E0E\u98DE\u534F\u535A\u4E1A\u52A1\u8303\u56F4\u65E0\u5173\u3002"), /*#__PURE__*/ _preact.h("p", {
+        __source: {
+            fileName: "frontend/pages/disclaimer.page.tsx",
+            lineNumber: 33,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, "\u9879\u76EE\u4E2D\u6570\u636E\u548C\u65B0\u95FB\u5185\u5BB9\u5747\u6765\u81EA\u4E0E\u5176\u4ED6\u5A92\u4F53\u7F51\u7AD9\uFF0C\u672C\u9879\u76EE\u4E2D\u5185\u5BB9\u5747\u4E0D\u4EE3\u8868\u98DE\u534F\u535A\u7ACB\u573A\u3002")));
 };
 
 },{"preact":"cwEwC","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"8qykB":[function() {},{}]},["hgVRR","fguh0"], "fguh0", "parcelRequire7041")
