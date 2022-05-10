@@ -49,7 +49,7 @@ export const SearchPage = (props: RoutePage) => {
             setResults(resultArr);
             setStatus(SearchPageEnum.RESULTS);
         }, 1000 + Math.floor(Math.random() * 1000));
-        searchStore.addHistory(keywords);
+        searchStore.addHistory(keyword);
     }
 
     const renderLoading = () => {

@@ -1,6 +1,9 @@
+/// <reference path="../custom.d.ts" />
+
 import { Fragment, h } from "preact";
 import { useState, useEffect } from "preact/hooks";
 import { RoutePage } from "../interfaces";
+import { userStore, useBookmarkStore } from "../helpers";
 
 import FreightWaves from "../icons/freightwaves.png";
 import axios, { AxiosResponse } from "axios";
@@ -14,6 +17,7 @@ export const ArticlePage = (props: any) => {
 
     const [loading, setLoading] = useState(true);
     const [article, setArticle] = useState(null);
+    const { bookmarkStore } = useBookmarkStore();
 
     useEffect(() => {
         axios
@@ -56,7 +60,13 @@ export const ArticlePage = (props: any) => {
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         </Fragment>
                     }
-                    <ion-icon name="bookmark-outline"></ion-icon>
+                    {
+                        userStore.isAvailable() && 
+                        <ion-icon 
+                            onClick={() => bookmarkStore.toggleBookmark(article.url)}
+                            name={ bookmarkStore.hasBookmark(article.url) ? "bookmark" : "bookmark-outline"}>
+                        </ion-icon>
+                    }
                 </div>
             </div>
             <div className="article-reference">

@@ -21,6 +21,10 @@ class UserStore {
         return Date.now() > (this.cache.exp * 1000);
     }
 
+    isAvailable(): boolean {
+        return this.hasCache() && !this.isExpired();
+    }
+
     hasCache(): boolean {
         return Boolean(this.cache);
     }

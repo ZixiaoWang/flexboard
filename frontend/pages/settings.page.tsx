@@ -20,7 +20,7 @@ export const SettingsPage = (props: RoutePage) => {
                 if (userStore.isExpired()) {
                     googleAuth.prompt();
                 } else {
-                    // googleAuth.prompt();
+                    googleAuth.prompt();
                 }
             } else {
                 googleAuth.renderButton();
@@ -40,7 +40,7 @@ export const SettingsPage = (props: RoutePage) => {
         <Fragment>
             <div className="setting-group" key={nounce}>
                 {
-                    (userStore.hasCache() && userStore.isExpired() === false) ?
+                    userStore.isAvailable() ?
                         <div className="setting-userinfo">
                             <div className="setting-avatar">
                                 <img src={userStore.cache.picture} alt={userStore.cache.name} />
@@ -58,10 +58,13 @@ export const SettingsPage = (props: RoutePage) => {
                 }
             </div>
             <div className="setting-group">
-                <div className="setting-item">
-                    <ion-icon name="bookmarks-sharp"></ion-icon>
-                    <span>My bookmarks</span>
-                </div>
+                {
+                    userStore.isAvailable() &&
+                    <div className="setting-item">
+                        <ion-icon name="bookmarks-sharp"></ion-icon>
+                        <span>My bookmarks</span>
+                    </div>
+                }
                 <div className="setting-item"
                     onClick={() => route("/about")}
                     onKeydown={() => route("/about")}>
@@ -69,8 +72,8 @@ export const SettingsPage = (props: RoutePage) => {
                     <span>About Flexboard</span>
                 </div>
                 <div className="setting-item"
-                    onClick={() => route("/about")}
-                    onKeydown={() => route("/about")}>
+                    onClick={() => route("/disclaimer")}
+                    onKeydown={() => route("/disclaimer")}>
                     <ion-icon name="alert-sharp"></ion-icon>
                     <span>Declaration</span>
                 </div>
