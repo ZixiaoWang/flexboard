@@ -672,11 +672,19 @@ const App = ()=>{
             columnNumber: 17
         },
         __self: undefined
+    }), /*#__PURE__*/ _preact.h(_pages.BookmarksPage, {
+        path: "/bookmarks",
+        __source: {
+            fileName: "frontend/index.tsx",
+            lineNumber: 91,
+            columnNumber: 17
+        },
+        __self: undefined
     }), /*#__PURE__*/ _preact.h(_pages.AboutPage, {
         path: "/about",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 91,
+            lineNumber: 92,
             columnNumber: 17
         },
         __self: undefined
@@ -684,7 +692,7 @@ const App = ()=>{
         path: "/:rest*",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 92,
+            lineNumber: 93,
             columnNumber: 17
         },
         __self: undefined
@@ -693,7 +701,7 @@ const App = ()=>{
 _preact.render(/*#__PURE__*/ _preact.h(App, {
     __source: {
         fileName: "frontend/index.tsx",
-        lineNumber: 99,
+        lineNumber: 100,
         columnNumber: 5
     },
     __self: undefined
@@ -2049,7 +2057,7 @@ parcelHelpers.exportAll(_seedsStore, exports);
 var _bookmarkStore = require("./bookmarkStore");
 parcelHelpers.exportAll(_bookmarkStore, exports);
 
-},{"./decodeJWT":"1trgr","./googleAuth":"5PK59","./userStore":"cx4a0","./searchStore":"6TqAD","./seedsStore":"ixOWY","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./bookmarkStore":"1crXd"}],"1trgr":[function(require,module,exports) {
+},{"./decodeJWT":"1trgr","./googleAuth":"5PK59","./userStore":"cx4a0","./searchStore":"6TqAD","./seedsStore":"ixOWY","./bookmarkStore":"1crXd","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1trgr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "decodeJWT", ()=>decodeJWT
@@ -2265,6 +2273,12 @@ class SeedsStore extends _hookClass.HookClass {
             });
         });
         return results;
+    }
+    getSeedByURL(url) {
+        if (this.seeds.length === 0) return null;
+        return this.seeds.find((seed)=>{
+            return seed.url === url;
+        });
     }
 }
 const seedsStore = new SeedsStore();
@@ -6522,6 +6536,9 @@ class BookmarkStore extends _hookClass.HookClass {
         else this.bookmarks.add(bookmark);
         this.updateBookmarks();
     }
+    getBookmarks() {
+        return Array.from(this.bookmarks);
+    }
     updateBookmarks() {
         const bookmarksString = Array.from(this.bookmarks).map((bookmark)=>window.btoa(bookmark)
         ).join(";");
@@ -7134,7 +7151,7 @@ const CardComponent = (props)=>{
     }, seed.date)))));
 };
 
-},{"preact":"cwEwC","preact-router":"gXK85","../icons/freightwaves.png":"aiuzK","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","../helpers":"dtOhO"}],"aiuzK":[function(require,module,exports) {
+},{"preact":"cwEwC","preact-router":"gXK85","../helpers":"dtOhO","../icons/freightwaves.png":"aiuzK","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"aiuzK":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "freightwaves.a156c0ae.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"hPpBg"}],"hPpBg":[function(require,module,exports) {
@@ -7196,8 +7213,10 @@ var _aboutPage = require("./about.page");
 parcelHelpers.exportAll(_aboutPage, exports);
 var _disclaimerPage = require("./disclaimer.page");
 parcelHelpers.exportAll(_disclaimerPage, exports);
+var _bookmarksPage = require("./bookmarks.page");
+parcelHelpers.exportAll(_bookmarksPage, exports);
 
-},{"./indices.page":"7FZOO","./search.page":"j27CE","./seeds.page":"8BcV2","./settings.page":"76mfA","./splash.page":"1gZMb","./redirect.page":"7ph5y","./messages.page":"2FU79","./articles.page":"kpakG","./route.page":"hCEyC","./about.page":"hV32b","./disclaimer.page":"8eDiM","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"7FZOO":[function(require,module,exports) {
+},{"./indices.page":"7FZOO","./search.page":"j27CE","./seeds.page":"8BcV2","./settings.page":"76mfA","./splash.page":"1gZMb","./redirect.page":"7ph5y","./messages.page":"2FU79","./articles.page":"kpakG","./route.page":"hCEyC","./about.page":"hV32b","./disclaimer.page":"8eDiM","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./bookmarks.page":"l3FRf"}],"7FZOO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "IndicesPage", ()=>IndicesPage
@@ -8028,6 +8047,10 @@ const SettingsPage = (props)=>{
         __self: undefined
     }, _helpers.userStore.isAvailable() && /*#__PURE__*/ _preact.h("div", {
         className: "setting-item",
+        onClick: ()=>_preactRouter.route("/bookmarks")
+        ,
+        onKeydown: ()=>_preactRouter.route("/bookmarks")
+        ,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
             lineNumber: 63,
@@ -8038,14 +8061,14 @@ const SettingsPage = (props)=>{
         name: "bookmarks-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 64,
+            lineNumber: 66,
             columnNumber: 25
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 65,
+            lineNumber: 67,
             columnNumber: 25
         },
         __self: undefined
@@ -8057,7 +8080,7 @@ const SettingsPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 68,
+            lineNumber: 70,
             columnNumber: 17
         },
         __self: undefined
@@ -8065,14 +8088,14 @@ const SettingsPage = (props)=>{
         name: "heart-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 71,
+            lineNumber: 73,
             columnNumber: 21
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 72,
+            lineNumber: 74,
             columnNumber: 21
         },
         __self: undefined
@@ -8084,7 +8107,7 @@ const SettingsPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 74,
+            lineNumber: 76,
             columnNumber: 17
         },
         __self: undefined
@@ -8092,14 +8115,14 @@ const SettingsPage = (props)=>{
         name: "alert-sharp",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 77,
+            lineNumber: 79,
             columnNumber: 21
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 78,
+            lineNumber: 80,
             columnNumber: 21
         },
         __self: undefined
@@ -8108,7 +8131,7 @@ const SettingsPage = (props)=>{
         key: nounce,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 83,
+            lineNumber: 85,
             columnNumber: 17
         },
         __self: undefined
@@ -8118,7 +8141,7 @@ const SettingsPage = (props)=>{
         onKeydown: logout,
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 84,
+            lineNumber: 86,
             columnNumber: 21
         },
         __self: undefined
@@ -8127,14 +8150,14 @@ const SettingsPage = (props)=>{
         className: "is-text-l",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 88,
+            lineNumber: 90,
             columnNumber: 25
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 89,
+            lineNumber: 91,
             columnNumber: 25
         },
         __self: undefined
@@ -8142,7 +8165,7 @@ const SettingsPage = (props)=>{
         className: "is-text-m",
         __source: {
             fileName: "frontend/pages/settings.page.tsx",
-            lineNumber: 90,
+            lineNumber: 92,
             columnNumber: 25
         },
         __self: undefined
@@ -8298,37 +8321,78 @@ const ArticlePage = (props)=>{
             columnNumber: 25
         },
         __self: undefined
-    }, /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "share-outline",
-        onClick: share,
+    }, /*#__PURE__*/ _preact.h("span", {
+        className: "blue40",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
             lineNumber: 58,
             columnNumber: 29
         },
         __self: undefined
-    }), /*#__PURE__*/ _preact.h("span", {
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "share-outline",
+        onClick: share,
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
             lineNumber: 59,
+            columnNumber: 33
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/pages/articles.page.tsx",
+            lineNumber: 61,
             columnNumber: 29
         },
         __self: undefined
-    }, "\xa0\xa0\xa0\xa0")), _helpers.userStore.isAvailable() && /*#__PURE__*/ _preact.h("ion-icon", {
-        onClick: ()=>bookmarkStore.toggleBookmark(article.url)
-        ,
-        name: bookmarkStore.hasBookmark(article.url) ? "bookmark" : "bookmark-outline",
+    }, "\xa0\xa0\xa0\xa0")), _helpers.userStore.isAvailable() && /*#__PURE__*/ _preact.h(_preact.Fragment, {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 64,
+            lineNumber: 66,
             columnNumber: 25
         },
         __self: undefined
-    }))), /*#__PURE__*/ _preact.h("div", {
+    }, bookmarkStore.hasBookmark(article.url) ? /*#__PURE__*/ _preact.h("span", {
+        className: "red30",
+        __source: {
+            fileName: "frontend/pages/articles.page.tsx",
+            lineNumber: 69,
+            columnNumber: 33
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        onClick: ()=>bookmarkStore.toggleBookmark(article.url)
+        ,
+        name: "bookmark",
+        __source: {
+            fileName: "frontend/pages/articles.page.tsx",
+            lineNumber: 70,
+            columnNumber: 37
+        },
+        __self: undefined
+    })) : /*#__PURE__*/ _preact.h("span", {
+        className: "grey40",
+        __source: {
+            fileName: "frontend/pages/articles.page.tsx",
+            lineNumber: 75,
+            columnNumber: 33
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        onClick: ()=>bookmarkStore.toggleBookmark(article.url)
+        ,
+        name: "bookmark-outline",
+        __source: {
+            fileName: "frontend/pages/articles.page.tsx",
+            lineNumber: 76,
+            columnNumber: 33
+        },
+        __self: undefined
+    }))))), /*#__PURE__*/ _preact.h("div", {
         className: "article-reference",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 71,
+            lineNumber: 86,
             columnNumber: 13
         },
         __self: undefined
@@ -8337,7 +8401,7 @@ const ArticlePage = (props)=>{
         alt: "Freight Waves",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 72,
+            lineNumber: 87,
             columnNumber: 17
         },
         __self: undefined
@@ -8348,7 +8412,7 @@ const ArticlePage = (props)=>{
         },
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 76,
+            lineNumber: 91,
             columnNumber: 17
         },
         __self: undefined
@@ -8356,7 +8420,7 @@ const ArticlePage = (props)=>{
         className: "article-title",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 78,
+            lineNumber: 93,
             columnNumber: 13
         },
         __self: undefined
@@ -8364,28 +8428,28 @@ const ArticlePage = (props)=>{
         className: "article-label",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 81,
+            lineNumber: 96,
             columnNumber: 13
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("div", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 82,
+            lineNumber: 97,
             columnNumber: 17
         },
         __self: undefined
     }, "Author: ", article.author), /*#__PURE__*/ _preact.h("div", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 83,
+            lineNumber: 98,
             columnNumber: 17
         },
         __self: undefined
     }, "Published at: ", article.date)), /*#__PURE__*/ _preact.h("hr", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 85,
+            lineNumber: 100,
             columnNumber: 13
         },
         __self: undefined
@@ -8396,21 +8460,21 @@ const ArticlePage = (props)=>{
         },
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 86,
+            lineNumber: 101,
             columnNumber: 13
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("hr", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 87,
+            lineNumber: 102,
             columnNumber: 13
         },
         __self: undefined
     }));
 };
 
-},{"preact":"cwEwC","preact/hooks":"97VL9","../icons/freightwaves.png":"aiuzK","axios":"gIwns","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","../helpers":"dtOhO"}],"hCEyC":[function(require,module,exports) {
+},{"preact":"cwEwC","preact/hooks":"97VL9","../helpers":"dtOhO","../icons/freightwaves.png":"aiuzK","axios":"gIwns","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"hCEyC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Route", ()=>Route
@@ -8644,5 +8708,148 @@ const DisclaimerPage = (props)=>{
     }, "\u9879\u76EE\u4E2D\u6570\u636E\u548C\u65B0\u95FB\u5185\u5BB9\u5747\u6765\u81EA\u4E0E\u5176\u4ED6\u5A92\u4F53\u7F51\u7AD9\uFF0C\u672C\u9879\u76EE\u4E2D\u5185\u5BB9\u5747\u4E0D\u4EE3\u8868\u98DE\u534F\u535A\u7ACB\u573A\u3002")));
 };
 
-},{"preact":"cwEwC","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"8qykB":[function() {},{}]},["hgVRR","fguh0"], "fguh0", "parcelRequire7041")
+},{"preact":"cwEwC","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"l3FRf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "BookmarksPage", ()=>BookmarksPage
+);
+var _preact = require("preact");
+var _helpers = require("../helpers");
+var _preactRouter = require("preact-router");
+const BookmarksPage = (props)=>{
+    const { seedsStore , getSeeds  } = _helpers.useSeedsStore();
+    const { bookmarkStore  } = _helpers.useBookmarkStore();
+    const back = ()=>{
+        history.back();
+    };
+    const goto = (seed)=>{
+        _preactRouter.route("/seeds/" + window.btoa(seed.detailurl));
+    };
+    const bookmarks = bookmarkStore.getBookmarks() || [];
+    return /*#__PURE__*/ _preact.h("div", {
+        className: "bookmarks",
+        __source: {
+            fileName: "frontend/pages/bookmarks.page.tsx",
+            lineNumber: 21,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "article-actions is-level",
+        __source: {
+            fileName: "frontend/pages/bookmarks.page.tsx",
+            lineNumber: 22,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "is-level-left",
+        onClick: back,
+        __source: {
+            fileName: "frontend/pages/bookmarks.page.tsx",
+            lineNumber: 23,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "chevron-back",
+        __source: {
+            fileName: "frontend/pages/bookmarks.page.tsx",
+            lineNumber: 24,
+            columnNumber: 21
+        },
+        __self: undefined
+    }))), /*#__PURE__*/ _preact.h("div", {
+        __source: {
+            fileName: "frontend/pages/bookmarks.page.tsx",
+            lineNumber: 27,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "has-padding-4 has-margin-bottom-2",
+        __source: {
+            fileName: "frontend/pages/bookmarks.page.tsx",
+            lineNumber: 28,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("span", {
+        className: "white is-text-bold is-text-l",
+        __source: {
+            fileName: "frontend/pages/bookmarks.page.tsx",
+            lineNumber: 29,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Bookmarks")), bookmarks.length === 0 ? /*#__PURE__*/ _preact.h("div", {
+        className: "grey40 is-text-m is-text-center",
+        __source: {
+            fileName: "frontend/pages/bookmarks.page.tsx",
+            lineNumber: 33,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, "No bookmarks") : bookmarks.map((bookmark)=>seedsStore.getSeedByURL(bookmark)
+    ).map((seed, index)=>{
+        return /*#__PURE__*/ _preact.h("div", {
+            className: "bookmark",
+            key: index,
+            onClick: ()=>goto(seed)
+            ,
+            onkeydown: ()=>goto(seed)
+            ,
+            __source: {
+                fileName: "frontend/pages/bookmarks.page.tsx",
+                lineNumber: 40,
+                columnNumber: 29
+            },
+            __self: undefined
+        }, /*#__PURE__*/ _preact.h("div", {
+            className: "bookmark-img",
+            style: {
+                backgroundImage: `url(${seed.thumbnail})`
+            },
+            __source: {
+                fileName: "frontend/pages/bookmarks.page.tsx",
+                lineNumber: 44,
+                columnNumber: 33
+            },
+            __self: undefined
+        }, "\xa0"), /*#__PURE__*/ _preact.h("div", {
+            className: "bookmark-text",
+            __source: {
+                fileName: "frontend/pages/bookmarks.page.tsx",
+                lineNumber: 47,
+                columnNumber: 33
+            },
+            __self: undefined
+        }, /*#__PURE__*/ _preact.h("div", {
+            className: "is-text-m is-text-bold",
+            __source: {
+                fileName: "frontend/pages/bookmarks.page.tsx",
+                lineNumber: 48,
+                columnNumber: 37
+            },
+            __self: undefined
+        }, seed.title), /*#__PURE__*/ _preact.h("br", {
+            __source: {
+                fileName: "frontend/pages/bookmarks.page.tsx",
+                lineNumber: 51,
+                columnNumber: 37
+            },
+            __self: undefined
+        }), /*#__PURE__*/ _preact.h("div", {
+            className: "is-text-s grey40",
+            __source: {
+                fileName: "frontend/pages/bookmarks.page.tsx",
+                lineNumber: 52,
+                columnNumber: 37
+            },
+            __self: undefined
+        }, seed.url.substring(0, 28), "...")));
+    })));
+};
+
+},{"preact":"cwEwC","../helpers":"dtOhO","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","preact-router":"gXK85"}],"8qykB":[function() {},{}]},["hgVRR","fguh0"], "fguh0", "parcelRequire7041")
 
