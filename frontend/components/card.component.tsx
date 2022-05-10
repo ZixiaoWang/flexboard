@@ -3,6 +3,7 @@
 import { h, VNode, } from "preact";
 import { route } from "preact-router";
 import { SeedArticleItem } from "../interfaces";
+import { useBookmarkStore } from "../helpers";
 
 import FreightWaves from "../icons/freightwaves.png";
 export interface CardComponentProps {
@@ -11,7 +12,7 @@ export interface CardComponentProps {
 }
 
 export const CardComponent = (props: CardComponentProps): VNode => {
-    
+    const { bookmarkStore } = useBookmarkStore();
     const seed: SeedArticleItem = props.seed;
     const base64url: string = window.btoa(seed.detailurl);
 
@@ -24,29 +25,39 @@ export const CardComponent = (props: CardComponentProps): VNode => {
             <div className="card is-small" {...cardProps}>
                 {
                     seed.thumbnail ?
-                    <div className="card-row">
-                        <div className="card-img" style={{ backgroundImage: `url(${seed.thumbnail})` }}></div>
-                    </div> :
-                    <div className="card-row">
-                        <div className="card-img-placeholder">
-                            &nbsp;
+                        <div className="card-row">
+                            <div className="card-img" style={{ backgroundImage: `url(${seed.thumbnail})` }}></div>
+                        </div> :
+                        <div className="card-row">
+                            <div className="card-img-placeholder">
+                                &nbsp;
+                            </div>
                         </div>
-                    </div>
                 }
                 <div className="card-row">
                     <div className="card-reference">
                         <img src={FreightWaves} alt="Freight Waves" />
                     </div>
                     <div className="blue50 is-text-bold">
-                        { seed.title }
+                        {seed.title}
                     </div>
                     <div className="is-text-xs grey40 has-margin-top-1">
-                        { seed.date }
+                        {seed.date}
                     </div>
                 </div>
-                <div className="card-row grey40">
-                    <ion-icon name="bookmark" />
-                    <ion-icon name="calendar" />
+                <div className="card-row">
+                    {
+                        bookmarkStore.hasBookmark(seed.url) ?
+                            <span className="red30">
+                                <ion-icon name="bookmark" />
+                            </span> :
+                            <span className="grey40">
+                                <ion-icon name="bookmark-outline" />
+                            </span>
+                    }
+                    <span className="grey40">
+                        <ion-icon name="calendar" />
+                    </span>
                 </div>
             </div>
         )

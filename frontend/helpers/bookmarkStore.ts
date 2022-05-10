@@ -11,6 +11,7 @@ class BookmarkStore extends HookClass {
             this.bookmarks = new Set(rawbookmarks.split(";")
                 .map((base64bookmark: string) => atob(base64bookmark))
             );
+            this.invokeCallbacks();
         }
     }
 
@@ -26,6 +27,10 @@ class BookmarkStore extends HookClass {
         }
 
         this.updateBookmarks();
+    }
+
+    getBookmarks(): string[] {
+        return Array.from(this.bookmarks);
     }
 
     private updateBookmarks(): void {
@@ -44,8 +49,8 @@ export const useBookmarkStore = () => {
     const [nounce, setNounce] = useState(Math.random());
 
     useEffect(() => {
+        bookmarkStore.setCallback(setNounce);
         bookmarkStore.init();
-        bookmarkStore.setCallback(setNounce)
     }, []);
 
     return {

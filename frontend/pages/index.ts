@@ -9,3 +9,4 @@ export * from "./articles.page";
 export * from "./route.page";
 export * from "./about.page";
 export * from "./disclaimer.page";
+export * from "./bookmarks.page";

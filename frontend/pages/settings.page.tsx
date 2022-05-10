@@ -60,7 +60,9 @@ export const SettingsPage = (props: RoutePage) => {
             <div className="setting-group">
                 {
                     userStore.isAvailable() &&
-                    <div className="setting-item">
+                    <div className="setting-item"
+                        onClick={() => route("/bookmarks")}
+                        onKeydown={() => route("/bookmarks")}>
                         <ion-icon name="bookmarks-sharp"></ion-icon>
                         <span>My bookmarks</span>
                     </div>

@@ -45,6 +45,16 @@ class SeedsStore extends HookClass  {
 
         return results;
     }
+
+    getSeedByURL(url: string): SeedArticleItem | null {
+        if (this.seeds.length === 0) {
+            return null;
+        }
+
+        return this.seeds.find((seed: SeedArticleItem) => {
+            return seed.url === url;
+        });
+    }
 }
 
 const seedsStore: SeedsStore = new SeedsStore();

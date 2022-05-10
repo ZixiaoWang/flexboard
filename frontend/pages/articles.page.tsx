@@ -2,7 +2,6 @@
 
 import { Fragment, h } from "preact";
 import { useState, useEffect } from "preact/hooks";
-import { RoutePage } from "../interfaces";
 import { userStore, useBookmarkStore } from "../helpers";
 
 import FreightWaves from "../icons/freightwaves.png";
@@ -56,16 +55,31 @@ export const ArticlePage = (props: any) => {
                     {
                         window.navigator.share &&
                         <Fragment>
-                            <ion-icon name="share-outline" onClick={share}></ion-icon>
+                            <span className="blue40">
+                                <ion-icon name="share-outline" onClick={share}></ion-icon>
+                            </span>
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         </Fragment>
                     }
                     {
                         userStore.isAvailable() && 
-                        <ion-icon 
-                            onClick={() => bookmarkStore.toggleBookmark(article.url)}
-                            name={ bookmarkStore.hasBookmark(article.url) ? "bookmark" : "bookmark-outline"}>
-                        </ion-icon>
+                        <Fragment>
+                            {
+                                bookmarkStore.hasBookmark(article.url) ?
+                                <span className="red30">
+                                    <ion-icon 
+                                        onClick={() => bookmarkStore.toggleBookmark(article.url)}
+                                        name="bookmark">
+                                    </ion-icon>
+                                </span> :
+                                <span className="grey40">
+                                <ion-icon 
+                                    onClick={() => bookmarkStore.toggleBookmark(article.url)}
+                                    name="bookmark-outline">
+                                </ion-icon>
+                            </span>
+                            }
+                        </Fragment>
                     }
                 </div>
             </div>

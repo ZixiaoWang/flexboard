@@ -7,7 +7,7 @@ import { createHashHistory } from "history";
 
 import { useSeedsStore } from "./helpers";
 import { HeaderComponent, TabsComponent } from "./components";
-import { ArticlePage, IndicesPage, MessagesPage, Redirect, SearchPage, SeedsPage, SettingsPage, SplashPage, Route, AboutPage, DisclaimerPage } from "./pages";
+import { ArticlePage, IndicesPage, MessagesPage, Redirect, SearchPage, SeedsPage, SettingsPage, SplashPage, Route, AboutPage, DisclaimerPage, BookmarksPage } from "./pages";
 /** @jsx h */
 
 import "./styles/main.scss";
@@ -88,6 +88,7 @@ const App = () => {
             <Router history={hashHistory}>
                 <ArticlePage path="/seeds/:base64url" />
                 <DisclaimerPage path="/disclaimer" />
+                <BookmarksPage path="/bookmarks" />
                 <AboutPage path="/about" />
                 <Home path="/:rest*" />
             </Router>
