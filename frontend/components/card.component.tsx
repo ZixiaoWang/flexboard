@@ -13,7 +13,6 @@ export interface CardComponentProps {
 export const CardComponent = (props: CardComponentProps): VNode => {
     
     const seed: SeedArticleItem = props.seed;
-    console.log(seed)
     const base64url: string = window.btoa(seed.detailurl);
 
     const cardProps = {

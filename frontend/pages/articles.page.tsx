@@ -30,7 +30,6 @@ export const ArticlePage = (props: any) => {
     }
 
     const share = () => {
-        console.log("about to share")
         window.navigator.share({
             url: article.url,
             title: article.title,

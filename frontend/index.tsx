@@ -5,6 +5,7 @@ import { useState, useEffect } from "preact/hooks";
 import Router from "preact-router";
 import { createHashHistory } from "history";
 
+import { useSeedsStore } from "./helpers";
 import { HeaderComponent, TabsComponent } from "./components";
 import { ArticlePage, IndicesPage, MessagesPage, Redirect, SearchPage, SeedsPage, SettingsPage, SplashPage, Route, AboutPage } from "./pages";
 /** @jsx h */
@@ -60,18 +61,21 @@ const Home = (props: HomePageProps) => {
 const App = () => {
     const hashHistory = createHashHistory();
     const [splashVisibility, setSplashVisibility] = useState(true);
+    const {getSeeds} = useSeedsStore();
 
     const loadingTime: number = Math.round(Math.random() * 200);
     useEffect(() => {
-        setTimeout(() => {
-            const splashLogo: HTMLElement | null = document.getElementById("splashlogo");
-            if (splashLogo) {
-                splashLogo.classList.add("is-fading");
-            }
-        }, loadingTime);
-        setTimeout(() => {
-            setSplashVisibility(false);
-        } ,loadingTime + 500);
+        getSeeds().then(() => {
+            setTimeout(() => {
+                const splashLogo: HTMLElement | null = document.getElementById("splashlogo");
+                if (splashLogo) {
+                    splashLogo.classList.add("is-fading");
+                }
+            }, loadingTime);
+            setTimeout(() => {
+                setSplashVisibility(false);
+            } ,loadingTime + 500);
+        })
     }, [])
 
     if (splashVisibility) {
