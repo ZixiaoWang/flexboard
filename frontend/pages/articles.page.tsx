@@ -1,13 +1,38 @@
 import { h } from "preact";
+import { useState, useEffect } from "preact/hooks";
 import { RoutePage } from "../interfaces";
 
-import WSJIcon from "../icons/wsj.svg";
+import FreightWaves from "../icons/freightwaves.png";
+import axios, { AxiosResponse } from "axios";
+
+export interface ArticlePageProps {
+    base64url: string,
+}
 
 export const ArticlePage = (props: any) => {
+    const url: string = window.atob(props.base64url);
+
+    const [loading, setLoading] = useState(true);
+    const [article, setArticle] = useState(null);
+
+    useEffect(() => {
+        axios
+            .get(url)
+            .then((response: AxiosResponse) => {
+                const data = response.data;
+                setArticle(data);
+                setLoading(false);
+            })
+    }, []);
 
     const back = () => {
         history.back();
     }
+
+    if (loading) {
+        return <div>Loading</div>
+    }
+
 
     return (
         <div className="article">
@@ -22,36 +47,21 @@ export const ArticlePage = (props: any) => {
                 </div>
             </div>
             <div className="article-reference">
-                <img src={WSJIcon} alt="WSJ" />
+                <img src={FreightWaves} alt="Freight Waves" />
             </div>
-            <div className="article-thumbnail">
-                <img src="http://placekitten.com/640/360" alt="cat" />
-            </div>
+            {
+                article.thumbnail &&
+                <div className="article-thumbnail" style={{ backgroundImage: `url(${article.thumbnail})` }}></div>
+            }
             <div className="article-title">
-                Lorem ipsum dolor sit amet consectetur adipisicing.
+                { article.title }
             </div>
             <div className="article-label">
-                <div>Author: Davy Jones</div>
-                <div>Published at: 28 Feb, 2022</div>
+                <div>Author: { article.author }</div>
+                <div>Published at: { article.date }</div>
             </div>
             <hr />
-            <div className="article-content">
-                <p className="first-paragraph">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia molestias consequatur, cupiditate repudiandae modi cumque illum maiores harum? Repellat molestias nobis accusamus, quos harum perspiciatis cupiditate minus animi atque exercitationem! Ullam distinctio quas nobis.
-                </p>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam vero quam veritatis consectetur numquam quia ex. Aspernatur rem dolore rerum facilis sequi ipsum fugiat autem ea quasi quaerat beatae, nobis blanditiis impedit dicta aliquid voluptas totam sed dolorum at ullam. Incidunt, cumque! At, ad explicabo?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam maxime reprehenderit eius enim neque?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque mollitia error, iure doloribus ipsam, voluptas, corrupti iusto accusantium cupiditate perferendis tempore laborum libero magni dolorum. Nihil, ipsum rem id nemo molestias dolore, ducimus recusandae perferendis quam temporibus voluptatem! Esse accusantium cupiditate id ad placeat modi dolore culpa non tempore saepe sequi molestiae, maiores enim sint alias facilis expedita possimus earum eaque velit praesentium est. Porro corrupti similique, fugit blanditiis tenetur aliquam veniam maxime molestiae iste, beatae, distinctio fuga!
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit inventore ab nesciunt quisquam enim vel sunt. Debitis quaerat odio placeat voluptas magni. Praesentium.
-                </p>
-            </div>
+            <div className="article-content" dangerouslySetInnerHTML={{ __html: article.content }}></div>
             <hr />
         </div>
     )

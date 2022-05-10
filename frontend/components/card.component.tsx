@@ -1,40 +1,48 @@
+/// <reference path="../custom.d.ts" />
+
 import { h, VNode, } from "preact";
 import { route } from "preact-router";
+import { SeedArticleItem } from "../interfaces";
 
-import CNNIcon from "../icons/cnn.svg";
+import FreightWaves from "../icons/freightwaves.png";
 export interface CardComponentProps {
     size?: "small" | "medium" | "large",
-    title?: string,
-    thumbnail?: string,
-    date?: string,
-    bookmarked?: boolean,
-    read?: boolean,
-    id?: string,
+    seed: SeedArticleItem
 }
 
 export const CardComponent = (props: CardComponentProps): VNode => {
+    
+    const seed: SeedArticleItem = props.seed;
+    console.log(seed)
+    const base64url: string = window.btoa(seed.detailurl);
 
     const cardProps = {
-        onClick: () => route(`/seeds/${props.id}`)
+        onClick: () => route(`/seeds/${base64url}`)
     }
 
     if (props.size === "small") {
         return (
             <div className="card is-small" {...cardProps}>
-                <div className="card-row">
-                    <div className="card-img">
-                        <img src="http://placekitten.com/160/160" alt="cat" />
+                {
+                    seed.thumbnail ?
+                    <div className="card-row">
+                        <div className="card-img" style={{ backgroundImage: `url(${seed.thumbnail})` }}></div>
+                    </div> :
+                    <div className="card-row">
+                        <div className="card-img-placeholder">
+                            &nbsp;
+                        </div>
                     </div>
-                </div>
+                }
                 <div className="card-row">
                     <div className="card-reference">
-                        <img src={CNNIcon} alt="Cnn News" />
+                        <img src={FreightWaves} alt="Freight Waves" />
                     </div>
                     <div className="blue50 is-text-bold">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, excepturi.
+                        { seed.title }
                     </div>
                     <div className="is-text-xs grey40 has-margin-top-1">
-                        24 Feb, 2022
+                        { seed.date }
                     </div>
                 </div>
                 <div className="card-row grey40">
@@ -46,16 +54,16 @@ export const CardComponent = (props: CardComponentProps): VNode => {
     }
 
     return (
-        <div className="card is-large" style={{ backgroundImage: `url("http://placekitten.com/320/319")` }} {...cardProps}>
+        <div className="card is-large" style={{ backgroundImage: `url(${seed.thumbnail})` }} {...cardProps}>
             <div className="card-row">
                 <div className="card-title">
                     <div className="card-reference">
-                        <img src={CNNIcon} alt="Cnn News" />
+                        <img src={FreightWaves} alt="Freight Waves" />
                     </div>
-                    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis harum repellendus dignissimos amet temporibus!</span>
+                    <span>{seed.title}</span>
                     <div className="has-padding-top-3">
                         <span className="is-text-s">
-                            25 Mar, 2022
+                            {seed.date}
                         </span>
                     </div>
                 </div>

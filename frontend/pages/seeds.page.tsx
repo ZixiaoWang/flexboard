@@ -1,6 +1,8 @@
+import axios, { AxiosResponse } from "axios";
 import { Fragment, h } from "preact";
+import { useState, useEffect } from "preact/hooks";
 import { CardComponent } from "../components";
-import { RoutePage } from "../interfaces";
+import { RoutePage, SeedArticleItem, SeedResponse } from "../interfaces";
 
 const news = new Array(10).fill(0);
 
@@ -26,6 +28,24 @@ const Section = (props: SectionProps) => (
 )
 
 export const SeedsPage = (props: RoutePage) => {
+    const [loading, setLoading] = useState(true);
+    const [seeds, setSeeds] = useState([]);
+
+    useEffect(() => {
+        axios
+            .get("/data/manifest.json")
+            .then((response: AxiosResponse) => {
+                const seeds: SeedResponse = response.data;
+                const articles = seeds.articles;
+                setLoading(false);
+                setSeeds(articles);
+            })
+    }, []);
+
+    if (loading) {
+        return <div>Loading</div>
+    }
+
     return (
         <Fragment>
             <div className="cards">
@@ -48,7 +68,7 @@ export const SeedsPage = (props: RoutePage) => {
                     </div>
                 </div>
                 <Section label="Top News" hasSeparator>
-                    <CardComponent />
+                    <CardComponent size="large" seed={seeds[0]} />
                 </Section>
                 <div className="widges">
                     <div className="widge is-selected">All Categories</div>
@@ -60,7 +80,7 @@ export const SeedsPage = (props: RoutePage) => {
                     <div className="widge">Commercial</div>
                 </div>
                 <Section label="Seeds">
-                    {news.map(() => <CardComponent size="small" />)}
+                    {seeds.map((seed: SeedArticleItem) => <CardComponent size="small" seed={seed} />)}
                 </Section>
             </div>
         </Fragment>

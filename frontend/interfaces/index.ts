@@ -27,3 +27,17 @@ export interface GoogleSignInResponse {
     credential: string,
     select_by: string,
 }
+
+export interface SeedArticleItem {
+    index: number,
+    title: string,
+    date: string,
+    source: string,
+    url: string,
+    thumbnail: string | null,
+    detailurl: string | null,
+}
+
+export interface SeedResponse {
+    articles: Array<SeedArticleItem>
+}

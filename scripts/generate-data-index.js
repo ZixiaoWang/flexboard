@@ -18,7 +18,8 @@ const manifest_dir = path.resolve(data_dir, "manifest.json");
             url: content.url,
             title: content.title,
             date: content.date,
-            thumbnail: content.thumbnail
+            thumbnail: content.thumbnail,
+            detailurl: "data/articles/freightwaves/" + article
         });
 
         i++;

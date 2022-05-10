@@ -1,7 +1,7 @@
 module.exports = {
 	globDirectory: 'dist/',
 	globPatterns: [
-		'**/*.{css,png,svg,jpeg,jpg,html}'
+		'**/*.{css,png,svg,webp,jpeg,jpg,html}'
 	],
 	swDest: 'dist/sw.js',
 	ignoreURLParametersMatching: [
@@ -11,10 +11,7 @@ module.exports = {
 	sourcemap: false,
 	cleanupOutdatedCaches: true,
 	runtimeCaching: [{
-		urlPattern: /\.css$|\.png$|\.jpeg$|\.jpg$/,
-		handler: "CacheFirst"
-	}, {
-		urlPattern: /\.html$|\.js$/,
+		urlPattern: /\.html$|\.js$|\.css$|\.png$|\.jpeg$|\.jpg$|\.webp$/,
 		handler: "NetworkFirst"
 	}]
 };

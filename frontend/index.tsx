@@ -82,7 +82,7 @@ const App = () => {
         <Fragment>
             {/* @ts-ignore */}
             <Router history={hashHistory}>
-                <ArticlePage path="/seeds/:id" />
+                <ArticlePage path="/seeds/:base64url" />
                 <AboutPage path="/about" />
                 <Home path="/:rest*" />
             </Router>
