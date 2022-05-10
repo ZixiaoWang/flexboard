@@ -2407,7 +2407,7 @@ const CardComponent = (props)=>{
             columnNumber: 13
         },
         __self: undefined
-    }, seed.thumbnail && /*#__PURE__*/ _preact.h("div", {
+    }, seed.thumbnail ? /*#__PURE__*/ _preact.h("div", {
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
@@ -2426,11 +2426,27 @@ const CardComponent = (props)=>{
             columnNumber: 25
         },
         __self: undefined
-    })), /*#__PURE__*/ _preact.h("div", {
+    })) : /*#__PURE__*/ _preact.h("div", {
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
+            lineNumber: 31,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "card-img-placeholder",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
             lineNumber: 32,
+            columnNumber: 25
+        },
+        __self: undefined
+    }, "\xa0")), /*#__PURE__*/ _preact.h("div", {
+        className: "card-row",
+        __source: {
+            fileName: "frontend/components/card.component.tsx",
+            lineNumber: 37,
             columnNumber: 17
         },
         __self: undefined
@@ -2438,7 +2454,7 @@ const CardComponent = (props)=>{
         className: "card-reference",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 33,
+            lineNumber: 38,
             columnNumber: 21
         },
         __self: undefined
@@ -2447,7 +2463,7 @@ const CardComponent = (props)=>{
         alt: "Freight Waves",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 34,
+            lineNumber: 39,
             columnNumber: 25
         },
         __self: undefined
@@ -2455,7 +2471,7 @@ const CardComponent = (props)=>{
         className: "blue50 is-text-bold",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 36,
+            lineNumber: 41,
             columnNumber: 21
         },
         __self: undefined
@@ -2463,7 +2479,7 @@ const CardComponent = (props)=>{
         className: "is-text-xs grey40 has-margin-top-1",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 39,
+            lineNumber: 44,
             columnNumber: 21
         },
         __self: undefined
@@ -2471,7 +2487,7 @@ const CardComponent = (props)=>{
         className: "card-row grey40",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 43,
+            lineNumber: 48,
             columnNumber: 17
         },
         __self: undefined
@@ -2479,7 +2495,7 @@ const CardComponent = (props)=>{
         name: "bookmark",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 44,
+            lineNumber: 49,
             columnNumber: 21
         },
         __self: undefined
@@ -2487,7 +2503,7 @@ const CardComponent = (props)=>{
         name: "calendar",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 45,
+            lineNumber: 50,
             columnNumber: 21
         },
         __self: undefined
@@ -2500,7 +2516,7 @@ const CardComponent = (props)=>{
         ...cardProps,
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 52,
+            lineNumber: 57,
             columnNumber: 9
         },
         __self: undefined
@@ -2508,7 +2524,7 @@ const CardComponent = (props)=>{
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 53,
+            lineNumber: 58,
             columnNumber: 13
         },
         __self: undefined
@@ -2516,7 +2532,7 @@ const CardComponent = (props)=>{
         className: "card-title",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 54,
+            lineNumber: 59,
             columnNumber: 17
         },
         __self: undefined
@@ -2524,7 +2540,7 @@ const CardComponent = (props)=>{
         className: "card-reference",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 55,
+            lineNumber: 60,
             columnNumber: 21
         },
         __self: undefined
@@ -2533,14 +2549,14 @@ const CardComponent = (props)=>{
         alt: "Freight Waves",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 56,
+            lineNumber: 61,
             columnNumber: 25
         },
         __self: undefined
     })), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 58,
+            lineNumber: 63,
             columnNumber: 21
         },
         __self: undefined
@@ -2548,7 +2564,7 @@ const CardComponent = (props)=>{
         className: "has-padding-top-3",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 59,
+            lineNumber: 64,
             columnNumber: 21
         },
         __self: undefined
@@ -2556,7 +2572,7 @@ const CardComponent = (props)=>{
         className: "is-text-s",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 60,
+            lineNumber: 65,
             columnNumber: 25
         },
         __self: undefined
@@ -3588,13 +3604,13 @@ const SeedsPage = (props)=>{
             columnNumber: 17
         },
         __self: undefined
-    }, seeds1.map((seed)=>/*#__PURE__*/ _preact.h(_components.CardComponent, {
+    }, seeds1.slice(1).map((seed)=>/*#__PURE__*/ _preact.h(_components.CardComponent, {
             size: "small",
             seed: seed,
             __source: {
                 fileName: "frontend/pages/seeds.page.tsx",
-                lineNumber: 83,
-                columnNumber: 59
+                lineNumber: 86,
+                columnNumber: 61
             },
             __self: undefined
         })
@@ -8282,7 +8298,7 @@ const ArticlePage = (props)=>{
     }));
 };
 
-},{"preact":"cwEwC","preact/hooks":"97VL9","axios":"gIwns","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","../icons/freightwaves.png":"aiuzK"}],"hCEyC":[function(require,module,exports) {
+},{"preact":"cwEwC","preact/hooks":"97VL9","../icons/freightwaves.png":"aiuzK","axios":"gIwns","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"hCEyC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Route", ()=>Route
