@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { Fragment, h } from "preact";
 import { useState, useEffect } from "preact/hooks";
 import { RoutePage } from "../interfaces";
 
@@ -29,6 +29,15 @@ export const ArticlePage = (props: any) => {
         history.back();
     }
 
+    const share = () => {
+        console.log("about to share")
+        window.navigator.share({
+            url: article.url,
+            title: article.title,
+            text: article.caption || article.title
+        })
+    }
+
     if (loading) {
         return <div>Loading</div>
     }
@@ -41,8 +50,13 @@ export const ArticlePage = (props: any) => {
                     <ion-icon name="chevron-back"></ion-icon>
                 </div>
                 <div className="is-level-right is-flex is-vertical-center">
-                    <ion-icon name="share-outline"></ion-icon>
-                    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    {
+                        window.navigator.share &&
+                        <Fragment>
+                            <ion-icon name="share-outline" onClick={share}></ion-icon>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        </Fragment>
+                    }
                     <ion-icon name="bookmark-outline"></ion-icon>
                 </div>
             </div>
