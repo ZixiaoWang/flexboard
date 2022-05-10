@@ -521,6 +521,7 @@ var _hooks = require("preact/hooks");
 var _preactRouter = require("preact-router");
 var _preactRouterDefault = parcelHelpers.interopDefault(_preactRouter);
 var _history = require("history");
+var _helpers = require("./helpers");
 var _components = require("./components");
 var _pages = require("./pages");
 /** @jsx h */ var _mainScss = require("./styles/main.scss");
@@ -536,14 +537,14 @@ const Home = (props)=>{
     return /*#__PURE__*/ _preact.h(_preact.Fragment, {
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 43,
+            lineNumber: 44,
             columnNumber: 9
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h(_components.TabsComponent, {
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 44,
+            lineNumber: 45,
             columnNumber: 9
         },
         __self: undefined
@@ -551,7 +552,7 @@ const Home = (props)=>{
         className: "container",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 45,
+            lineNumber: 46,
             columnNumber: 9
         },
         __self: undefined
@@ -559,42 +560,42 @@ const Home = (props)=>{
         className: "page",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 46,
+            lineNumber: 47,
             columnNumber: 13
         },
         __self: undefined
     }, rest === "seeds" && /*#__PURE__*/ _preact.h(_pages.SeedsPage, {
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 47,
+            lineNumber: 48,
             columnNumber: 38
         },
         __self: undefined
     }), rest === "search" && /*#__PURE__*/ _preact.h(_pages.SearchPage, {
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 48,
+            lineNumber: 49,
             columnNumber: 39
         },
         __self: undefined
     }), rest === "indices" && /*#__PURE__*/ _preact.h(_pages.IndicesPage, {
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 49,
+            lineNumber: 50,
             columnNumber: 40
         },
         __self: undefined
     }), rest === "messages" && /*#__PURE__*/ _preact.h(_pages.MessagesPage, {
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 50,
+            lineNumber: 51,
             columnNumber: 41
         },
         __self: undefined
     }), rest === "settings" && /*#__PURE__*/ _preact.h(_pages.SettingsPage, {
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 51,
+            lineNumber: 52,
             columnNumber: 41
         },
         __self: undefined
@@ -603,14 +604,14 @@ const Home = (props)=>{
         to: "/seeds",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 52,
+            lineNumber: 53,
             columnNumber: 64
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h(_components.HeaderComponent, {
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 53,
+            lineNumber: 54,
             columnNumber: 17
         },
         __self: undefined
@@ -619,20 +620,23 @@ const Home = (props)=>{
 const App = ()=>{
     const hashHistory = _history.createHashHistory();
     const [splashVisibility, setSplashVisibility] = _hooks.useState(true);
+    const { getSeeds  } = _helpers.useSeedsStore();
     const loadingTime = Math.round(Math.random() * 200);
     _hooks.useEffect(()=>{
-        setTimeout(()=>{
-            const splashLogo = document.getElementById("splashlogo");
-            if (splashLogo) splashLogo.classList.add("is-fading");
-        }, loadingTime);
-        setTimeout(()=>{
-            setSplashVisibility(false);
-        }, loadingTime + 500);
+        getSeeds().then(()=>{
+            setTimeout(()=>{
+                const splashLogo = document.getElementById("splashlogo");
+                if (splashLogo) splashLogo.classList.add("is-fading");
+            }, loadingTime);
+            setTimeout(()=>{
+                setSplashVisibility(false);
+            }, loadingTime + 500);
+        });
     }, []);
     if (splashVisibility) return /*#__PURE__*/ _preact.h(_pages.SplashPage, {
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 78,
+            lineNumber: 82,
             columnNumber: 16
         },
         __self: undefined
@@ -640,7 +644,7 @@ const App = ()=>{
     return /*#__PURE__*/ _preact.h(_preact.Fragment, {
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 82,
+            lineNumber: 86,
             columnNumber: 9
         },
         __self: undefined
@@ -648,7 +652,7 @@ const App = ()=>{
         history: hashHistory,
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 84,
+            lineNumber: 88,
             columnNumber: 13
         },
         __self: undefined
@@ -656,7 +660,7 @@ const App = ()=>{
         path: "/seeds/:base64url",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 85,
+            lineNumber: 89,
             columnNumber: 17
         },
         __self: undefined
@@ -664,7 +668,7 @@ const App = ()=>{
         path: "/about",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 86,
+            lineNumber: 90,
             columnNumber: 17
         },
         __self: undefined
@@ -672,7 +676,7 @@ const App = ()=>{
         path: "/:rest*",
         __source: {
             fileName: "frontend/index.tsx",
-            lineNumber: 87,
+            lineNumber: 91,
             columnNumber: 17
         },
         __self: undefined
@@ -681,13 +685,13 @@ const App = ()=>{
 _preact.render(/*#__PURE__*/ _preact.h(App, {
     __source: {
         fileName: "frontend/index.tsx",
-        lineNumber: 94,
+        lineNumber: 98,
         columnNumber: 5
     },
     __self: undefined
 }), document.getElementById("root"));
 
-},{"preact":"cwEwC","preact/hooks":"97VL9","preact-router":"gXK85","history":"5vYEI","./components":"1IJMQ","./pages":"9RWB4","./styles/main.scss":"8qykB","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"cwEwC":[function(require,module,exports) {
+},{"preact":"cwEwC","preact/hooks":"97VL9","preact-router":"gXK85","history":"5vYEI","./components":"1IJMQ","./pages":"9RWB4","./styles/main.scss":"8qykB","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./helpers":"dtOhO"}],"cwEwC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "render", ()=>S
@@ -2393,7 +2397,6 @@ var _freightwavesPng = require("../icons/freightwaves.png");
 var _freightwavesPngDefault = parcelHelpers.interopDefault(_freightwavesPng);
 const CardComponent = (props)=>{
     const seed = props.seed;
-    console.log(seed);
     const base64url = window.btoa(seed.detailurl);
     const cardProps = {
         onClick: ()=>_preactRouter.route(`/seeds/${base64url}`)
@@ -2403,7 +2406,7 @@ const CardComponent = (props)=>{
         ...cardProps,
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 25,
+            lineNumber: 24,
             columnNumber: 13
         },
         __self: undefined
@@ -2411,7 +2414,7 @@ const CardComponent = (props)=>{
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 28,
+            lineNumber: 27,
             columnNumber: 21
         },
         __self: undefined
@@ -2422,7 +2425,7 @@ const CardComponent = (props)=>{
         },
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 29,
+            lineNumber: 28,
             columnNumber: 25
         },
         __self: undefined
@@ -2430,7 +2433,7 @@ const CardComponent = (props)=>{
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 31,
+            lineNumber: 30,
             columnNumber: 21
         },
         __self: undefined
@@ -2438,7 +2441,7 @@ const CardComponent = (props)=>{
         className: "card-img-placeholder",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 32,
+            lineNumber: 31,
             columnNumber: 25
         },
         __self: undefined
@@ -2446,7 +2449,7 @@ const CardComponent = (props)=>{
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 37,
+            lineNumber: 36,
             columnNumber: 17
         },
         __self: undefined
@@ -2454,7 +2457,7 @@ const CardComponent = (props)=>{
         className: "card-reference",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 38,
+            lineNumber: 37,
             columnNumber: 21
         },
         __self: undefined
@@ -2463,7 +2466,7 @@ const CardComponent = (props)=>{
         alt: "Freight Waves",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 39,
+            lineNumber: 38,
             columnNumber: 25
         },
         __self: undefined
@@ -2471,7 +2474,7 @@ const CardComponent = (props)=>{
         className: "blue50 is-text-bold",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 41,
+            lineNumber: 40,
             columnNumber: 21
         },
         __self: undefined
@@ -2479,7 +2482,7 @@ const CardComponent = (props)=>{
         className: "is-text-xs grey40 has-margin-top-1",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 44,
+            lineNumber: 43,
             columnNumber: 21
         },
         __self: undefined
@@ -2487,7 +2490,7 @@ const CardComponent = (props)=>{
         className: "card-row grey40",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 48,
+            lineNumber: 47,
             columnNumber: 17
         },
         __self: undefined
@@ -2495,7 +2498,7 @@ const CardComponent = (props)=>{
         name: "bookmark",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 49,
+            lineNumber: 48,
             columnNumber: 21
         },
         __self: undefined
@@ -2503,7 +2506,7 @@ const CardComponent = (props)=>{
         name: "calendar",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 50,
+            lineNumber: 49,
             columnNumber: 21
         },
         __self: undefined
@@ -2516,7 +2519,7 @@ const CardComponent = (props)=>{
         ...cardProps,
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 57,
+            lineNumber: 56,
             columnNumber: 9
         },
         __self: undefined
@@ -2524,7 +2527,7 @@ const CardComponent = (props)=>{
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 58,
+            lineNumber: 57,
             columnNumber: 13
         },
         __self: undefined
@@ -2532,7 +2535,7 @@ const CardComponent = (props)=>{
         className: "card-title",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 59,
+            lineNumber: 58,
             columnNumber: 17
         },
         __self: undefined
@@ -2540,7 +2543,7 @@ const CardComponent = (props)=>{
         className: "card-reference",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 60,
+            lineNumber: 59,
             columnNumber: 21
         },
         __self: undefined
@@ -2549,14 +2552,14 @@ const CardComponent = (props)=>{
         alt: "Freight Waves",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 61,
+            lineNumber: 60,
             columnNumber: 25
         },
         __self: undefined
     })), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 63,
+            lineNumber: 62,
             columnNumber: 21
         },
         __self: undefined
@@ -2564,7 +2567,7 @@ const CardComponent = (props)=>{
         className: "has-padding-top-3",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 64,
+            lineNumber: 63,
             columnNumber: 21
         },
         __self: undefined
@@ -2572,7 +2575,7 @@ const CardComponent = (props)=>{
         className: "is-text-s",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 65,
+            lineNumber: 64,
             columnNumber: 25
         },
         __self: undefined
@@ -2874,29 +2877,42 @@ var _helpers = require("../helpers");
 let SearchPageEnum;
 (function(SearchPageEnum1) {
     SearchPageEnum1[SearchPageEnum1["HISTORIES"] = 0] = "HISTORIES";
-    SearchPageEnum1[SearchPageEnum1["SUGGESTIONS"] = 1] = "SUGGESTIONS";
-    SearchPageEnum1[SearchPageEnum1["RESULTS"] = 2] = "RESULTS";
-    SearchPageEnum1[SearchPageEnum1["LOADING"] = 3] = "LOADING";
+    SearchPageEnum1[SearchPageEnum1["RESULTS"] = 1] = "RESULTS";
+    SearchPageEnum1[SearchPageEnum1["LOADING"] = 2] = "LOADING";
 })(SearchPageEnum || (SearchPageEnum = {}));
+const FEATURED_TOPICS = [
+    "ukrainian",
+    "covid",
+    "volume",
+    "trucking"
+];
 const SearchPage = (props)=>{
     const [status, setStatus] = _hooks.useState(SearchPageEnum.HISTORIES);
     const [keywords, setKeywords] = _hooks.useState("");
-    const [results, setResults] = _hooks.useState([
-        1,
-        2,
-        3,
-        4,
-        5
-    ]);
+    const [results, setResults] = _hooks.useState([]);
     const { searchStore  } = _helpers.useSearchStore();
+    const { seedsStore  } = _helpers.useSeedsStore();
     const deleteHistories = ()=>{
         if (window.confirm("Do you want to delete all searching histories?")) searchStore.deleteAllHistory();
     };
     const search = (event)=>{
         event.preventDefault();
         setStatus(SearchPageEnum.LOADING);
-        setTimeout(()=>setStatus(SearchPageEnum.RESULTS)
-        , 2000);
+        setTimeout(()=>{
+            const resultArr = seedsStore.findByKeywords(keywords);
+            setResults(resultArr);
+            setStatus(SearchPageEnum.RESULTS);
+        }, 1000 + Math.floor(Math.random() * 1000));
+        searchStore.addHistory(keywords);
+    };
+    const directSearch = (keyword)=>{
+        setKeywords(keyword);
+        setStatus(SearchPageEnum.LOADING);
+        setTimeout(()=>{
+            const resultArr = seedsStore.findByKeywords(keyword);
+            setResults(resultArr);
+            setStatus(SearchPageEnum.RESULTS);
+        }, 1000 + Math.floor(Math.random() * 1000));
         searchStore.addHistory(keywords);
     };
     const renderLoading = ()=>{
@@ -2904,7 +2920,7 @@ const SearchPage = (props)=>{
             className: "search-results",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 35,
+                lineNumber: 57,
                 columnNumber: 13
             },
             __self: undefined
@@ -2915,7 +2931,7 @@ const SearchPage = (props)=>{
             className: "search-results",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 43,
+                lineNumber: 65,
                 columnNumber: 13
             },
             __self: undefined
@@ -2923,11 +2939,11 @@ const SearchPage = (props)=>{
             return /*#__PURE__*/ _preact.h("div", {
                 key: index,
                 className: "search-result",
-                onClick: ()=>_preactRouter.route("/seeds/" + result.toString())
+                onClick: ()=>_preactRouter.route("/seeds/" + window.btoa(result.detailurl))
                 ,
                 __source: {
                     fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 46,
+                    lineNumber: 68,
                     columnNumber: 25
                 },
                 __self: undefined
@@ -2935,83 +2951,26 @@ const SearchPage = (props)=>{
                 className: "search-result-url",
                 __source: {
                     fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 49,
+                    lineNumber: 71,
                     columnNumber: 29
                 },
                 __self: undefined
-            }, "https://placekittn.com/900/460"), /*#__PURE__*/ _preact.h("div", {
+            }, result.url), /*#__PURE__*/ _preact.h("div", {
                 className: "search-result-title",
                 __source: {
                     fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 50,
+                    lineNumber: 74,
                     columnNumber: 29
                 },
                 __self: undefined
-            }, "Lorem ipsum dolor sit amet consectetur adipisicing elit."), /*#__PURE__*/ _preact.h("div", {
-                className: "search-result-description",
-                __source: {
-                    fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 53,
-                    columnNumber: 29
-                },
-                __self: undefined
-            }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, deleniti vero officia ", /*#__PURE__*/ _preact.h("b", {
-                __source: {
-                    fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 55,
-                    columnNumber: 65
-                },
-                __self: undefined
-            }, "doloremque"), " maiores odit at incidunt, libero dignissimos fuga ", /*#__PURE__*/ _preact.h("b", {
-                __source: {
-                    fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 56,
-                    columnNumber: 70
-                },
-                __self: undefined
-            }, "facere"), "voluptate veniam totam omnis quos. Autem quaerat quas temporibus hic assumenda?"));
+            }, result.title));
         }));
-    };
-    const renderSearchSuggestions = ()=>{
-        return /*#__PURE__*/ _preact.h("div", {
-            className: "search-suggestions",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 69,
-                columnNumber: 13
-            },
-            __self: undefined
-        }, /*#__PURE__*/ _preact.h("div", {
-            className: "search-suggestion",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 70,
-                columnNumber: 17
-            },
-            __self: undefined
-        }, "Ocean shipment"), /*#__PURE__*/ _preact.h("div", {
-            className: "search-suggestion",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 71,
-                columnNumber: 17
-            },
-            __self: undefined
-        }, "Air shipment"), /*#__PURE__*/ _preact.h("div", {
-            className: "search-suggestion",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 72,
-                columnNumber: 17
-            },
-            __self: undefined
-        }, "Trucking"));
     };
     const renderHistories = ()=>{
         return /*#__PURE__*/ _preact.h(_preact.Fragment, {
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 79,
+                lineNumber: 86,
                 columnNumber: 13
             },
             __self: undefined
@@ -3019,7 +2978,7 @@ const SearchPage = (props)=>{
             className: "has-margin-top-6",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 80,
+                lineNumber: 87,
                 columnNumber: 17
             },
             __self: undefined
@@ -3027,7 +2986,7 @@ const SearchPage = (props)=>{
             className: "search-row",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 81,
+                lineNumber: 88,
                 columnNumber: 17
             },
             __self: undefined
@@ -3035,39 +2994,26 @@ const SearchPage = (props)=>{
             className: "search-title",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 82,
+                lineNumber: 89,
                 columnNumber: 21
             },
             __self: undefined
-        }, "Featured Topics"), /*#__PURE__*/ _preact.h("div", {
-            className: "search-item",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 85,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "Flexport"), /*#__PURE__*/ _preact.h("div", {
-            className: "search-item",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 88,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "Shipments"), /*#__PURE__*/ _preact.h("div", {
-            className: "search-item",
-            __source: {
-                fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 91,
-                columnNumber: 21
-            },
-            __self: undefined
-        }, "Air shipment")), /*#__PURE__*/ _preact.h("div", {
+        }, "Featured Topics"), FEATURED_TOPICS.map((topic)=>/*#__PURE__*/ _preact.h("div", {
+                className: "search-item",
+                onClick: ()=>directSearch(topic)
+                ,
+                __source: {
+                    fileName: "frontend/pages/search.page.tsx",
+                    lineNumber: 94,
+                    columnNumber: 29
+                },
+                __self: undefined
+            }, topic)
+        )), /*#__PURE__*/ _preact.h("div", {
             className: "search-row",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 95,
+                lineNumber: 100,
                 columnNumber: 17
             },
             __self: undefined
@@ -3075,7 +3021,7 @@ const SearchPage = (props)=>{
             className: "search-title is-level",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 96,
+                lineNumber: 101,
                 columnNumber: 21
             },
             __self: undefined
@@ -3083,7 +3029,7 @@ const SearchPage = (props)=>{
             className: "is-level-left",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 97,
+                lineNumber: 102,
                 columnNumber: 25
             },
             __self: undefined
@@ -3093,21 +3039,21 @@ const SearchPage = (props)=>{
             onKeyDown: deleteHistories,
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 98,
+                lineNumber: 103,
                 columnNumber: 25
             },
             __self: undefined
         }, /*#__PURE__*/ _preact.h("span", {
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 101,
+                lineNumber: 106,
                 columnNumber: 29
             },
             __self: undefined
         }, "Delete all"), /*#__PURE__*/ _preact.h("span", {
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 102,
+                lineNumber: 107,
                 columnNumber: 29
             },
             __self: undefined
@@ -3115,7 +3061,7 @@ const SearchPage = (props)=>{
             name: "trash-sharp",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 103,
+                lineNumber: 108,
                 columnNumber: 29
             },
             __self: undefined
@@ -3123,7 +3069,7 @@ const SearchPage = (props)=>{
                 className: "search-item",
                 __source: {
                     fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 110,
+                    lineNumber: 115,
                     columnNumber: 33
                 },
                 __self: undefined
@@ -3134,7 +3080,7 @@ const SearchPage = (props)=>{
         className: "search",
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 121,
+            lineNumber: 126,
             columnNumber: 9
         },
         __self: undefined
@@ -3142,7 +3088,7 @@ const SearchPage = (props)=>{
         className: "search-row",
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 122,
+            lineNumber: 127,
             columnNumber: 13
         },
         __self: undefined
@@ -3150,7 +3096,7 @@ const SearchPage = (props)=>{
         onSubmit: search,
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 123,
+            lineNumber: 128,
             columnNumber: 17
         },
         __self: undefined
@@ -3158,7 +3104,7 @@ const SearchPage = (props)=>{
         className: "search-input",
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 124,
+            lineNumber: 129,
             columnNumber: 21
         },
         __self: undefined
@@ -3167,15 +3113,11 @@ const SearchPage = (props)=>{
         id: "searchinput",
         placeholder: "Try Ryan Petersen",
         value: keywords,
-        onChange: (event)=>setKeywords(event?.target?.value)
-        ,
-        onFocus: ()=>setStatus(SearchPageEnum.SUGGESTIONS)
-        ,
-        onBlur: ()=>setStatus(SearchPageEnum.HISTORIES)
+        onChange: (event)=>setKeywords(event.target.value)
         ,
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 125,
+            lineNumber: 130,
             columnNumber: 25
         },
         __self: undefined
@@ -3184,11 +3126,11 @@ const SearchPage = (props)=>{
         onClick: search,
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 132,
+            lineNumber: 135,
             columnNumber: 25
         },
         __self: undefined
-    })))), status === SearchPageEnum.LOADING && renderLoading(), status === SearchPageEnum.HISTORIES && renderHistories(), status === SearchPageEnum.SUGGESTIONS && renderSearchSuggestions(), status === SearchPageEnum.RESULTS && renderSearchResults());
+    })))), status === SearchPageEnum.LOADING && renderLoading(), status === SearchPageEnum.HISTORIES && renderHistories(), status === SearchPageEnum.RESULTS && renderSearchResults());
 };
 
 },{"preact":"cwEwC","preact-router":"gXK85","preact/hooks":"97VL9","../helpers":"dtOhO","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"dtOhO":[function(require,module,exports) {
@@ -3202,8 +3144,10 @@ var _userStore = require("./userStore");
 parcelHelpers.exportAll(_userStore, exports);
 var _searchStore = require("./searchStore");
 parcelHelpers.exportAll(_searchStore, exports);
+var _seedsStore = require("./seedsStore");
+parcelHelpers.exportAll(_seedsStore, exports);
 
-},{"./decodeJWT":"1trgr","./googleAuth":"5PK59","./userStore":"cx4a0","./searchStore":"6TqAD","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1trgr":[function(require,module,exports) {
+},{"./decodeJWT":"1trgr","./googleAuth":"5PK59","./userStore":"cx4a0","./searchStore":"6TqAD","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./seedsStore":"ixOWY"}],"1trgr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "decodeJWT", ()=>decodeJWT
@@ -3381,243 +3325,66 @@ const useSearchStore = ()=>{
     };
 };
 
-},{"preact/hooks":"97VL9","./hookClass":"3IghV","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"8BcV2":[function(require,module,exports) {
+},{"preact/hooks":"97VL9","./hookClass":"3IghV","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"ixOWY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "SeedsPage", ()=>SeedsPage
+parcelHelpers.export(exports, "useSeedsStore", ()=>useSeedsStore
 );
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _preact = require("preact");
 var _hooks = require("preact/hooks");
-var _components = require("../components");
-const news = new Array(10).fill(0);
-const Section = (props)=>/*#__PURE__*/ _preact.h(_preact.Fragment, {
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 16,
-            columnNumber: 5
-        },
-        __self: undefined
-    }, props.label && /*#__PURE__*/ _preact.h("div", {
-        className: "has-padding-1",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 19,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("h3", {
-        className: "red30",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 20,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, props.label)), props.children, props.hasSeparator && /*#__PURE__*/ _preact.h("hr", {
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 25,
-            columnNumber: 35
-        },
-        __self: undefined
-    }))
-;
-const SeedsPage = (props)=>{
-    const [loading, setLoading] = _hooks.useState(true);
-    const [seeds1, setSeeds] = _hooks.useState([]);
-    _hooks.useEffect(()=>{
-        _axiosDefault.default.get("/data/manifest.json").then((response)=>{
+var _hookClass = require("./hookClass");
+class SeedsStore extends _hookClass.HookClass {
+    seeds = [];
+    lastTimeGetSeeds = -1;
+    constructor(){
+        super();
+        window.seedsStore = this;
+    }
+    init() {
+        if (this.lastTimeGetSeeds === -1 || Date.now() - this.lastTimeGetSeeds > 600000) return _axiosDefault.default.get("/data/manifest.json").then((response)=>{
             const seeds = response.data;
-            const articles = seeds.articles;
-            setLoading(false);
-            setSeeds(articles);
+            this.seeds = seeds.articles;
+            this.invokeCallbacks();
         });
+        else return this.seeds;
+    }
+    findByKeywords(keywords) {
+        if (this.seeds.length === 0) return [];
+        const keywordArr = keywords.trim().split(" ").filter((word)=>Boolean(word)
+        );
+        const results = [];
+        keywordArr.forEach((keyword)=>{
+            this.seeds.forEach((seed)=>{
+                if (seed.title.toLocaleLowerCase().indexOf(keyword.toLocaleLowerCase()) !== -1) results.push(seed);
+            });
+        });
+        return results;
+    }
+}
+const seedsStore = new SeedsStore();
+const useSeedsStore = ()=>{
+    const [nounce, setNounce] = _hooks.useState(Math.random());
+    const [loading, setLoading] = _hooks.useState(true);
+    _hooks.useEffect(()=>{
+        seedsStore.setCallback(setNounce);
     }, []);
-    if (loading) return /*#__PURE__*/ _preact.h("div", {
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 46,
-            columnNumber: 16
-        },
-        __self: undefined
-    }, "Loading");
-    return /*#__PURE__*/ _preact.h(_preact.Fragment, {
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 50,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "cards",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 51,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "seed-boxes",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 52,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "seed-box",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 53,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "is-text-s white",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 54,
-            columnNumber: 25
-        },
-        __self: undefined
-    }, "Current FBX"), /*#__PURE__*/ _preact.h("div", {
-        className: "is-text-xxl green30",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 57,
-            columnNumber: 25
-        },
-        __self: undefined
-    }, "$5,430")), /*#__PURE__*/ _preact.h("div", {
-        className: "seed-box",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 61,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "is-text-s white",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 62,
-            columnNumber: 25
-        },
-        __self: undefined
-    }, "Volatility"), /*#__PURE__*/ _preact.h("div", {
-        className: "is-text-xxl red30",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 65,
-            columnNumber: 25
-        },
-        __self: undefined
-    }, "1.23%"))), /*#__PURE__*/ _preact.h(Section, {
-        label: "Top News",
-        hasSeparator: true,
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 70,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h(_components.CardComponent, {
-        size: "large",
-        seed: seeds1[0],
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 71,
-            columnNumber: 21
-        },
-        __self: undefined
-    })), /*#__PURE__*/ _preact.h("div", {
-        className: "widges",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 73,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _preact.h("div", {
-        className: "widge is-selected",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 74,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "All Categories"), /*#__PURE__*/ _preact.h("div", {
-        className: "widge",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 75,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "Ocean"), /*#__PURE__*/ _preact.h("div", {
-        className: "widge",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 76,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "Air"), /*#__PURE__*/ _preact.h("div", {
-        className: "widge",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 77,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "Trucking"), /*#__PURE__*/ _preact.h("div", {
-        className: "widge",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 78,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "COVID"), /*#__PURE__*/ _preact.h("div", {
-        className: "widge",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 79,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "Tenology"), /*#__PURE__*/ _preact.h("div", {
-        className: "widge",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 80,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "Commercial")), /*#__PURE__*/ _preact.h(Section, {
-        label: "Seeds",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 82,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, seeds1.slice(1).map((seed)=>/*#__PURE__*/ _preact.h(_components.CardComponent, {
-            size: "small",
-            seed: seed,
-            __source: {
-                fileName: "frontend/pages/seeds.page.tsx",
-                lineNumber: 86,
-                columnNumber: 61
-            },
-            __self: undefined
-        })
-    ))));
+    const getSeeds = async ()=>{
+        setLoading(true);
+        await seedsStore.init();
+        setLoading(false);
+    };
+    return {
+        seedsStore,
+        nounce,
+        loading,
+        setNounce,
+        setLoading,
+        getSeeds
+    };
 };
 
-},{"axios":"gIwns","preact":"cwEwC","preact/hooks":"97VL9","../components":"1IJMQ","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"gIwns":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./hookClass":"3IghV","axios":"gIwns","preact/hooks":"97VL9"}],"gIwns":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"lNH3U"}],"lNH3U":[function(require,module,exports) {
@@ -7824,7 +7591,236 @@ var utils = require('./../utils');
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-},{"./../utils":"lbtnr"}],"76mfA":[function(require,module,exports) {
+},{"./../utils":"lbtnr"}],"8BcV2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SeedsPage", ()=>SeedsPage
+);
+var _preact = require("preact");
+var _hooks = require("preact/hooks");
+var _components = require("../components");
+var _helpers = require("../helpers");
+const Section = (props)=>/*#__PURE__*/ _preact.h(_preact.Fragment, {
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 14,
+            columnNumber: 5
+        },
+        __self: undefined
+    }, props.label && /*#__PURE__*/ _preact.h("div", {
+        className: "has-padding-1",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 17,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("h3", {
+        className: "red30",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 18,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, props.label)), props.children, props.hasSeparator && /*#__PURE__*/ _preact.h("hr", {
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 23,
+            columnNumber: 35
+        },
+        __self: undefined
+    }))
+;
+const SeedsPage = (props)=>{
+    const { seedsStore , loading , getSeeds  } = _helpers.useSeedsStore();
+    const seeds = seedsStore.seeds;
+    _hooks.useEffect(()=>{
+        getSeeds();
+    }, []);
+    if (loading) return /*#__PURE__*/ _preact.h("div", {
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 37,
+            columnNumber: 16
+        },
+        __self: undefined
+    }, "Loading");
+    return /*#__PURE__*/ _preact.h(_preact.Fragment, {
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 41,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "cards",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 42,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "seed-boxes",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 43,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "seed-box",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 44,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "is-text-s white",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 45,
+            columnNumber: 25
+        },
+        __self: undefined
+    }, "Current FBX"), /*#__PURE__*/ _preact.h("div", {
+        className: "is-text-xxl green30",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 48,
+            columnNumber: 25
+        },
+        __self: undefined
+    }, "$5,430")), /*#__PURE__*/ _preact.h("div", {
+        className: "seed-box",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 52,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "is-text-s white",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 53,
+            columnNumber: 25
+        },
+        __self: undefined
+    }, "Volatility"), /*#__PURE__*/ _preact.h("div", {
+        className: "is-text-xxl red30",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 56,
+            columnNumber: 25
+        },
+        __self: undefined
+    }, "1.23%"))), /*#__PURE__*/ _preact.h(Section, {
+        label: "Top News",
+        hasSeparator: true,
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 61,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h(_components.CardComponent, {
+        size: "large",
+        seed: seeds[0],
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 62,
+            columnNumber: 21
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _preact.h("div", {
+        className: "widges",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 64,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("div", {
+        className: "widge is-selected",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 65,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "All Categories"), /*#__PURE__*/ _preact.h("div", {
+        className: "widge",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 66,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Ocean"), /*#__PURE__*/ _preact.h("div", {
+        className: "widge",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 67,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Air"), /*#__PURE__*/ _preact.h("div", {
+        className: "widge",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 68,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Trucking"), /*#__PURE__*/ _preact.h("div", {
+        className: "widge",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 69,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "COVID"), /*#__PURE__*/ _preact.h("div", {
+        className: "widge",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 70,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Tenology"), /*#__PURE__*/ _preact.h("div", {
+        className: "widge",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 71,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Commercial")), /*#__PURE__*/ _preact.h(Section, {
+        label: "Seeds",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 73,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, seeds.slice(1).map((seed)=>/*#__PURE__*/ _preact.h(_components.CardComponent, {
+            size: "small",
+            seed: seed,
+            __source: {
+                fileName: "frontend/pages/seeds.page.tsx",
+                lineNumber: 77,
+                columnNumber: 61
+            },
+            __self: undefined
+        })
+    ))));
+};
+
+},{"preact":"cwEwC","../components":"1IJMQ","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","../helpers":"dtOhO","preact/hooks":"97VL9"}],"76mfA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SettingsPage", ()=>SettingsPage
@@ -8140,10 +8136,17 @@ const ArticlePage = (props)=>{
     const back = ()=>{
         history.back();
     };
+    const share = ()=>{
+        window.navigator.share({
+            url: article.url,
+            title: article.title,
+            text: article.caption || article.title
+        });
+    };
     if (loading) return /*#__PURE__*/ _preact.h("div", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 33,
+            lineNumber: 41,
             columnNumber: 16
         },
         __self: undefined
@@ -8152,7 +8155,7 @@ const ArticlePage = (props)=>{
         className: "article",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 38,
+            lineNumber: 46,
             columnNumber: 9
         },
         __self: undefined
@@ -8160,7 +8163,7 @@ const ArticlePage = (props)=>{
         className: "article-actions is-level",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 39,
+            lineNumber: 47,
             columnNumber: 13
         },
         __self: undefined
@@ -8169,7 +8172,7 @@ const ArticlePage = (props)=>{
         onClick: back,
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 40,
+            lineNumber: 48,
             columnNumber: 17
         },
         __self: undefined
@@ -8177,7 +8180,7 @@ const ArticlePage = (props)=>{
         name: "chevron-back",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 41,
+            lineNumber: 49,
             columnNumber: 21
         },
         __self: undefined
@@ -8185,30 +8188,38 @@ const ArticlePage = (props)=>{
         className: "is-level-right is-flex is-vertical-center",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 43,
+            lineNumber: 51,
             columnNumber: 17
+        },
+        __self: undefined
+    }, window.navigator.share && /*#__PURE__*/ _preact.h(_preact.Fragment, {
+        __source: {
+            fileName: "frontend/pages/articles.page.tsx",
+            lineNumber: 54,
+            columnNumber: 25
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("ion-icon", {
         name: "share-outline",
+        onClick: share,
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 44,
-            columnNumber: 21
+            lineNumber: 55,
+            columnNumber: 29
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 45,
-            columnNumber: 21
+            lineNumber: 56,
+            columnNumber: 29
         },
         __self: undefined
-    }, "\xa0\xa0\xa0\xa0"), /*#__PURE__*/ _preact.h("ion-icon", {
+    }, "\xa0\xa0\xa0\xa0")), /*#__PURE__*/ _preact.h("ion-icon", {
         name: "bookmark-outline",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 46,
+            lineNumber: 59,
             columnNumber: 21
         },
         __self: undefined
@@ -8216,7 +8227,7 @@ const ArticlePage = (props)=>{
         className: "article-reference",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 49,
+            lineNumber: 62,
             columnNumber: 13
         },
         __self: undefined
@@ -8225,7 +8236,7 @@ const ArticlePage = (props)=>{
         alt: "Freight Waves",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 50,
+            lineNumber: 63,
             columnNumber: 17
         },
         __self: undefined
@@ -8236,7 +8247,7 @@ const ArticlePage = (props)=>{
         },
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 54,
+            lineNumber: 67,
             columnNumber: 17
         },
         __self: undefined
@@ -8244,7 +8255,7 @@ const ArticlePage = (props)=>{
         className: "article-title",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 56,
+            lineNumber: 69,
             columnNumber: 13
         },
         __self: undefined
@@ -8252,28 +8263,28 @@ const ArticlePage = (props)=>{
         className: "article-label",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 59,
+            lineNumber: 72,
             columnNumber: 13
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("div", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 60,
+            lineNumber: 73,
             columnNumber: 17
         },
         __self: undefined
     }, "Author: ", article.author), /*#__PURE__*/ _preact.h("div", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 61,
+            lineNumber: 74,
             columnNumber: 17
         },
         __self: undefined
     }, "Published at: ", article.date)), /*#__PURE__*/ _preact.h("hr", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 63,
+            lineNumber: 76,
             columnNumber: 13
         },
         __self: undefined
@@ -8284,14 +8295,14 @@ const ArticlePage = (props)=>{
         },
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 64,
+            lineNumber: 77,
             columnNumber: 13
         },
         __self: undefined
     }), /*#__PURE__*/ _preact.h("hr", {
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 65,
+            lineNumber: 78,
             columnNumber: 13
         },
         __self: undefined

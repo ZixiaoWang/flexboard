@@ -1620,7 +1620,7 @@
   margin-right: 0;
 }
 
-.article-content figure img {
+.article-content figure video, .article-content figure img {
   max-width: 350px;
   height: auto;
   width: 100% !important;
