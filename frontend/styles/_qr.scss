@@ -1,0 +1,21 @@
+@import "variables";
+
+.qr {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px; left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(
+        45deg, $blue50, $blue60
+    );
+
+    img {
+        border-radius: 16px;
+        background-color: white;
+        box-shadow: 4px 4px 12px rgba(black, 0.4);
+    }
+}

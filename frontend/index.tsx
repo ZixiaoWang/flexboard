@@ -6,7 +6,7 @@ import Router from "preact-router";
 import { createHashHistory } from "history";
 
 import { useSeedsStore } from "./helpers";
-import { HeaderComponent, TabsComponent } from "./components";
+import { HeaderComponent, QRCode, TabsComponent } from "./components";
 import { ArticlePage, IndicesPage, MessagesPage, Redirect, SearchPage, SeedsPage, SettingsPage, SplashPage, Route, AboutPage, DisclaimerPage, BookmarksPage } from "./pages";
 /** @jsx h */
 
@@ -61,10 +61,24 @@ const Home = (props: HomePageProps) => {
 const App = () => {
     const hashHistory = createHashHistory();
     const [splashVisibility, setSplashVisibility] = useState(true);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 576);
     const {getSeeds} = useSeedsStore();
 
     const loadingTime: number = Math.round(Math.random() * 200);
+
+    const resizeHandler = () => {
+        if (location.hash !== "#/indices") {
+            if (window.innerWidth < 570) {
+                setIsMobile(true);
+            } else {
+                setIsMobile(false)
+            }
+        }
+    }
+
     useEffect(() => {
+        window.addEventListener("resize", resizeHandler);
+
         getSeeds().then(() => {
             setTimeout(() => {
                 const splashLogo: HTMLElement | null = document.getElementById("splashlogo");
@@ -75,8 +89,16 @@ const App = () => {
             setTimeout(() => {
                 setSplashVisibility(false);
             } ,loadingTime + 500);
-        })
-    }, [])
+        });
+
+        return () => {
+            window.removeEventListener("resize", resizeHandler);
+        }
+    }, []);
+
+    if (isMobile === false) {
+        return <QRCode />
+    }
 
     if (splashVisibility) {
         return <SplashPage />

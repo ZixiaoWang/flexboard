@@ -1,8 +1,11 @@
 import { Fragment, h } from "preact";
 import { route } from "preact-router";
 import { useState } from "preact/hooks";
+import { Loader } from "../components";
 import { useSearchStore, useSeedsStore } from "../helpers";
 import { RoutePage, SeedArticleItem } from "../interfaces";
+
+import RyanPetersen from "../icons/ryan_petersen.png";
 
 enum SearchPageEnum {
     HISTORIES,
@@ -31,14 +34,24 @@ export const SearchPage = (props: RoutePage) => {
     }
 
     const search = (event: Event) => {
-        event.preventDefault();
-        setStatus(SearchPageEnum.LOADING);
-        setTimeout(() => {
-            const resultArr = seedsStore.findByKeywords(keywords);
-            setResults(resultArr);
-            setStatus(SearchPageEnum.RESULTS);
-        }, 1000 + Math.floor(Math.random() * 1000));
-        searchStore.addHistory(keywords);
+        if (keywords.toLocaleLowerCase() === "ryan petersen") {
+            const ryan = document.getElementById("ryanpetersen");
+            if (ryan) {
+                ryan.classList.add("show");
+                setTimeout(() => {
+                    ryan.classList.remove("show")
+                }, 3000);
+            }
+        } else {
+            event.preventDefault();
+            setStatus(SearchPageEnum.LOADING);
+            setTimeout(() => {
+                const resultArr = seedsStore.findByKeywords(keywords);
+                setResults(resultArr);
+                setStatus(SearchPageEnum.RESULTS);
+            }, 1000 + Math.floor(Math.random() * 1000));
+            searchStore.addHistory(keywords);
+        }
     }
 
     const directSearch = (keyword: string) => {
@@ -53,11 +66,7 @@ export const SearchPage = (props: RoutePage) => {
     }
 
     const renderLoading = () => {
-        return (
-            <div className="search-results">
-                loading...
-            </div>
-        )
+        return <Loader>Searching...</Loader>
     }
 
     const renderSearchResults = () => {
@@ -139,6 +148,7 @@ export const SearchPage = (props: RoutePage) => {
             {status === SearchPageEnum.LOADING && renderLoading()}
             {status === SearchPageEnum.HISTORIES && renderHistories()}
             {status === SearchPageEnum.RESULTS && renderSearchResults()}
+            <img id="ryanpetersen" src={RyanPetersen} alt="Ryan Petersen" className="ryan-petersen" />
         </div>
     )
 }

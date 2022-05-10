@@ -121,4 +121,18 @@
             margin-top: 12px;
         }
     }
+
+
+    .ryan-petersen {
+        position: fixed;
+        top: 120vh;
+        left: 0;
+        width: 120%;
+        transition: top .5s ease-in-out;
+        z-index: 999;
+
+        &.show {
+            top: calc(100% - 420px);
+        }
+    }
 }

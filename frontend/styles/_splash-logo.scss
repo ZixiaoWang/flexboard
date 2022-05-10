@@ -30,7 +30,7 @@ $logo-size: 45px;
         display: block;
         border-radius: 4px;
         position: absolute;
-        animation: fadeout 6s ease-in-out infinite;
+        animation: fadeout 2.5s ease-in-out infinite;
 
         &.is-red {
             $size: $logo-size * 0.67;

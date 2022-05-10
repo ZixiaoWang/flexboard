@@ -6,6 +6,7 @@ import { userStore, useBookmarkStore } from "../helpers";
 
 import FreightWaves from "../icons/freightwaves.png";
 import axios, { AxiosResponse } from "axios";
+import { Loader } from "../components";
 
 export interface ArticlePageProps {
     base64url: string,
@@ -41,7 +42,7 @@ export const ArticlePage = (props: any) => {
     }
 
     if (loading) {
-        return <div>Loading</div>
+        return <Loader />
     }
 
 

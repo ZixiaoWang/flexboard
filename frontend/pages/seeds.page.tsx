@@ -1,6 +1,6 @@
 import { Fragment, h } from "preact";
 import { useEffect } from "preact/hooks";
-import { CardComponent } from "../components";
+import { CardComponent, Loader } from "../components";
 import { useSeedsStore } from "../helpers";
 import { RoutePage, SeedArticleItem } from "../interfaces";
 
@@ -34,7 +34,7 @@ export const SeedsPage = (props: RoutePage) => {
     }, [])
 
     if (loading) {
-        return <div>Loading</div>
+        return <Loader />
     }
 
     return (
