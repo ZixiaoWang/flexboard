@@ -2094,7 +2094,7 @@ parcelHelpers.exportAll(_bookmarkStore, exports);
 var _getFlexportIndicatorData = require("./getFlexportIndicatorData");
 parcelHelpers.exportAll(_getFlexportIndicatorData, exports);
 
-},{"./decodeJWT":"1trgr","./googleAuth":"5PK59","./userStore":"cx4a0","./searchStore":"6TqAD","./seedsStore":"ixOWY","./bookmarkStore":"1crXd","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./getFlexportIndicatorData":"4xwpl"}],"1trgr":[function(require,module,exports) {
+},{"./decodeJWT":"1trgr","./googleAuth":"5PK59","./userStore":"cx4a0","./searchStore":"6TqAD","./seedsStore":"ixOWY","./bookmarkStore":"1crXd","./getFlexportIndicatorData":"4xwpl","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"1trgr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "decodeJWT", ()=>decodeJWT
@@ -8031,12 +8031,15 @@ parcelHelpers.export(exports, "CardComponent", ()=>CardComponent
 var _preact = require("preact");
 var _preactRouter = require("preact-router");
 var _helpers = require("../helpers");
+var _wsjSvg = require("../icons/wsj.svg");
+var _wsjSvgDefault = parcelHelpers.interopDefault(_wsjSvg);
 var _freightwavesPng = require("../icons/freightwaves.png");
 var _freightwavesPngDefault = parcelHelpers.interopDefault(_freightwavesPng);
 const CardComponent = (props)=>{
     const { bookmarkStore  } = _helpers.useBookmarkStore();
     const seed = props.seed;
     const base64url = window.btoa(seed.detailurl);
+    const referenceSourceIconSrc = props.seed.source === "Freight Waves" ? _freightwavesPngDefault.default : _wsjSvgDefault.default;
     const cardProps = {
         onClick: ()=>_preactRouter.route(`/seeds/${base64url}`)
     };
@@ -8045,7 +8048,7 @@ const CardComponent = (props)=>{
         ...cardProps,
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 25,
+            lineNumber: 27,
             columnNumber: 13
         },
         __self: undefined
@@ -8053,7 +8056,7 @@ const CardComponent = (props)=>{
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 28,
+            lineNumber: 30,
             columnNumber: 25
         },
         __self: undefined
@@ -8064,7 +8067,7 @@ const CardComponent = (props)=>{
         },
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 29,
+            lineNumber: 31,
             columnNumber: 29
         },
         __self: undefined
@@ -8072,7 +8075,7 @@ const CardComponent = (props)=>{
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 31,
+            lineNumber: 33,
             columnNumber: 25
         },
         __self: undefined
@@ -8080,7 +8083,7 @@ const CardComponent = (props)=>{
         className: "card-img-placeholder",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 32,
+            lineNumber: 34,
             columnNumber: 29
         },
         __self: undefined
@@ -8088,47 +8091,40 @@ const CardComponent = (props)=>{
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 37,
+            lineNumber: 39,
             columnNumber: 17
         },
         __self: undefined
-    }, seed.source === "Freight Waves" ? /*#__PURE__*/ _preact.h("div", {
+    }, /*#__PURE__*/ _preact.h("div", {
         className: "card-reference",
         __source: {
             fileName: "frontend/components/card.component.tsx",
             lineNumber: 40,
-            columnNumber: 25
+            columnNumber: 21
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("img", {
-        src: _freightwavesPngDefault.default,
+        src: referenceSourceIconSrc,
         alt: "Freight Waves",
         __source: {
             fileName: "frontend/components/card.component.tsx",
             lineNumber: 41,
-            columnNumber: 29
+            columnNumber: 25
         },
         __self: undefined
-    })) : /*#__PURE__*/ _preact.h("div", {
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 42,
-            columnNumber: 34
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _preact.h("div", {
+    })), /*#__PURE__*/ _preact.h("div", {
         className: "blue50 is-text-bold",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 44,
+            lineNumber: 43,
             columnNumber: 21
         },
         __self: undefined
-    }, seed.title), /*#__PURE__*/ _preact.h("div", {
+    }, seed.title.length > 70 ? seed.title.substring(0, 70) + "..." : seed.title), /*#__PURE__*/ _preact.h("div", {
         className: "is-text-xs grey40 has-margin-top-1",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 47,
+            lineNumber: 46,
             columnNumber: 21
         },
         __self: undefined
@@ -8136,7 +8132,7 @@ const CardComponent = (props)=>{
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 51,
+            lineNumber: 50,
             columnNumber: 17
         },
         __self: undefined
@@ -8144,7 +8140,7 @@ const CardComponent = (props)=>{
         className: "red30",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 54,
+            lineNumber: 53,
             columnNumber: 29
         },
         __self: undefined
@@ -8152,7 +8148,7 @@ const CardComponent = (props)=>{
         name: "bookmark",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 55,
+            lineNumber: 54,
             columnNumber: 33
         },
         __self: undefined
@@ -8160,7 +8156,7 @@ const CardComponent = (props)=>{
         className: "grey40",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 57,
+            lineNumber: 56,
             columnNumber: 29
         },
         __self: undefined
@@ -8168,14 +8164,14 @@ const CardComponent = (props)=>{
         name: "bookmark-outline",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 58,
+            lineNumber: 57,
             columnNumber: 33
         },
         __self: undefined
     })), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 61,
+            lineNumber: 60,
             columnNumber: 21
         },
         __self: undefined
@@ -8188,7 +8184,7 @@ const CardComponent = (props)=>{
         ...cardProps,
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 68,
+            lineNumber: 67,
             columnNumber: 9
         },
         __self: undefined
@@ -8196,7 +8192,7 @@ const CardComponent = (props)=>{
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 69,
+            lineNumber: 68,
             columnNumber: 13
         },
         __self: undefined
@@ -8204,7 +8200,7 @@ const CardComponent = (props)=>{
         className: "card-title",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 70,
+            lineNumber: 69,
             columnNumber: 17
         },
         __self: undefined
@@ -8212,23 +8208,23 @@ const CardComponent = (props)=>{
         className: "card-reference",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 71,
+            lineNumber: 70,
             columnNumber: 21
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("img", {
-        src: _freightwavesPngDefault.default,
+        src: referenceSourceIconSrc,
         alt: "Freight Waves",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 72,
+            lineNumber: 71,
             columnNumber: 25
         },
         __self: undefined
     })), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 74,
+            lineNumber: 73,
             columnNumber: 21
         },
         __self: undefined
@@ -8236,7 +8232,7 @@ const CardComponent = (props)=>{
         className: "has-padding-top-3",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 75,
+            lineNumber: 74,
             columnNumber: 21
         },
         __self: undefined
@@ -8244,14 +8240,14 @@ const CardComponent = (props)=>{
         className: "is-text-s",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 76,
+            lineNumber: 75,
             columnNumber: 25
         },
         __self: undefined
     }, seed.date)))));
 };
 
-},{"preact":"cwEwC","preact-router":"gXK85","../helpers":"dtOhO","../icons/freightwaves.png":"aiuzK","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"aiuzK":[function(require,module,exports) {
+},{"preact":"cwEwC","preact-router":"gXK85","../helpers":"dtOhO","../icons/freightwaves.png":"aiuzK","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","../icons/wsj.svg":"7Siaj"}],"aiuzK":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "freightwaves.a156c0ae.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"hPpBg"}],"hPpBg":[function(require,module,exports) {
@@ -8288,7 +8284,10 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"aJbpU":[function(require,module,exports) {
+},{}],"7Siaj":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "wsj.73f5e3d4.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"hPpBg"}],"aJbpU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "QRCode", ()=>QRCode
@@ -8381,7 +8380,7 @@ parcelHelpers.exportAll(_indicesListPage, exports);
 var _flexportIndicatorPage = require("./flexport-indicator.page");
 parcelHelpers.exportAll(_flexportIndicatorPage, exports);
 
-},{"./indices.page":"7FZOO","./search.page":"j27CE","./seeds.page":"8BcV2","./settings.page":"76mfA","./splash.page":"1gZMb","./redirect.page":"7ph5y","./messages.page":"2FU79","./articles.page":"kpakG","./route.page":"hCEyC","./about.page":"hV32b","./disclaimer.page":"8eDiM","./bookmarks.page":"l3FRf","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","./indices-list.page":"aoUaC","./flexport-indicator.page":"fwZt1"}],"7FZOO":[function(require,module,exports) {
+},{"./indices.page":"7FZOO","./search.page":"j27CE","./seeds.page":"8BcV2","./settings.page":"76mfA","./splash.page":"1gZMb","./redirect.page":"7ph5y","./messages.page":"2FU79","./articles.page":"kpakG","./route.page":"hCEyC","./about.page":"hV32b","./disclaimer.page":"8eDiM","./bookmarks.page":"l3FRf","./indices-list.page":"aoUaC","./flexport-indicator.page":"fwZt1","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"7FZOO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "IndicesPage", ()=>IndicesPage
@@ -8816,7 +8815,7 @@ const SearchPage = (props)=>{
                 columnNumber: 25
             },
             __self: undefined
-        }, "Histoires"), /*#__PURE__*/ _preact.h("div", {
+        }, "History"), /*#__PURE__*/ _preact.h("div", {
             className: "is-level-right is-flex is-vertical-center",
             onClick: deleteHistories,
             onKeyDown: deleteHistories,
@@ -8975,6 +8974,7 @@ const Section = (props)=>/*#__PURE__*/ _preact.h(_preact.Fragment, {
 ;
 const SeedsPage = (props)=>{
     const { seedsStore , loading , getSeeds  } = _helpers.useSeedsStore();
+    const [source, setSource] = _hooks.useState("ALL");
     const seeds = seedsStore.seeds;
     _hooks.useEffect(()=>{
         getSeeds();
@@ -8982,7 +8982,7 @@ const SeedsPage = (props)=>{
     if (loading) return /*#__PURE__*/ _preact.h(_components.Loader, {
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 37,
+            lineNumber: 38,
             columnNumber: 16
         },
         __self: undefined
@@ -8990,7 +8990,7 @@ const SeedsPage = (props)=>{
     return /*#__PURE__*/ _preact.h(_preact.Fragment, {
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 41,
+            lineNumber: 42,
             columnNumber: 9
         },
         __self: undefined
@@ -8998,7 +8998,7 @@ const SeedsPage = (props)=>{
         className: "cards",
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 42,
+            lineNumber: 43,
             columnNumber: 13
         },
         __self: undefined
@@ -9006,7 +9006,7 @@ const SeedsPage = (props)=>{
         className: "seed-boxes",
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 43,
+            lineNumber: 44,
             columnNumber: 17
         },
         __self: undefined
@@ -9014,7 +9014,7 @@ const SeedsPage = (props)=>{
         className: "seed-box",
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 44,
+            lineNumber: 45,
             columnNumber: 21
         },
         __self: undefined
@@ -9022,7 +9022,7 @@ const SeedsPage = (props)=>{
         className: "is-text-s white",
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 45,
+            lineNumber: 46,
             columnNumber: 25
         },
         __self: undefined
@@ -9030,7 +9030,7 @@ const SeedsPage = (props)=>{
         className: "is-text-xxl green30",
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 48,
+            lineNumber: 49,
             columnNumber: 25
         },
         __self: undefined
@@ -9038,7 +9038,7 @@ const SeedsPage = (props)=>{
         className: "seed-box",
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 52,
+            lineNumber: 53,
             columnNumber: 21
         },
         __self: undefined
@@ -9046,7 +9046,7 @@ const SeedsPage = (props)=>{
         className: "is-text-s white",
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 53,
+            lineNumber: 54,
             columnNumber: 25
         },
         __self: undefined
@@ -9054,7 +9054,7 @@ const SeedsPage = (props)=>{
         className: "is-text-xxl green30",
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 56,
+            lineNumber: 57,
             columnNumber: 25
         },
         __self: undefined
@@ -9063,7 +9063,7 @@ const SeedsPage = (props)=>{
         hasSeparator: true,
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 61,
+            lineNumber: 62,
             columnNumber: 17
         },
         __self: undefined
@@ -9071,7 +9071,7 @@ const SeedsPage = (props)=>{
         className: "seed-top",
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 62,
+            lineNumber: 63,
             columnNumber: 21
         },
         __self: undefined
@@ -9081,7 +9081,7 @@ const SeedsPage = (props)=>{
             seed: seed,
             __source: {
                 fileName: "frontend/pages/seeds.page.tsx",
-                lineNumber: 67,
+                lineNumber: 68,
                 columnNumber: 44
             },
             __self: undefined
@@ -9090,80 +9090,60 @@ const SeedsPage = (props)=>{
         className: "widges",
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 72,
+            lineNumber: 73,
             columnNumber: 17
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("div", {
-        className: "widge is-selected",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 73,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "All Categories"), /*#__PURE__*/ _preact.h("div", {
-        className: "widge",
+        className: source === "ALL" ? "widge is-selected" : "widge",
+        onClick: ()=>setSource("ALL")
+        ,
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
             lineNumber: 74,
             columnNumber: 21
         },
         __self: undefined
-    }, "Ocean"), /*#__PURE__*/ _preact.h("div", {
-        className: "widge",
+    }, "All Sources"), /*#__PURE__*/ _preact.h("div", {
+        className: source === "WSJ" ? "widge is-selected" : "widge",
+        onClick: ()=>setSource("WSJ")
+        ,
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
             lineNumber: 75,
             columnNumber: 21
         },
         __self: undefined
-    }, "Air"), /*#__PURE__*/ _preact.h("div", {
-        className: "widge",
+    }, "WSJ"), /*#__PURE__*/ _preact.h("div", {
+        className: source === "FRIEIGHT_WAVES" ? "widge is-selected" : "widge",
+        onClick: ()=>setSource("FRIEIGHT_WAVES")
+        ,
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
             lineNumber: 76,
             columnNumber: 21
         },
         __self: undefined
-    }, "Trucking"), /*#__PURE__*/ _preact.h("div", {
-        className: "widge",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 77,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "COVID"), /*#__PURE__*/ _preact.h("div", {
-        className: "widge",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 78,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "Tenology"), /*#__PURE__*/ _preact.h("div", {
-        className: "widge",
-        __source: {
-            fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 79,
-            columnNumber: 21
-        },
-        __self: undefined
-    }, "Commercial")), /*#__PURE__*/ _preact.h(Section, {
+    }, "Freight Waves")), /*#__PURE__*/ _preact.h(Section, {
         label: "Seeds",
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
-            lineNumber: 81,
+            lineNumber: 78,
             columnNumber: 17
         },
         __self: undefined
-    }, seeds.slice(4).map((seed)=>/*#__PURE__*/ _preact.h(_components.CardComponent, {
+    }, seeds.slice(4).filter((seed)=>{
+        if (source === "ALL") return true;
+        else {
+            if (source === "WSJ") return seed.source.indexOf("WSJ") === 0;
+            else return seed.source === "Freight Waves";
+        }
+    }).map((seed)=>/*#__PURE__*/ _preact.h(_components.CardComponent, {
             size: "small",
             seed: seed,
             __source: {
                 fileName: "frontend/pages/seeds.page.tsx",
-                lineNumber: 85,
+                lineNumber: 93,
                 columnNumber: 61
             },
             __self: undefined
@@ -9362,7 +9342,7 @@ const SettingsPage = (props)=>{
             columnNumber: 21
         },
         __self: undefined
-    }, "Declaration"))), _helpers.userStore.hasCache() && /*#__PURE__*/ _preact.h("div", {
+    }, "Disclaimer"))), _helpers.userStore.hasCache() && /*#__PURE__*/ _preact.h("div", {
         className: "setting-group",
         key: nounce,
         __source: {
@@ -10044,22 +10024,30 @@ const BookmarksPage = (props)=>{
                 columnNumber: 29
             },
             __self: undefined
-        }, /*#__PURE__*/ _preact.h("div", {
+        }, seed.thumbnail ? /*#__PURE__*/ _preact.h("div", {
             className: "bookmark-img",
             style: {
                 backgroundImage: `url(${seed.thumbnail})`
             },
             __source: {
                 fileName: "frontend/pages/bookmarks.page.tsx",
-                lineNumber: 44,
-                columnNumber: 33
+                lineNumber: 46,
+                columnNumber: 37
+            },
+            __self: undefined
+        }, "\xa0") : /*#__PURE__*/ _preact.h("div", {
+            className: "bookmark-img-placeholder",
+            __source: {
+                fileName: "frontend/pages/bookmarks.page.tsx",
+                lineNumber: 49,
+                columnNumber: 37
             },
             __self: undefined
         }, "\xa0"), /*#__PURE__*/ _preact.h("div", {
             className: "bookmark-text",
             __source: {
                 fileName: "frontend/pages/bookmarks.page.tsx",
-                lineNumber: 47,
+                lineNumber: 51,
                 columnNumber: 33
             },
             __self: undefined
@@ -10067,14 +10055,14 @@ const BookmarksPage = (props)=>{
             className: "is-text-m is-text-bold",
             __source: {
                 fileName: "frontend/pages/bookmarks.page.tsx",
-                lineNumber: 48,
+                lineNumber: 52,
                 columnNumber: 37
             },
             __self: undefined
         }, seed.title), /*#__PURE__*/ _preact.h("br", {
             __source: {
                 fileName: "frontend/pages/bookmarks.page.tsx",
-                lineNumber: 51,
+                lineNumber: 55,
                 columnNumber: 37
             },
             __self: undefined
@@ -10082,7 +10070,7 @@ const BookmarksPage = (props)=>{
             className: "is-text-s grey40",
             __source: {
                 fileName: "frontend/pages/bookmarks.page.tsx",
-                lineNumber: 52,
+                lineNumber: 56,
                 columnNumber: 37
             },
             __self: undefined
@@ -10217,16 +10205,19 @@ var _preact = require("preact");
 var _hooks = require("preact/hooks");
 var _getFlexportIndicatorData = require("../helpers/getFlexportIndicatorData");
 var _chartJs = require("chart.js");
-const RED = "#FDA6A6";
-const BLUE = "#6294BE";
+const BLUE = "#FDA6A6";
+const RED = "#6294BE";
+const getDate = (num)=>{
+    return new Date(new Date(2019, 3, 7).getTime() + (num - 43561) * 86400000).toISOString().split("T")[0];
+};
 const FlexportIndicatorPage = (props)=>{
     const [type, setType] = _hooks.useState("OTI");
     const [chart1, setChart] = _hooks.useState(null);
     const OTIData = {
-        labels: _getFlexportIndicatorData.DATA.OTI.WEEK_ENDINGS,
+        labels: _getFlexportIndicatorData.DATA.OTI.WEEK_ENDINGS.map(getDate),
         datasets: [
             {
-                label: "Far East Westbounding",
+                label: "Far East Westbound",
                 backgroundColor: RED,
                 borderColor: RED,
                 data: _getFlexportIndicatorData.DATA.OTI.FAR_EAST_WESTBOUND,
@@ -10234,7 +10225,7 @@ const FlexportIndicatorPage = (props)=>{
                 pointRadius: 0
             },
             {
-                label: "Transpacific Westbounding",
+                label: "Transpacific Eastbound",
                 backgroundColor: BLUE,
                 borderColor: BLUE,
                 data: _getFlexportIndicatorData.DATA.OTI.TRANSPACIFIC_WESTBOUND,
@@ -10244,10 +10235,10 @@ const FlexportIndicatorPage = (props)=>{
         ]
     };
     const ATIData = {
-        labels: _getFlexportIndicatorData.DATA.ATI.WEEK_ENDINGS,
+        labels: _getFlexportIndicatorData.DATA.ATI.WEEK_ENDINGS.map(getDate),
         datasets: [
             {
-                label: "Far East Westbounding",
+                label: "Far East Westbound",
                 backgroundColor: RED,
                 borderColor: RED,
                 data: _getFlexportIndicatorData.DATA.ATI.FAR_EAST_WESTBOUND,
@@ -10255,7 +10246,7 @@ const FlexportIndicatorPage = (props)=>{
                 pointRadius: 0
             },
             {
-                label: "Transpacific Westbounding",
+                label: "Transpacific Eastbound",
                 backgroundColor: BLUE,
                 borderColor: BLUE,
                 data: _getFlexportIndicatorData.DATA.ATI.TRANSPACIFIC_WESTBOUND,
@@ -10300,7 +10291,7 @@ const FlexportIndicatorPage = (props)=>{
         className: "indices-list indicator",
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 86,
+            lineNumber: 90,
             columnNumber: 9
         },
         __self: undefined
@@ -10308,7 +10299,7 @@ const FlexportIndicatorPage = (props)=>{
         className: "article-actions is-level",
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 87,
+            lineNumber: 91,
             columnNumber: 13
         },
         __self: undefined
@@ -10318,7 +10309,7 @@ const FlexportIndicatorPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 88,
+            lineNumber: 92,
             columnNumber: 17
         },
         __self: undefined
@@ -10326,7 +10317,7 @@ const FlexportIndicatorPage = (props)=>{
         name: "chevron-back",
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 89,
+            lineNumber: 93,
             columnNumber: 21
         },
         __self: undefined
@@ -10334,7 +10325,7 @@ const FlexportIndicatorPage = (props)=>{
         className: "indicator-tabs",
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 92,
+            lineNumber: 96,
             columnNumber: 13
         },
         __self: undefined
@@ -10344,7 +10335,7 @@ const FlexportIndicatorPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 93,
+            lineNumber: 97,
             columnNumber: 17
         },
         __self: undefined
@@ -10352,14 +10343,14 @@ const FlexportIndicatorPage = (props)=>{
         className: "one",
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 94,
+            lineNumber: 98,
             columnNumber: 21
         },
         __self: undefined
     }, "OTI"), /*#__PURE__*/ _preact.h("br", {
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 95,
+            lineNumber: 99,
             columnNumber: 21
         },
         __self: undefined
@@ -10367,7 +10358,7 @@ const FlexportIndicatorPage = (props)=>{
         className: "two",
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 96,
+            lineNumber: 100,
             columnNumber: 21
         },
         __self: undefined
@@ -10377,7 +10368,7 @@ const FlexportIndicatorPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 100,
+            lineNumber: 104,
             columnNumber: 17
         },
         __self: undefined
@@ -10385,14 +10376,14 @@ const FlexportIndicatorPage = (props)=>{
         className: "one",
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 101,
+            lineNumber: 105,
             columnNumber: 21
         },
         __self: undefined
     }, "ATI"), /*#__PURE__*/ _preact.h("br", {
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 102,
+            lineNumber: 106,
             columnNumber: 21
         },
         __self: undefined
@@ -10400,7 +10391,7 @@ const FlexportIndicatorPage = (props)=>{
         className: "two",
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 103,
+            lineNumber: 107,
             columnNumber: 21
         },
         __self: undefined
@@ -10408,7 +10399,7 @@ const FlexportIndicatorPage = (props)=>{
         className: "indicator-chart",
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 108,
+            lineNumber: 112,
             columnNumber: 13
         },
         __self: undefined
@@ -10417,7 +10408,7 @@ const FlexportIndicatorPage = (props)=>{
         height: "350",
         __source: {
             fileName: "frontend/pages/flexport-indicator.page.tsx",
-            lineNumber: 109,
+            lineNumber: 113,
             columnNumber: 17
         },
         __self: undefined
