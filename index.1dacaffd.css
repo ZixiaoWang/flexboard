@@ -1940,7 +1940,7 @@
 
 .about-bubble {
   margin: 0 16px;
-  padding: 8px;
+  padding: 12px 8px;
   box-shadow: 0 0 12px #0006;
 }
 
@@ -1991,6 +1991,18 @@
   color: #f7f9fd;
   background-color: #0f2943;
   border: 1px solid #67768d;
+}
+
+.about-bubble.five {
+  color: #f7f9fd;
+  background-color: #566ae5;
+  border: 1px solid #0723d8;
+}
+
+.about-bubble.six {
+  color: #39414d;
+  background-color: #fda6a6;
+  border: 1px solid #fa5959;
 }
 
 .about-img {

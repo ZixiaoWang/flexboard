@@ -9757,12 +9757,26 @@ parcelHelpers.export(exports, "AboutPage", ()=>AboutPage
 var _preact = require("preact");
 var _allMemberJpg = require("../icons/all-member.jpg");
 var _allMemberJpgDefault = parcelHelpers.interopDefault(_allMemberJpg);
+var _hooks = require("preact/hooks");
 const AboutPage = (props)=>{
+    const [count, setCount] = _hooks.useState(0);
+    const [easterEgg, setEasterEgg] = _hooks.useState("Jacky");
+    _hooks.useEffect(()=>{
+        if (count >= 9) {
+            setEasterEgg("Jacky is in ❤️ with Kai");
+            setTimeout(()=>{
+                setCount(0);
+                setEasterEgg("Jacky");
+            }, 3000);
+        }
+    }, [
+        count
+    ]);
     return /*#__PURE__*/ _preact.h("div", {
         className: "about",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 10,
+            lineNumber: 24,
             columnNumber: 9
         },
         __self: undefined
@@ -9770,7 +9784,7 @@ const AboutPage = (props)=>{
         className: "article-actions is-level",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 11,
+            lineNumber: 25,
             columnNumber: 13
         },
         __self: undefined
@@ -9780,7 +9794,7 @@ const AboutPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 12,
+            lineNumber: 26,
             columnNumber: 17
         },
         __self: undefined
@@ -9788,7 +9802,7 @@ const AboutPage = (props)=>{
         name: "chevron-back",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 13,
+            lineNumber: 27,
             columnNumber: 21
         },
         __self: undefined
@@ -9796,7 +9810,7 @@ const AboutPage = (props)=>{
         className: "about-title",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 16,
+            lineNumber: 30,
             columnNumber: 13
         },
         __self: undefined
@@ -9804,28 +9818,28 @@ const AboutPage = (props)=>{
         className: "about-content grey40",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 19,
+            lineNumber: 33,
             columnNumber: 13
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("p", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 20,
+            lineNumber: 34,
             columnNumber: 17
         },
         __self: undefined
     }, "Flexboard is the premier supply chain and logistics news app. Consolidating top industry news from multiple channels and sources around the world. Flexboard allows a user to customize their own news browsing experience. With extensive personalization through bookmarking, news grouping by topics, and top notch user interface and user experience, Flexboard will deliver the best browsing experience for industry amateurs and professionals alike!"), /*#__PURE__*/ _preact.h("p", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 29,
+            lineNumber: 43,
             columnNumber: 17
         },
         __self: undefined
     }, "The Flexboard team is comprised of members originating from a wide range of teams across Tech and Business. Having team members from engineering, product, client solutions and ocean teams provides a great mix of technical prowess and business knowledge. Now introducing our team members!"), /*#__PURE__*/ _preact.h("hr", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 36,
+            lineNumber: 50,
             columnNumber: 17
         },
         __self: undefined
@@ -9833,21 +9847,21 @@ const AboutPage = (props)=>{
         className: "about-bubble left one",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 37,
+            lineNumber: 51,
             columnNumber: 17
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("blockquote", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 38,
+            lineNumber: 52,
             columnNumber: 21
         },
         __self: undefined
     }, "Catching up with mass news in such a fast-changing world is not that easy, Flexboard help me and my team, my clients always catch the hottest news from the industry. Easy and effective."), /*#__PURE__*/ _preact.h("b", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 41,
+            lineNumber: 55,
             columnNumber: 21
         },
         __self: undefined
@@ -9855,21 +9869,21 @@ const AboutPage = (props)=>{
         className: "about-bubble right two",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 43,
+            lineNumber: 57,
             columnNumber: 17
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("blockquote", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 44,
+            lineNumber: 58,
             columnNumber: 21
         },
         __self: undefined
     }, "The past two years have shown that staying up to date with the latest news in the supply chain industry is crucial for us and our customers. Flexboard does just that and more by surfacing the top news in the industry everyday, allowing personalization and easy access to industry specific indices as well!"), /*#__PURE__*/ _preact.h("b", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 47,
+            lineNumber: 61,
             columnNumber: 21
         },
         __self: undefined
@@ -9877,21 +9891,21 @@ const AboutPage = (props)=>{
         className: "about-bubble left three",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 49,
+            lineNumber: 63,
             columnNumber: 17
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("blockquote", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 50,
+            lineNumber: 64,
             columnNumber: 21
         },
         __self: undefined
     }, "Never get bored with Flex Board! It\u2019s the best ever app for anyone who works in global trade."), /*#__PURE__*/ _preact.h("b", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 53,
+            lineNumber: 67,
             columnNumber: 21
         },
         __self: undefined
@@ -9899,28 +9913,74 @@ const AboutPage = (props)=>{
         className: "about-bubble right four",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 55,
+            lineNumber: 69,
             columnNumber: 17
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("blockquote", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 56,
+            lineNumber: 70,
             columnNumber: 21
         },
         __self: undefined
     }, "It's fun \u{1F92A}"), /*#__PURE__*/ _preact.h("b", {
+        onClick: ()=>setCount(count + 1)
+        ,
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 59,
+            lineNumber: 73,
             columnNumber: 21
         },
         __self: undefined
-    }, "Jacky")), /*#__PURE__*/ _preact.h("hr", {
+    }, easterEgg)), /*#__PURE__*/ _preact.h("div", {
+        className: "about-bubble left five",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 61,
+            lineNumber: 75,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("blockquote", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 76,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Meeting the wonderful team here! Voice out if you have any new ideas, keep us up to date, power!"), /*#__PURE__*/ _preact.h("b", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 79,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Leon")), /*#__PURE__*/ _preact.h("div", {
+        className: "about-bubble right six",
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 81,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("blockquote", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 82,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "FlexBords makes making glable trade easy easier"), /*#__PURE__*/ _preact.h("b", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 85,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Liaoyin")), /*#__PURE__*/ _preact.h("hr", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 87,
             columnNumber: 17
         },
         __self: undefined
@@ -9930,14 +9990,14 @@ const AboutPage = (props)=>{
         alt: "",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 63,
+            lineNumber: 89,
             columnNumber: 17
         },
         __self: undefined
     })));
 };
 
-},{"preact":"cwEwC","../icons/all-member.jpg":"6sIYA","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"6sIYA":[function(require,module,exports) {
+},{"preact":"cwEwC","../icons/all-member.jpg":"6sIYA","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","preact/hooks":"97VL9"}],"6sIYA":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "all-member.15d16988.jpg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"hPpBg"}],"8eDiM":[function(require,module,exports) {
