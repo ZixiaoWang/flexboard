@@ -20,11 +20,13 @@ export const ArticlePage = (props: any) => {
     const { bookmarkStore } = useBookmarkStore();
 
     useEffect(() => {
+        console.log(url);
         if (url.startsWith('data')) {
             axios
-                .get(url)
+                .get("/"+url)
                 .then((response: AxiosResponse) => {
                     const data = response.data;
+                    console.log(data);
                     setArticle(data);
                     setLoading(false);
                 });
