@@ -41,9 +41,13 @@ export const BookmarksPage = (props: RoutePage) => {
                                 key={index}
                                 onClick={() => goto(seed)}
                                 onkeydown={() => goto(seed)}>
-                                <div className="bookmark-img" style={{
-                                    backgroundImage: `url(${ seed.thumbnail })`
-                                }}>&nbsp;</div>
+                                {
+                                    seed.thumbnail ? 
+                                    <div className="bookmark-img" style={{
+                                        backgroundImage: `url(${ seed.thumbnail })`
+                                    }}>&nbsp;</div> :
+                                    <div className="bookmark-img-placeholder">&nbsp;</div>
+                                }
                                 <div className="bookmark-text">
                                     <div className="is-text-m is-text-bold">
                                         { seed.title }

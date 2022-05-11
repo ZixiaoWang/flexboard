@@ -5,6 +5,7 @@ import { route } from "preact-router";
 import { SeedArticleItem } from "../interfaces";
 import { useBookmarkStore } from "../helpers";
 
+import WSJ from "../icons/wsj.svg";
 import FreightWaves from "../icons/freightwaves.png";
 export interface CardComponentProps {
     size?: "small" | "medium" | "large",
@@ -15,6 +16,7 @@ export const CardComponent = (props: CardComponentProps): VNode => {
     const { bookmarkStore } = useBookmarkStore();
     const seed: SeedArticleItem = props.seed;
     const base64url: string = window.btoa(seed.detailurl);
+    const referenceSourceIconSrc = props.seed.source === "Freight Waves" ? FreightWaves : WSJ;
 
     const cardProps = {
         onClick: () => route(`/seeds/${base64url}`)
@@ -35,14 +37,11 @@ export const CardComponent = (props: CardComponentProps): VNode => {
                         </div>
                 }
                 <div className="card-row">
-                    {
-                        seed.source === "Freight Waves" ?
-                        <div className="card-reference">
-                            <img src={FreightWaves} alt="Freight Waves" />
-                        </div> : <div/>
-                    }
+                    <div className="card-reference">
+                        <img src={referenceSourceIconSrc} alt="Freight Waves" />
+                    </div>
                     <div className="blue50 is-text-bold">
-                        {seed.title}
+                        {seed.title.length > 70 ? (seed.title.substring(0, 70) + "...") : seed.title}
                     </div>
                     <div className="is-text-xs grey40 has-margin-top-1">
                         {seed.date}
@@ -69,7 +68,7 @@ export const CardComponent = (props: CardComponentProps): VNode => {
             <div className="card-row">
                 <div className="card-title">
                     <div className="card-reference">
-                        <img src={FreightWaves} alt="Freight Waves" />
+                        <img src={referenceSourceIconSrc} alt="Freight Waves" />
                     </div>
                     <span>{seed.title}</span>
                     <div className="has-padding-top-3">

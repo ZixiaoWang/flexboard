@@ -1,7 +1,7 @@
 @import "variables";
 
 .article {
-    padding: 94px 18px 80 18px;
+    padding: 94px 18px 80px 18px;
     width: 100%;
     max-width: 1200px;
     overflow-x: hidden;
@@ -119,6 +119,17 @@
                 max-width: 350px;
                 height: auto;
             }
+        }
+    }
+
+    .iframe-container {
+        margin: -19px -18px -80px -18px;
+        height: calc(100vh - 75px);
+        border-top: 1px solid $grey50;
+
+        iframe {
+            border: none;
+            height: 100%;
         }
     }
 }

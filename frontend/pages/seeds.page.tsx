@@ -1,5 +1,5 @@
 import { Fragment, h } from "preact";
-import { useEffect } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import { CardComponent, Loader } from "../components";
 import { useSeedsStore } from "../helpers";
 import { RoutePage, SeedArticleItem } from "../interfaces";
@@ -27,6 +27,7 @@ const Section = (props: SectionProps) => (
 
 export const SeedsPage = (props: RoutePage) => {
     const {seedsStore, loading, getSeeds} = useSeedsStore();
+    const [source, setSource] = useState("ALL");
     const seeds = seedsStore.seeds;
 
     useEffect(() => {
@@ -70,18 +71,25 @@ export const SeedsPage = (props: RoutePage) => {
                     </div>
                 </Section>
                 <div className="widges">
-                    <div className="widge is-selected">All Categories</div>
-                    <div className="widge">Ocean</div>
-                    <div className="widge">Air</div>
-                    <div className="widge">Trucking</div>
-                    <div className="widge">COVID</div>
-                    <div className="widge">Tenology</div>
-                    <div className="widge">Commercial</div>
+                    <div className={source === "ALL" ? "widge is-selected" : "widge"} onClick={() => setSource("ALL")}>All Sources</div>
+                    <div className={source === "WSJ" ? "widge is-selected" : "widge"} onClick={() => setSource("WSJ")}>WSJ</div>
+                    <div className={source === "FRIEIGHT_WAVES" ? "widge is-selected" : "widge"} onClick={() => setSource("FRIEIGHT_WAVES")}>Freight Waves</div>
                 </div>
                 <Section label="Seeds">
                     {
                         seeds
                             .slice(4)
+                            .filter((seed) => {
+                                if (source === "ALL") {
+                                    return true;
+                                } else {
+                                    if (source === "WSJ") {
+                                        return seed.source.indexOf("WSJ") === 0;
+                                    } else {
+                                        return seed.source === "Freight Waves";
+                                    }
+                                }
+                            })
                             .map((seed: SeedArticleItem) => <CardComponent size="small" seed={seed} />)
                     }
                 </Section>
