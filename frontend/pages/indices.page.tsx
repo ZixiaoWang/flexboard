@@ -102,6 +102,11 @@ export const IndicesPage = (props: RoutePage) => {
 
     return (
         <div className="indices" id="indices">
+            <div className="article-actions is-level">
+                <div className="is-level-left white" onClick={() => history.back()}>
+                    <ion-icon name="chevron-back"></ion-icon>
+                </div>
+            </div>
             <div className="indices-header">
                 {((data[0]?.[0] || {}) as any).text}
             </div>

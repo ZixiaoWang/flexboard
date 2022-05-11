@@ -15,4 +15,28 @@
         padding: 12px;
         box-sizing: border-box;
     }
+
+    &-top {
+        max-height: 240px;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        & > .card {
+            width: 280px;
+            margin-top: 0px !important;
+            margin-right: 36px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+
+            &:last-of-type {
+                margin-right: 0px !important;
+            }
+        }
+    }
 }

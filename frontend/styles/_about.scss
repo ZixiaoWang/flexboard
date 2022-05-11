@@ -1,0 +1,25 @@
+@import "variables";
+
+.about {
+    padding: 94px 18px 80 18px;
+    width: 100%;
+    height: 100vh;
+    max-width: 1200px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    position: relative;
+    background-color: white;
+    font-weight: 300;
+    background-image: radial-gradient($blue50, $blue60);
+    color: white;
+
+    &-title {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    &-content {
+        color: $grey30;
+        line-height: 22px;
+    }
+}

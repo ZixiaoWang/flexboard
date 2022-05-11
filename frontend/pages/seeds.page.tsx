@@ -46,20 +46,28 @@ export const SeedsPage = (props: RoutePage) => {
                             Current FBX
                         </div>
                         <div className="is-text-xxl green30">
-                            $5,430
+                            $8,710
                         </div>
                     </div>
                     <div className="seed-box">
                         <div className="is-text-s white">
                             Volatility
                         </div>
-                        <div className="is-text-xxl red30">
-                            1.23%
+                        <div className="is-text-xxl green30">
+                            0.00%
                         </div>
                     </div>
                 </div>
                 <Section label="Top News" hasSeparator>
-                    <CardComponent size="large" seed={seeds[0]} />
+                    <div className="seed-top">
+                        {
+                            seeds
+                                .slice(0, 4)
+                                .map((seed: SeedArticleItem) => {
+                                    return <CardComponent size="large" seed={seed} />
+                                })
+                        }
+                    </div>
                 </Section>
                 <div className="widges">
                     <div className="widge is-selected">All Categories</div>
@@ -73,7 +81,7 @@ export const SeedsPage = (props: RoutePage) => {
                 <Section label="Seeds">
                     {
                         seeds
-                            .slice(1)
+                            .slice(4)
                             .map((seed: SeedArticleItem) => <CardComponent size="small" seed={seed} />)
                     }
                 </Section>

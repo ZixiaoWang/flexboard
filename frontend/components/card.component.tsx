@@ -55,9 +55,7 @@ export const CardComponent = (props: CardComponentProps): VNode => {
                                 <ion-icon name="bookmark-outline" />
                             </span>
                     }
-                    <span className="grey40">
-                        <ion-icon name="calendar" />
-                    </span>
+                    <span>&nbsp;</span>
                 </div>
             </div>
         )

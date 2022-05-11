@@ -10,3 +10,5 @@ export * from "./route.page";
 export * from "./about.page";
 export * from "./disclaimer.page";
 export * from "./bookmarks.page";
+export * from "./indices-list.page";
+export * from "./flexport-indicator.page";

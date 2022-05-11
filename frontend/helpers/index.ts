@@ -4,3 +4,4 @@ export * from "./userStore";
 export * from "./searchStore";
 export * from "./seedsStore";
 export * from "./bookmarkStore";
+export * from "./getFlexportIndicatorData";

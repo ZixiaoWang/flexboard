@@ -20,7 +20,7 @@ export const SettingsPage = (props: RoutePage) => {
                 if (userStore.isExpired()) {
                     googleAuth.prompt();
                 } else {
-                    googleAuth.prompt();
+                    // googleAuth.prompt();
                 }
             } else {
                 googleAuth.renderButton();
