@@ -73,8 +73,10 @@ export const SeedsPage = (props: RoutePage) => {
                 </Section>
                 <div className="widges">
                     <div className={source === "ALL" ? "widge is-selected" : "widge"} onClick={() => setSource("ALL")}>All Sources</div>
-                    <div className={source === "WSJ" ? "widge is-selected" : "widge"} onClick={() => setSource("WSJ")}>WSJ</div>
                     <div className={source === "FRIEIGHT_WAVES" ? "widge is-selected" : "widge"} onClick={() => setSource("FRIEIGHT_WAVES")}>Freight Waves</div>
+                    <div className={source === "load star" ? "widge is-selected" : "widge"} onClick={() => setSource("load star")}>The Load Star</div>
+                    <div className={source === "JOC" ? "widge is-selected" : "widge"} onClick={() => setSource("JOC")}>JOC</div>
+                    <div className={source === "WSJ" ? "widge is-selected" : "widge"} onClick={() => setSource("WSJ")}>WSJ</div>
                 </div>
                 <Section label="Seeds">
                     {
@@ -83,12 +85,14 @@ export const SeedsPage = (props: RoutePage) => {
                             .filter((seed) => {
                                 if (source === "ALL") {
                                     return true;
+                                } else if (source === "WSJ") {
+                                    return seed.source.indexOf("WSJ") === 0;
+                                } else if (source === "load star") {
+                                    return seed.source === "The Load Star";
+                                } else if (source === "JOC") {
+                                    return seed.source.indexOf("JOC") === 0;
                                 } else {
-                                    if (source === "WSJ") {
-                                        return seed.source.indexOf("WSJ") === 0;
-                                    } else {
-                                        return seed.source === "Freight Waves";
-                                    }
+                                    return seed.source === "Freight Waves";
                                 }
                             })
                             .map((seed: SeedArticleItem) => <CardComponent size="small" seed={seed} />)
