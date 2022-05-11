@@ -622,7 +622,7 @@ const App = ()=>{
     const [splashVisibility, setSplashVisibility] = _hooks.useState(true);
     const [isMobile, setIsMobile] = _hooks.useState(window.innerWidth < 576);
     const { getSeeds  } = _helpers.useSeedsStore();
-    const loadingTime = Math.round(Math.random() * 200);
+    const loadingTime = 1000 + Math.round(Math.random() * 1000);
     const resizeHandler = ()=>{
         if (location.hash !== "#/indices") {
             if (window.innerWidth < 570) setIsMobile(true);
@@ -9997,7 +9997,7 @@ const AboutPage = (props)=>{
     })));
 };
 
-},{"preact":"cwEwC","../icons/all-member.jpg":"6sIYA","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","preact/hooks":"97VL9"}],"6sIYA":[function(require,module,exports) {
+},{"preact":"cwEwC","../icons/all-member.jpg":"6sIYA","preact/hooks":"97VL9","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"6sIYA":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "all-member.15d16988.jpg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"hPpBg"}],"8eDiM":[function(require,module,exports) {
