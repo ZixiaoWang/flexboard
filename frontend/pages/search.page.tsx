@@ -28,12 +28,16 @@ export const SearchPage = (props: RoutePage) => {
     const { seedsStore } = useSeedsStore();
 
     const deleteHistories = () => {
-        if (window.confirm("Do you want to delete all searching histories?")) {
+        if (window.confirm("Do you want to delete all searching history?")) {
             searchStore.deleteAllHistory();
         }
     }
 
     const search = (event: Event) => {
+        if (!keywords) {
+            return null;
+        }
+        
         if (keywords.toLocaleLowerCase() === "ryan petersen") {
             const ryan = document.getElementById("ryanpetersen");
             if (ryan) {
@@ -77,6 +81,15 @@ export const SearchPage = (props: RoutePage) => {
     }
 
     const renderSearchResults = () => {
+        if (results.length === 0) {
+            return (
+                <div className="search-results">
+                    <div className="is-text-center white is-text-m">
+                        Didn't find any results
+                    </div>
+                </div>
+            )
+        }
         return (
             <div className="search-results">
                 {results.map((result: SeedArticleItem, index: number) => {

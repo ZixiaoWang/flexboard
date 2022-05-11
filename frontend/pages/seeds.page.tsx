@@ -1,4 +1,5 @@
 import { Fragment, h } from "preact";
+import { route } from "preact-router";
 import { useEffect, useState } from "preact/hooks";
 import { CardComponent, Loader } from "../components";
 import { useSeedsStore } from "../helpers";
@@ -42,20 +43,20 @@ export const SeedsPage = (props: RoutePage) => {
         <Fragment>
             <div className="cards">
                 <div className="seed-boxes">
-                    <div className="seed-box">
-                        <div className="is-text-s white">
-                            Current FBX
+                    <div className="seed-box" onClick={() => route("/indices/flexport-indicator")}>
+                        <div className="is-text-xs white">
+                            OTI transpacific eastbound
                         </div>
                         <div className="is-text-xxl green30">
-                            $8,710
+                            103
                         </div>
                     </div>
-                    <div className="seed-box">
-                        <div className="is-text-s white">
-                            Volatility
+                    <div className="seed-box" onClick={() => route("/indices/flexport-indicator")}>
+                        <div className="is-text-xs white">
+                            ATI transpacific eastbound
                         </div>
                         <div className="is-text-xxl green30">
-                            0.00%
+                            11.5
                         </div>
                     </div>
                 </div>
