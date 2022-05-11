@@ -112,6 +112,15 @@ export const FlexportIndicatorPage = (props: RoutePage) => {
             <div className="indicator-chart">
                 <canvas id="chart" height="350"></canvas>
             </div>
+            <div className="is-text-center has-margin-top-8 is-text-s">
+                <span>The data comes from Flexport own statistics, if you query more information, please visit </span>
+                <br />
+                {
+                    type === "OTI" ?
+                    <a href="https://www.flexport.com/research/ocean-timeliness-indicator/" target="_blank">Flexport Ocean Timeliness Indicator</a> :
+                    <a href="https://www.flexport.com/research/air-timeliness-indicator/" target="_blank">Flexport Air Timeliness Indicator</a>
+                }
+            </div>
         </div>
     )
 }

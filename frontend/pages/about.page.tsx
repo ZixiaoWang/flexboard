@@ -1,5 +1,9 @@
+/// <reference path="../custom.d.ts" />
+
 import { h } from "preact";
 import { RoutePage } from "../interfaces";
+
+import ALL_MEMBERS from "../icons/all-member.jpg";
 
 export const AboutPage = (props: RoutePage) => {
     return (
@@ -28,7 +32,35 @@ export const AboutPage = (props: RoutePage) => {
                     client solutions and ocean teams provides a great mix of technical
                     prowess and business knowledge. Now introducing our team members!
                 </p>
+
                 <hr />
+                <div className="about-bubble left one">
+                    <blockquote>
+                        Catching up with mass news in such a fast-changing world is not that easy, Flexboard help me and my team, my clients always catch the hottest news from the industry. Easy and effective.
+                    </blockquote>
+                    <b>Joyee</b>
+                </div>
+                <div className="about-bubble right two">
+                    <blockquote>
+                        The past two years have shown that staying up to date with the latest news in the supply chain industry is crucial for us and our customers. Flexboard does just that and more by surfacing the top news in the industry everyday, allowing personalization and easy access to industry specific indices as well!
+                    </blockquote>
+                    <b>Jonathan</b>
+                </div>
+                <div className="about-bubble left three">
+                    <blockquote>
+                    Never get bored with Flex Board! It’s the best ever app for anyone who works in global trade. 
+                    </blockquote>
+                    <b>Kelly</b>
+                </div>
+                <div className="about-bubble right four">
+                    <blockquote>
+                        It's fun 🤪
+                    </blockquote>
+                    <b>Jacky</b>
+                </div>
+                <hr />
+
+                <img className="about-img" src={ALL_MEMBERS} alt="" />
             </div>
         </div>
     )

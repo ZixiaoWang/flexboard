@@ -105,6 +105,13 @@ export const ArticlePage = (props: any) => {
                     <hr />
                     <div className="article-content" dangerouslySetInnerHTML={{ __html: article.content }}></div>
                     <hr />
+                    <div className="article-link">
+                        <a href={article.url} target="_blank">
+                            <span>Original Source</span>
+                            <span>&nbsp;</span>
+                            <ion-icon name="arrow-forward-circle"></ion-icon>
+                        </a>
+                    </div>
                 </div> : 
                 <div class='iframe-container'>
                     <iframe type="text/html" src={`${url}`} width="100%" height="100%" />
