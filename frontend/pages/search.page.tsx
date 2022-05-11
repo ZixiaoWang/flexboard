@@ -39,7 +39,14 @@ export const SearchPage = (props: RoutePage) => {
             if (ryan) {
                 ryan.classList.add("show");
                 setTimeout(() => {
-                    ryan.classList.remove("show")
+                    ryan.classList.remove("show");
+                    setStatus(SearchPageEnum.LOADING);
+                    setTimeout(() => {
+                        const resultArr = seedsStore.findByKeywords(keywords);
+                        setResults(resultArr);
+                        setStatus(SearchPageEnum.RESULTS);
+                    }, 1000 + Math.floor(Math.random() * 1000));
+                    searchStore.addHistory(keywords);
                 }, 3000);
             }
         } else {
@@ -121,7 +128,7 @@ export const SearchPage = (props: RoutePage) => {
                         searchStore
                             .getHistories()
                             .map(history => (
-                                <div className="search-item">
+                                <div className="search-item" onClick={() => directSearch(history)}>
                                     {history}
                                 </div>
                             ))

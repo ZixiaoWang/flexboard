@@ -7,7 +7,7 @@ import { createHashHistory } from "history";
 
 import { useSeedsStore } from "./helpers";
 import { HeaderComponent, QRCode, TabsComponent } from "./components";
-import { ArticlePage, IndicesPage, MessagesPage, Redirect, SearchPage, SeedsPage, SettingsPage, SplashPage, Route, AboutPage, DisclaimerPage, BookmarksPage } from "./pages";
+import { ArticlePage, IndicesPage, MessagesPage, Redirect, SearchPage, SeedsPage, SettingsPage, SplashPage, Route, AboutPage, DisclaimerPage, BookmarksPage, IndicesListPage, FlexportIndicatorPage } from "./pages";
 /** @jsx h */
 
 import "./styles/main.scss";
@@ -47,7 +47,7 @@ const Home = (props: HomePageProps) => {
             <div className="page">
                 {rest === "seeds" && <SeedsPage />}
                 {rest === "search" && <SearchPage />}
-                {rest === "indices" && <IndicesPage />}
+                {rest === "indices" && <IndicesListPage />}
                 {rest === "messages" && <MessagesPage />}
                 {rest === "settings" && <SettingsPage />}
                 {HOME_ROUTES.includes(rest || "") === false && <Redirect default to="/seeds" />}
@@ -111,6 +111,8 @@ const App = () => {
                 <ArticlePage path="/seeds/:base64url" />
                 <DisclaimerPage path="/disclaimer" />
                 <BookmarksPage path="/bookmarks" />
+                <IndicesPage path="/indices/shanghai-exchange" />
+                <FlexportIndicatorPage path="/indices/flexport-indicator" />
                 <AboutPage path="/about" />
                 <Home path="/:rest*" />
             </Router>
