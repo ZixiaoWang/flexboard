@@ -64,7 +64,7 @@ const App = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 576);
     const {getSeeds} = useSeedsStore();
 
-    const loadingTime: number = Math.round(Math.random() * 200);
+    const loadingTime: number = 1000 + Math.round(Math.random() * 1000);
 
     const resizeHandler = () => {
         if (location.hash !== "#/indices") {
