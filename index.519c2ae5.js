@@ -9151,8 +9151,8 @@ const SeedsPage = (props)=>{
         },
         __self: undefined
     }, "All Sources"), /*#__PURE__*/ _preact.h("div", {
-        className: source === "WSJ" ? "widge is-selected" : "widge",
-        onClick: ()=>setSource("WSJ")
+        className: source === "FRIEIGHT_WAVES" ? "widge is-selected" : "widge",
+        onClick: ()=>setSource("FRIEIGHT_WAVES")
         ,
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
@@ -9160,9 +9160,9 @@ const SeedsPage = (props)=>{
             columnNumber: 21
         },
         __self: undefined
-    }, "WSJ"), /*#__PURE__*/ _preact.h("div", {
-        className: source === "FRIEIGHT_WAVES" ? "widge is-selected" : "widge",
-        onClick: ()=>setSource("FRIEIGHT_WAVES")
+    }, "Freight Waves"), /*#__PURE__*/ _preact.h("div", {
+        className: source === "load star" ? "widge is-selected" : "widge",
+        onClick: ()=>setSource("load star")
         ,
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
@@ -9170,26 +9170,46 @@ const SeedsPage = (props)=>{
             columnNumber: 21
         },
         __self: undefined
-    }, "Freight Waves")), /*#__PURE__*/ _preact.h(Section, {
-        label: "Seeds",
+    }, "The Load Star"), /*#__PURE__*/ _preact.h("div", {
+        className: source === "JOC" ? "widge is-selected" : "widge",
+        onClick: ()=>setSource("JOC")
+        ,
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 78,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "JOC"), /*#__PURE__*/ _preact.h("div", {
+        className: source === "WSJ" ? "widge is-selected" : "widge",
+        onClick: ()=>setSource("WSJ")
+        ,
         __source: {
             fileName: "frontend/pages/seeds.page.tsx",
             lineNumber: 79,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "WSJ")), /*#__PURE__*/ _preact.h(Section, {
+        label: "Seeds",
+        __source: {
+            fileName: "frontend/pages/seeds.page.tsx",
+            lineNumber: 81,
             columnNumber: 17
         },
         __self: undefined
     }, seeds.slice(4).filter((seed)=>{
         if (source === "ALL") return true;
-        else {
-            if (source === "WSJ") return seed.source.indexOf("WSJ") === 0;
-            else return seed.source === "Freight Waves";
-        }
+        else if (source === "WSJ") return seed.source.indexOf("WSJ") === 0;
+        else if (source === "load star") return seed.source === "The Load Star";
+        else if (source === "JOC") return seed.source.indexOf("JOC") === 0;
+        else return seed.source === "Freight Waves";
     }).map((seed)=>/*#__PURE__*/ _preact.h(_components.CardComponent, {
             size: "small",
             seed: seed,
             __source: {
                 fileName: "frontend/pages/seeds.page.tsx",
-                lineNumber: 94,
+                lineNumber: 98,
                 columnNumber: 61
             },
             __self: undefined
