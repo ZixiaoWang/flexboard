@@ -8247,8 +8247,8 @@ const CardComponent = (props)=>{
     }, seed.date)))));
 };
 
-},{"preact":"cwEwC","preact-router":"gXK85","../helpers":"dtOhO","../icons/freightwaves.png":"aiuzK","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","../icons/wsj.svg":"7Siaj"}],"aiuzK":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "freightwaves.a156c0ae.png" + "?" + Date.now();
+},{"preact":"cwEwC","preact-router":"gXK85","../helpers":"dtOhO","../icons/wsj.svg":"7Siaj","../icons/freightwaves.png":"aiuzK","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"7Siaj":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "wsj.73f5e3d4.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"hPpBg"}],"hPpBg":[function(require,module,exports) {
 "use strict";
@@ -8284,8 +8284,8 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"7Siaj":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "wsj.73f5e3d4.svg" + "?" + Date.now();
+},{}],"aiuzK":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "freightwaves.a156c0ae.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"hPpBg"}],"aJbpU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -9714,13 +9714,16 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AboutPage", ()=>AboutPage
 );
+/// <reference path="../custom.d.ts" />
 var _preact = require("preact");
+var _allMemberJpg = require("../icons/all-member.jpg");
+var _allMemberJpgDefault = parcelHelpers.interopDefault(_allMemberJpg);
 const AboutPage = (props)=>{
     return /*#__PURE__*/ _preact.h("div", {
         className: "about",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 6,
+            lineNumber: 10,
             columnNumber: 9
         },
         __self: undefined
@@ -9728,7 +9731,7 @@ const AboutPage = (props)=>{
         className: "article-actions is-level",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 7,
+            lineNumber: 11,
             columnNumber: 13
         },
         __self: undefined
@@ -9738,7 +9741,7 @@ const AboutPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 8,
+            lineNumber: 12,
             columnNumber: 17
         },
         __self: undefined
@@ -9746,7 +9749,7 @@ const AboutPage = (props)=>{
         name: "chevron-back",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 9,
+            lineNumber: 13,
             columnNumber: 21
         },
         __self: undefined
@@ -9754,7 +9757,7 @@ const AboutPage = (props)=>{
         className: "about-title",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 12,
+            lineNumber: 16,
             columnNumber: 13
         },
         __self: undefined
@@ -9762,35 +9765,143 @@ const AboutPage = (props)=>{
         className: "about-content grey40",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 15,
+            lineNumber: 19,
             columnNumber: 13
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("p", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 16,
+            lineNumber: 20,
             columnNumber: 17
         },
         __self: undefined
     }, "Flexboard is the premier supply chain and logistics news app. Consolidating top industry news from multiple channels and sources around the world. Flexboard allows a user to customize their own news browsing experience. With extensive personalization through bookmarking, news grouping by topics, and top notch user interface and user experience, Flexboard will deliver the best browsing experience for industry amateurs and professionals alike!"), /*#__PURE__*/ _preact.h("p", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 25,
+            lineNumber: 29,
             columnNumber: 17
         },
         __self: undefined
     }, "The Flexboard team is comprised of members originating from a wide range of teams across Tech and Business. Having team members from engineering, product, client solutions and ocean teams provides a great mix of technical prowess and business knowledge. Now introducing our team members!"), /*#__PURE__*/ _preact.h("hr", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 31,
+            lineNumber: 36,
+            columnNumber: 17
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _preact.h("div", {
+        className: "about-bubble left one",
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 37,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("blockquote", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 38,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Catchinng up with mass news in such a fast-changing world is not that easy, Flexboard help me and my team, my clients always catch the hottest news from the industry. Easy and effective."), /*#__PURE__*/ _preact.h("b", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 41,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Joyee")), /*#__PURE__*/ _preact.h("div", {
+        className: "about-bubble right two",
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 43,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("blockquote", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 44,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "The past two years have shown that staying up to date with the latest news in the supply chain industry is crucial for us and our customers. Flexboard does just that and more by surfacing the top news in the industry everyday, allowing personalization and easy access to industry specific indices as well!"), /*#__PURE__*/ _preact.h("b", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 47,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Jonathan")), /*#__PURE__*/ _preact.h("div", {
+        className: "about-bubble left three",
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 49,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("blockquote", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 50,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Never get bored with Flex Board! It\u2019s the best ever app for anyone who works in global trade."), /*#__PURE__*/ _preact.h("b", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 53,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Kelly")), /*#__PURE__*/ _preact.h("div", {
+        className: "about-bubble left four",
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 55,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("blockquote", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 56,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "It's fun \u{1F92A}"), /*#__PURE__*/ _preact.h("b", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 59,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Jacky")), /*#__PURE__*/ _preact.h("hr", {
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 61,
+            columnNumber: 17
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _preact.h("img", {
+        className: "about-img",
+        src: _allMemberJpgDefault.default,
+        alt: "",
+        __source: {
+            fileName: "frontend/pages/about.page.tsx",
+            lineNumber: 63,
             columnNumber: 17
         },
         __self: undefined
     })));
 };
 
-},{"preact":"cwEwC","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"8eDiM":[function(require,module,exports) {
+},{"preact":"cwEwC","../icons/all-member.jpg":"6sIYA","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"6sIYA":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('cL05w') + "all-member.15d16988.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"hPpBg"}],"8eDiM":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "DisclaimerPage", ()=>DisclaimerPage
