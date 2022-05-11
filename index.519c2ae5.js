@@ -9677,11 +9677,50 @@ const ArticlePage = (props)=>{
             columnNumber: 21
         },
         __self: undefined
-    })) : /*#__PURE__*/ _preact.h("div", {
-        class: "iframe-container",
+    }), /*#__PURE__*/ _preact.h("div", {
+        className: "article-link",
+        __source: {
+            fileName: "frontend/pages/articles.page.tsx",
+            lineNumber: 108,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("a", {
+        href: article.url,
+        target: "_blank",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
             lineNumber: 109,
+            columnNumber: 25
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/pages/articles.page.tsx",
+            lineNumber: 110,
+            columnNumber: 29
+        },
+        __self: undefined
+    }, "Original Source"), /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/pages/articles.page.tsx",
+            lineNumber: 111,
+            columnNumber: 29
+        },
+        __self: undefined
+    }, "\xa0"), /*#__PURE__*/ _preact.h("ion-icon", {
+        name: "arrow-forward-circle",
+        __source: {
+            fileName: "frontend/pages/articles.page.tsx",
+            lineNumber: 112,
+            columnNumber: 29
+        },
+        __self: undefined
+    })))) : /*#__PURE__*/ _preact.h("div", {
+        class: "iframe-container",
+        __source: {
+            fileName: "frontend/pages/articles.page.tsx",
+            lineNumber: 116,
             columnNumber: 17
         },
         __self: undefined
@@ -9692,7 +9731,7 @@ const ArticlePage = (props)=>{
         height: "100%",
         __source: {
             fileName: "frontend/pages/articles.page.tsx",
-            lineNumber: 110,
+            lineNumber: 117,
             columnNumber: 21
         },
         __self: undefined
@@ -9805,7 +9844,7 @@ const AboutPage = (props)=>{
             columnNumber: 21
         },
         __self: undefined
-    }, "Catchinng up with mass news in such a fast-changing world is not that easy, Flexboard help me and my team, my clients always catch the hottest news from the industry. Easy and effective."), /*#__PURE__*/ _preact.h("b", {
+    }, "Catching up with mass news in such a fast-changing world is not that easy, Flexboard help me and my team, my clients always catch the hottest news from the industry. Easy and effective."), /*#__PURE__*/ _preact.h("b", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
             lineNumber: 41,
@@ -9857,7 +9896,7 @@ const AboutPage = (props)=>{
         },
         __self: undefined
     }, "Kelly")), /*#__PURE__*/ _preact.h("div", {
-        className: "about-bubble left four",
+        className: "about-bubble right four",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
             lineNumber: 55,
@@ -10523,7 +10562,47 @@ const FlexportIndicatorPage = (props)=>{
             columnNumber: 17
         },
         __self: undefined
-    })));
+    })), /*#__PURE__*/ _preact.h("div", {
+        className: "is-text-center has-margin-top-8 is-text-s",
+        __source: {
+            fileName: "frontend/pages/flexport-indicator.page.tsx",
+            lineNumber: 115,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _preact.h("span", {
+        __source: {
+            fileName: "frontend/pages/flexport-indicator.page.tsx",
+            lineNumber: 116,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, "The data comes from Flexport own statistics, if you query more information, please visit "), /*#__PURE__*/ _preact.h("br", {
+        __source: {
+            fileName: "frontend/pages/flexport-indicator.page.tsx",
+            lineNumber: 117,
+            columnNumber: 17
+        },
+        __self: undefined
+    }), type === "OTI" ? /*#__PURE__*/ _preact.h("a", {
+        href: "https://www.flexport.com/research/ocean-timeliness-indicator/",
+        target: "_blank",
+        __source: {
+            fileName: "frontend/pages/flexport-indicator.page.tsx",
+            lineNumber: 120,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Flexport Ocean Timeliness Indicator") : /*#__PURE__*/ _preact.h("a", {
+        href: "https://www.flexport.com/research/air-timeliness-indicator/",
+        target: "_blank",
+        __source: {
+            fileName: "frontend/pages/flexport-indicator.page.tsx",
+            lineNumber: 121,
+            columnNumber: 21
+        },
+        __self: undefined
+    }, "Flexport Air Timeliness Indicator")));
 };
 
 },{"preact":"cwEwC","preact/hooks":"97VL9","../helpers/getFlexportIndicatorData":"4xwpl","chart.js":"iUqbf","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"iUqbf":[function(require,module,exports) {
