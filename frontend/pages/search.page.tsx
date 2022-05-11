@@ -115,7 +115,7 @@ export const SearchPage = (props: RoutePage) => {
                 </div>
                 <div className="search-row">
                     <div className="search-title is-level">
-                        <div className="is-level-left">Histoires</div>
+                        <div className="is-level-left">History</div>
                         <div className="is-level-right is-flex is-vertical-center"
                             onClick={deleteHistories}
                             onKeyDown={deleteHistories}>

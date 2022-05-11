@@ -4,24 +4,28 @@ import { useEffect, useState } from "preact/hooks";
 import { DATA } from "../helpers/getFlexportIndicatorData";
 import { Chart, registerables } from "chart.js";
 
-const RED = "#FDA6A6";
-const BLUE = "#6294BE";
+const BLUE = "#FDA6A6";
+const RED = "#6294BE";
+
+const getDate = (num: number): string => {
+    return new Date(new Date(2019, 3, 7).getTime() + ((num - 43562) * 24 * 60 * 60 * 1000)).toISOString().split("T")[0];
+}
 
 export const FlexportIndicatorPage = (props: RoutePage) => {
     const [type, setType] = useState("OTI");
     const [chart, setChart] = useState(null);
 
     const OTIData: any = {
-        labels: DATA.OTI.WEEK_ENDINGS,
+        labels: DATA.OTI.WEEK_ENDINGS.map(getDate),
         datasets: [{
-            label: "Far East Westbounding",
+            label: "Far East Westbound",
             backgroundColor: RED,
             borderColor: RED,
             data: DATA.OTI.FAR_EAST_WESTBOUND,
             borderJoinStyle: "round",
             pointRadius: 0,
         }, {
-            label: "Transpacific Westbounding",
+            label: "Transpacific Eastbound",
             backgroundColor: BLUE,
             borderColor: BLUE,
             data: DATA.OTI.TRANSPACIFIC_WESTBOUND,
@@ -31,16 +35,16 @@ export const FlexportIndicatorPage = (props: RoutePage) => {
     };
 
     const ATIData: any = {
-        labels: DATA.ATI.WEEK_ENDINGS,
+        labels: DATA.ATI.WEEK_ENDINGS.map(getDate),
         datasets: [{
-            label: "Far East Westbounding",
+            label: "Far East Westbound",
             backgroundColor: RED,
             borderColor: RED,
             data: DATA.ATI.FAR_EAST_WESTBOUND,
             borderJoinStyle: "round",
             pointRadius: 0,
         }, {
-            label: "Transpacific Westbounding",
+            label: "Transpacific Eastbound",
             backgroundColor: BLUE,
             borderColor: BLUE,
             data: DATA.ATI.TRANSPACIFIC_WESTBOUND,

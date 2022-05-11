@@ -77,7 +77,7 @@ export const SettingsPage = (props: RoutePage) => {
                     onClick={() => route("/disclaimer")}
                     onKeydown={() => route("/disclaimer")}>
                     <ion-icon name="alert-sharp"></ion-icon>
-                    <span>Declaration</span>
+                    <span>Disclaimer</span>
                 </div>
             </div>
             {
