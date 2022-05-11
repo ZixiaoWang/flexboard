@@ -20,13 +20,17 @@ export const ArticlePage = (props: any) => {
     const { bookmarkStore } = useBookmarkStore();
 
     useEffect(() => {
-        axios
-            .get(url)
-            .then((response: AxiosResponse) => {
-                const data = response.data;
-                setArticle(data);
-                setLoading(false);
-            })
+        if (url.startsWith('data')) {
+            axios
+                .get(url)
+                .then((response: AxiosResponse) => {
+                    const data = response.data;
+                    setArticle(data);
+                    setLoading(false);
+                });
+        } else {
+            setLoading(false);
+        }
     }, []);
 
     const back = () => {
@@ -66,16 +70,16 @@ export const ArticlePage = (props: any) => {
                         userStore.isAvailable() && 
                         <Fragment>
                             {
-                                bookmarkStore.hasBookmark(article.url) ?
+                                bookmarkStore.hasBookmark(article?.url || url) ?
                                 <span className="red30">
                                     <ion-icon 
-                                        onClick={() => bookmarkStore.toggleBookmark(article.url)}
+                                        onClick={() => bookmarkStore.toggleBookmark(article?.url || url)}
                                         name="bookmark">
                                     </ion-icon>
                                 </span> :
                                 <span className="grey40">
                                 <ion-icon 
-                                    onClick={() => bookmarkStore.toggleBookmark(article.url)}
+                                    onClick={() => bookmarkStore.toggleBookmark(article?.url || url)}
                                     name="bookmark-outline">
                                 </ion-icon>
                             </span>
@@ -84,23 +88,29 @@ export const ArticlePage = (props: any) => {
                     }
                 </div>
             </div>
-            <div className="article-reference">
-                <img src={FreightWaves} alt="Freight Waves" />
-            </div>
             {
-                article.thumbnail &&
-                <div className="article-thumbnail" style={{ backgroundImage: `url(${article.thumbnail})` }}></div>
+                url.startsWith('data') ?
+                <div>
+                    {
+                        article.thumbnail &&
+                        <div className="article-thumbnail" style={{ backgroundImage: `url(${article.thumbnail})` }}></div>
+                    }
+                    <div className="article-title">
+                        { article.title }
+                    </div>
+                    <div className="article-label">
+                        <div>Author: { article.author }</div>
+                        <div>Published at: { article.date }</div>
+                    </div>
+                    <hr />
+                    <div className="article-content" dangerouslySetInnerHTML={{ __html: article.content }}></div>
+                    <hr />
+                </div> : 
+                <div class='iframe-container'>
+                    <iframe type="text/html" src={`${url}`} width="100%" height="100%" />
+                </div>
             }
-            <div className="article-title">
-                { article.title }
-            </div>
-            <div className="article-label">
-                <div>Author: { article.author }</div>
-                <div>Published at: { article.date }</div>
-            </div>
-            <hr />
-            <div className="article-content" dangerouslySetInnerHTML={{ __html: article.content }}></div>
-            <hr />
+            
         </div>
     )
 }

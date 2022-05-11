@@ -35,9 +35,12 @@ export const CardComponent = (props: CardComponentProps): VNode => {
                         </div>
                 }
                 <div className="card-row">
-                    <div className="card-reference">
-                        <img src={FreightWaves} alt="Freight Waves" />
-                    </div>
+                    {
+                        seed.source === "Freight Waves" ?
+                        <div className="card-reference">
+                            <img src={FreightWaves} alt="Freight Waves" />
+                        </div> : <div/>
+                    }
                     <div className="blue50 is-text-bold">
                         {seed.title}
                     </div>
