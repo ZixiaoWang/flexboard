@@ -7,6 +7,8 @@ import { useBookmarkStore } from "../helpers";
 
 import WSJ from "../icons/wsj.svg";
 import FreightWaves from "../icons/freightwaves.png";
+import JOC from "../icons/joc.png";
+import loadstar from "../icons/loadstar.png";
 export interface CardComponentProps {
     size?: "small" | "medium" | "large",
     seed: SeedArticleItem
@@ -16,7 +18,21 @@ export const CardComponent = (props: CardComponentProps): VNode => {
     const { bookmarkStore } = useBookmarkStore();
     const seed: SeedArticleItem = props.seed;
     const base64url: string = window.btoa(seed.detailurl);
-    const referenceSourceIconSrc = props.seed.source === "Freight Waves" ? FreightWaves : WSJ;
+    let referenceSourceIconSrc = props.seed.source;
+
+    switch(props.seed.source) {
+        case('Freight Waves'):
+            referenceSourceIconSrc = FreightWaves;
+            break;
+        case('The Load Star'):
+            referenceSourceIconSrc = loadstar;
+            break;
+        case('JOC'):
+            referenceSourceIconSrc = JOC;
+            break;
+        default: 
+            referenceSourceIconSrc = WSJ;
+    }
 
     const cardProps = {
         onClick: () => route(`/seeds/${base64url}`)

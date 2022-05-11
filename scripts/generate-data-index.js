@@ -50,9 +50,12 @@ const rss_json_file = path.resolve(data_dir, "rss.json");
     const joc_meta = []
     for await (let article of joc_articles) {
         const content = await fs.readJSON(path.resolve(joc_news_dir, article));
+        if (content.thumbnail.length === 0) {
+            continue;
+        }
         joc_meta.push({
             index: i,
-            source: "Journal of Commerce",
+            source: "JOC",
             url: content.url,
             title: content.title,
             date: content.date,
@@ -87,7 +90,7 @@ const rss_json_file = path.resolve(data_dir, "rss.json");
     the_load_star_meta.sort(sortByDate);
     rss_meta.sort(sortByDate);
     
-    cont first_half_meta = freight_waves_meta.slice(0, 10).concat(the_load_star_meta.slice(0, 10)).sort((a, b) => 0.5 - Math.random())
+    const first_half_meta = freight_waves_meta.slice(0, 10).concat(the_load_star_meta.slice(0, 10)).sort((a, b) => 0.5 - Math.random())
 
     const article_meta = first_half_meta.concat(joc_meta.slice(0, 10), rss_meta.slice(0, 3));
 

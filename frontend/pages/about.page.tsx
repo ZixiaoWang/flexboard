@@ -82,7 +82,7 @@ export const AboutPage = (props: RoutePage) => {
                     <blockquote>
                         Flexboard makes making glable trade easy easier
                     </blockquote>
-                    <b>Liaoyin</b>
+                    <b>Yin Liao</b>
                 </div>
                 <hr />
 
