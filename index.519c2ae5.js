@@ -9970,7 +9970,7 @@ const AboutPage = (props)=>{
             columnNumber: 21
         },
         __self: undefined
-    }, "FlexBords makes making glable trade easy easier"), /*#__PURE__*/ _preact.h("b", {
+    }, "Flexboard makes making glable trade easy easier"), /*#__PURE__*/ _preact.h("b", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
             lineNumber: 85,
