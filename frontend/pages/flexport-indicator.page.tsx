@@ -8,7 +8,7 @@ const BLUE = "#FDA6A6";
 const RED = "#6294BE";
 
 const getDate = (num: number): string => {
-    return new Date(new Date(2019, 3, 7).getTime() + ((num - 43562) * 24 * 60 * 60 * 1000)).toISOString().split("T")[0];
+    return new Date(new Date(2019, 3, 7).getTime() + ((num - 43561) * 24 * 60 * 60 * 1000)).toISOString().split("T")[0];
 }
 
 export const FlexportIndicatorPage = (props: RoutePage) => {
