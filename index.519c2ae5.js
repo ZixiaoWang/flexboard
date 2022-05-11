@@ -7125,22 +7125,13 @@ const CardComponent = (props)=>{
         },
         __self: undefined
     })), /*#__PURE__*/ _preact.h("span", {
-        className: "grey40",
         __source: {
             fileName: "frontend/components/card.component.tsx",
             lineNumber: 58,
             columnNumber: 21
         },
         __self: undefined
-    }, /*#__PURE__*/ _preact.h("ion-icon", {
-        name: "calendar",
-        __source: {
-            fileName: "frontend/components/card.component.tsx",
-            lineNumber: 59,
-            columnNumber: 25
-        },
-        __self: undefined
-    }))));
+    }, "\xa0")));
     return /*#__PURE__*/ _preact.h("div", {
         className: "card is-large",
         style: {
@@ -7149,7 +7140,7 @@ const CardComponent = (props)=>{
         ...cardProps,
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 67,
+            lineNumber: 65,
             columnNumber: 9
         },
         __self: undefined
@@ -7157,7 +7148,7 @@ const CardComponent = (props)=>{
         className: "card-row",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 68,
+            lineNumber: 66,
             columnNumber: 13
         },
         __self: undefined
@@ -7165,7 +7156,7 @@ const CardComponent = (props)=>{
         className: "card-title",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 69,
+            lineNumber: 67,
             columnNumber: 17
         },
         __self: undefined
@@ -7173,7 +7164,7 @@ const CardComponent = (props)=>{
         className: "card-reference",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 70,
+            lineNumber: 68,
             columnNumber: 21
         },
         __self: undefined
@@ -7182,14 +7173,14 @@ const CardComponent = (props)=>{
         alt: "Freight Waves",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 71,
+            lineNumber: 69,
             columnNumber: 25
         },
         __self: undefined
     })), /*#__PURE__*/ _preact.h("span", {
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 73,
+            lineNumber: 71,
             columnNumber: 21
         },
         __self: undefined
@@ -7197,7 +7188,7 @@ const CardComponent = (props)=>{
         className: "has-padding-top-3",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 74,
+            lineNumber: 72,
             columnNumber: 21
         },
         __self: undefined
@@ -7205,7 +7196,7 @@ const CardComponent = (props)=>{
         className: "is-text-s",
         __source: {
             fileName: "frontend/components/card.component.tsx",
-            lineNumber: 75,
+            lineNumber: 73,
             columnNumber: 25
         },
         __self: undefined
@@ -7600,9 +7591,15 @@ const SearchPage = (props)=>{
                 ryan.classList.add("show");
                 setTimeout(()=>{
                     ryan.classList.remove("show");
+                    setStatus(SearchPageEnum.LOADING);
+                    setTimeout(()=>{
+                        const resultArr = seedsStore.findByKeywords(keywords);
+                        setResults(resultArr);
+                        setStatus(SearchPageEnum.RESULTS);
+                    }, 1000 + Math.floor(Math.random() * 1000));
+                    searchStore.addHistory(keywords);
                 }, 3000);
             }
-            searchStore.addHistory(keywords);
         } else {
             event.preventDefault();
             setStatus(SearchPageEnum.LOADING);
@@ -7628,7 +7625,7 @@ const SearchPage = (props)=>{
         return /*#__PURE__*/ _preact.h(_components.Loader, {
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 70,
+                lineNumber: 76,
                 columnNumber: 16
             },
             __self: undefined
@@ -7639,7 +7636,7 @@ const SearchPage = (props)=>{
             className: "search-results",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 75,
+                lineNumber: 81,
                 columnNumber: 13
             },
             __self: undefined
@@ -7651,7 +7648,7 @@ const SearchPage = (props)=>{
                 ,
                 __source: {
                     fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 78,
+                    lineNumber: 84,
                     columnNumber: 25
                 },
                 __self: undefined
@@ -7659,7 +7656,7 @@ const SearchPage = (props)=>{
                 className: "search-result-url",
                 __source: {
                     fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 81,
+                    lineNumber: 87,
                     columnNumber: 29
                 },
                 __self: undefined
@@ -7667,7 +7664,7 @@ const SearchPage = (props)=>{
                 className: "search-result-title",
                 __source: {
                     fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 84,
+                    lineNumber: 90,
                     columnNumber: 29
                 },
                 __self: undefined
@@ -7678,7 +7675,7 @@ const SearchPage = (props)=>{
         return /*#__PURE__*/ _preact.h(_preact.Fragment, {
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 96,
+                lineNumber: 102,
                 columnNumber: 13
             },
             __self: undefined
@@ -7686,7 +7683,7 @@ const SearchPage = (props)=>{
             className: "has-margin-top-6",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 97,
+                lineNumber: 103,
                 columnNumber: 17
             },
             __self: undefined
@@ -7694,7 +7691,7 @@ const SearchPage = (props)=>{
             className: "search-row",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 98,
+                lineNumber: 104,
                 columnNumber: 17
             },
             __self: undefined
@@ -7702,7 +7699,7 @@ const SearchPage = (props)=>{
             className: "search-title",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 99,
+                lineNumber: 105,
                 columnNumber: 21
             },
             __self: undefined
@@ -7712,7 +7709,7 @@ const SearchPage = (props)=>{
                 ,
                 __source: {
                     fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 104,
+                    lineNumber: 110,
                     columnNumber: 29
                 },
                 __self: undefined
@@ -7721,7 +7718,7 @@ const SearchPage = (props)=>{
             className: "search-row",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 110,
+                lineNumber: 116,
                 columnNumber: 17
             },
             __self: undefined
@@ -7729,7 +7726,7 @@ const SearchPage = (props)=>{
             className: "search-title is-level",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 111,
+                lineNumber: 117,
                 columnNumber: 21
             },
             __self: undefined
@@ -7737,7 +7734,7 @@ const SearchPage = (props)=>{
             className: "is-level-left",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 112,
+                lineNumber: 118,
                 columnNumber: 25
             },
             __self: undefined
@@ -7747,21 +7744,21 @@ const SearchPage = (props)=>{
             onKeyDown: deleteHistories,
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 113,
+                lineNumber: 119,
                 columnNumber: 25
             },
             __self: undefined
         }, /*#__PURE__*/ _preact.h("span", {
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 116,
+                lineNumber: 122,
                 columnNumber: 29
             },
             __self: undefined
         }, "Delete all"), /*#__PURE__*/ _preact.h("span", {
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 117,
+                lineNumber: 123,
                 columnNumber: 29
             },
             __self: undefined
@@ -7769,15 +7766,17 @@ const SearchPage = (props)=>{
             name: "trash-sharp",
             __source: {
                 fileName: "frontend/pages/search.page.tsx",
-                lineNumber: 118,
+                lineNumber: 124,
                 columnNumber: 29
             },
             __self: undefined
         }))), searchStore.getHistories().map((history)=>/*#__PURE__*/ _preact.h("div", {
                 className: "search-item",
+                onClick: ()=>directSearch(history)
+                ,
                 __source: {
                     fileName: "frontend/pages/search.page.tsx",
-                    lineNumber: 125,
+                    lineNumber: 131,
                     columnNumber: 33
                 },
                 __self: undefined
@@ -7788,7 +7787,7 @@ const SearchPage = (props)=>{
         className: "search",
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 136,
+            lineNumber: 142,
             columnNumber: 9
         },
         __self: undefined
@@ -7796,7 +7795,7 @@ const SearchPage = (props)=>{
         className: "search-row",
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 137,
+            lineNumber: 143,
             columnNumber: 13
         },
         __self: undefined
@@ -7804,7 +7803,7 @@ const SearchPage = (props)=>{
         onSubmit: search,
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 138,
+            lineNumber: 144,
             columnNumber: 17
         },
         __self: undefined
@@ -7812,7 +7811,7 @@ const SearchPage = (props)=>{
         className: "search-input",
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 139,
+            lineNumber: 145,
             columnNumber: 21
         },
         __self: undefined
@@ -7825,7 +7824,7 @@ const SearchPage = (props)=>{
         ,
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 140,
+            lineNumber: 146,
             columnNumber: 25
         },
         __self: undefined
@@ -7834,7 +7833,7 @@ const SearchPage = (props)=>{
         onClick: search,
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 145,
+            lineNumber: 151,
             columnNumber: 25
         },
         __self: undefined
@@ -7845,7 +7844,7 @@ const SearchPage = (props)=>{
         className: "ryan-petersen",
         __source: {
             fileName: "frontend/pages/search.page.tsx",
-            lineNumber: 152,
+            lineNumber: 158,
             columnNumber: 13
         },
         __self: undefined
@@ -8109,7 +8108,7 @@ const SettingsPage = (props)=>{
         if (window.google) {
             if (_helpers.userStore.hasCache()) {
                 if (_helpers.userStore.isExpired()) googleAuth.prompt();
-                else googleAuth.prompt();
+            // googleAuth.prompt();
             } else {
                 googleAuth.renderButton();
                 googleAuth.prompt();
@@ -8652,7 +8651,7 @@ parcelHelpers.export(exports, "AboutPage", ()=>AboutPage
 var _preact = require("preact");
 const AboutPage = (props)=>{
     return /*#__PURE__*/ _preact.h("div", {
-        className: "article",
+        className: "about",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
             lineNumber: 6,
@@ -8685,7 +8684,8 @@ const AboutPage = (props)=>{
             columnNumber: 21
         },
         __self: undefined
-    }))), /*#__PURE__*/ _preact.h("h3", {
+    }))), /*#__PURE__*/ _preact.h("div", {
+        className: "about-title",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
             lineNumber: 12,
@@ -8693,42 +8693,35 @@ const AboutPage = (props)=>{
         },
         __self: undefined
     }, "About Flexboard"), /*#__PURE__*/ _preact.h("div", {
-        className: "grey40",
+        className: "about-content grey40",
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 13,
+            lineNumber: 15,
             columnNumber: 13
         },
         __self: undefined
     }, /*#__PURE__*/ _preact.h("p", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 14,
+            lineNumber: 16,
             columnNumber: 17
         },
         __self: undefined
-    }, "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, ratione dolorum facere quo sint sit dignissimos quis nihil vitae provident adipisci ullam in qui explicabo distinctio accusantium iure unde tempore perferendis excepturi nulla! Rem obcaecati est nostrum repudiandae deserunt unde cumque quas hic accusantium aliquam corrupti fugiat numquam nemo dignissimos minus eos commodi, corporis sequi rerum laudantium? Provident modi optio, asperiores blanditiis molestiae fugiat nostrum est dolores laboriosam sunt eum quo temporibus omnis vero velit delectus cum dolore mollitia facere."), /*#__PURE__*/ _preact.h("p", {
+    }, "Flexboard is the premier supply chain and logistics news app. Consolidating top industry news from multiple channels and sources around the world. Flexboard allows a user to customize their own news browsing experience. With extensive personalization through bookmarking, news grouping by topics, and top notch user interface and user experience, Flexboard will deliver the best browsing experience for industry amateurs and professionals alike!"), /*#__PURE__*/ _preact.h("p", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 17,
+            lineNumber: 25,
             columnNumber: 17
         },
         __self: undefined
-    }, "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora hic eaque, laudantium voluptas officia asperiores dolor debitis laboriosam aspernatur amet autem inventore quidem est optio possimus animi, quos nisi non sequi rerum molestiae aliquam expedita ullam illo. Alias quibusdam dolor nobis, magnam iste vel repellendus!"), /*#__PURE__*/ _preact.h("p", {
+    }, "The Flexboard team is comprised of members originating from a wide range of teams across Tech and Business. Having team members from engineering, product, client solutions and ocean teams provides a great mix of technical prowess and business knowledge. Now introducing our team members!"), /*#__PURE__*/ _preact.h("hr", {
         __source: {
             fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 20,
+            lineNumber: 31,
             columnNumber: 17
         },
         __self: undefined
-    }, "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero architecto consequuntur, possimus harum, iure nostrum pariatur asperiores voluptate tempora dolorem quam ipsum adipisci."), /*#__PURE__*/ _preact.h("p", {
-        __source: {
-            fileName: "frontend/pages/about.page.tsx",
-            lineNumber: 23,
-            columnNumber: 17
-        },
-        __self: undefined
-    }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius fugiat natus dicta eum officiis non sint dolor maiores, inventore aliquid excepturi consequuntur cum veritatis, assumenda porro numquam consectetur nemo doloremque deserunt quibusdam reprehenderit necessitatibus itaque saepe quae. Qui a debitis provident amet eius repudiandae atque laudantium harum natus non. Rerum, facilis aperiam. Facere harum similique, maxime in minus corrupti pariatur corporis est culpa saepe, beatae accusantium, praesentium tempora? Sequi temporibus tempore vel labore officiis adipisci est cumque, nisi alias quam laboriosam ipsum neque perspiciatis possimus dolore, non voluptas, ab voluptates! Expedita iure ea eos, harum magnam libero vel odio enim.")));
+    })));
 };
 
 },{"preact":"cwEwC","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh"}],"8eDiM":[function(require,module,exports) {
