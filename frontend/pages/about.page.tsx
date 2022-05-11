@@ -4,8 +4,22 @@ import { h } from "preact";
 import { RoutePage } from "../interfaces";
 
 import ALL_MEMBERS from "../icons/all-member.jpg";
+import { useEffect, useState } from "preact/hooks";
 
 export const AboutPage = (props: RoutePage) => {
+    const [count, setCount] = useState(0);
+    const [easterEgg, setEasterEgg] = useState("Jacky");
+
+    useEffect(() => {
+        if (count >= 9) {
+            setEasterEgg("Jacky is in ❤️ with Kai");
+            setTimeout(() => {
+                setCount(0);
+                setEasterEgg("Jacky")
+            }, 3000);
+        }
+    }, [count]);
+
     return (
         <div className="about">
             <div className="article-actions is-level">
@@ -48,7 +62,7 @@ export const AboutPage = (props: RoutePage) => {
                 </div>
                 <div className="about-bubble left three">
                     <blockquote>
-                    Never get bored with Flex Board! It’s the best ever app for anyone who works in global trade. 
+                        Never get bored with Flex Board! It’s the best ever app for anyone who works in global trade. 
                     </blockquote>
                     <b>Kelly</b>
                 </div>
@@ -56,7 +70,19 @@ export const AboutPage = (props: RoutePage) => {
                     <blockquote>
                         It's fun 🤪
                     </blockquote>
-                    <b>Jacky</b>
+                    <b onClick={() => setCount(count+1)}>{easterEgg}</b>
+                </div>
+                <div className="about-bubble left five">
+                    <blockquote>
+                        Meeting the wonderful team here! Voice out if you have any new ideas, keep us up to date, power!
+                    </blockquote>
+                    <b>Leon</b>
+                </div>
+                <div className="about-bubble right six">
+                    <blockquote>
+                        FlexBords makes making glable trade easy easier
+                    </blockquote>
+                    <b>Liaoyin</b>
                 </div>
                 <hr />
 
