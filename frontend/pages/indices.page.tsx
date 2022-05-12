@@ -123,9 +123,6 @@ export const IndicesPage = (props: RoutePage) => {
                         }
                     </select>
                 </div>
-                <div className="indices-action is-expand" onClick={requestFullScreen} onKeyDown={requestFullScreen}>
-                    <ion-icon name="expand-sharp"></ion-icon>
-                </div>
             </div>
             <div className="indices-table">
                 <table className="table">

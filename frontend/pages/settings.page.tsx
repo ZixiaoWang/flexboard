@@ -12,7 +12,7 @@ declare global {
 }
 
 export const SettingsPage = (props: RoutePage) => {
-    const {googleAuth, nounce} = useGoogleAuth();
+    const { googleAuth, nounce } = useGoogleAuth();
 
     useEffect(() => {
         if (window.google) {
@@ -30,7 +30,7 @@ export const SettingsPage = (props: RoutePage) => {
     }, []);
 
     const logout = () => {
-        if(window.confirm("Are you sure you want to logout?")) {
+        if (window.confirm("Are you sure you want to logout?")) {
             userStore.clear();
             location.reload();
         }
@@ -54,19 +54,23 @@ export const SettingsPage = (props: RoutePage) => {
                                 </div>
                             </div>
                         </div> :
-                        <div className="setting-google-btn-container" id="gbuttondiv"></div>
+                        <div className="setting-google-btn-container" id="gbuttondiv">
+                            {
+                                !window.google &&
+                                <div className="setting-google-btn-simulator">
+                                    Google Auth is on the way
+                                </div>
+                            }
+                        </div>
                 }
             </div>
             <div className="setting-group">
-                {
-                    userStore.isAvailable() &&
-                    <div className="setting-item"
-                        onClick={() => route("/bookmarks")}
-                        onKeydown={() => route("/bookmarks")}>
-                        <ion-icon name="bookmarks-sharp"></ion-icon>
-                        <span>My bookmarks</span>
-                    </div>
-                }
+                <div className="setting-item"
+                    onClick={() => route("/bookmarks")}
+                    onKeydown={() => route("/bookmarks")}>
+                    <ion-icon name="bookmarks-sharp"></ion-icon>
+                    <span>My bookmarks</span>
+                </div>
                 <div className="setting-item"
                     onClick={() => route("/about")}
                     onKeydown={() => route("/about")}>
@@ -83,7 +87,7 @@ export const SettingsPage = (props: RoutePage) => {
             {
                 userStore.hasCache() &&
                 <div className="setting-group" key={nounce}>
-                    <div 
+                    <div
                         className="has-padding-vertical-3 is-flex is-all-center red30"
                         onClick={logout}
                         onKeydown={logout}>

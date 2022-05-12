@@ -14,7 +14,7 @@ class GoogleAuth extends HookClass {
     private clientId: string = "646206867663-n5avbo6sap51864lno5vnrffc8jrlf45";
 
     init() {
-        window.google.accounts.id.initialize({
+        window.google?.accounts?.id.initialize({
             client_id: "646206867663-n5avbo6sap51864lno5vnrffc8jrlf45",
             callback: this.onSignInSuccess.bind(this)
         });
@@ -27,7 +27,7 @@ class GoogleAuth extends HookClass {
     }
 
     renderButton(): void {
-        window.google.accounts.id.renderButton(
+        window.google?.accounts?.id.renderButton(
             document.getElementById("gbuttondiv"),
             { 
                 theme: "outline", 
@@ -38,7 +38,7 @@ class GoogleAuth extends HookClass {
     }
 
     prompt(): void {
-        window.google.accounts.id.prompt();
+        window.google?.accounts?.id?.prompt();
     }
 }
 

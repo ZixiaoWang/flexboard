@@ -22,7 +22,7 @@ class UserStore {
     }
 
     isAvailable(): boolean {
-        return this.hasCache() && !this.isExpired();
+        return !!this.cache;
     }
 
     hasCache(): boolean {

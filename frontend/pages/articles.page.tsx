@@ -22,7 +22,7 @@ export const ArticlePage = (props: any) => {
     useEffect(() => {
         if (url.startsWith('data')) {
             axios
-                .get("/"+url)
+                .get("/" + url)
                 .then((response: AxiosResponse) => {
                     const data = response.data;
                     setArticle(data);
@@ -66,58 +66,57 @@ export const ArticlePage = (props: any) => {
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         </Fragment>
                     }
-                    {
-                        userStore.isAvailable() && 
-                        <Fragment>
-                            {
-                                bookmarkStore.hasBookmark(article?.url || url) ?
+
+                    <Fragment>
+                        {
+                            bookmarkStore.hasBookmark(article?.url || url) ?
                                 <span className="red30">
-                                    <ion-icon 
+                                    <ion-icon
                                         onClick={() => bookmarkStore.toggleBookmark(article?.url || url)}
                                         name="bookmark">
                                     </ion-icon>
                                 </span> :
                                 <span className="grey40">
-                                <ion-icon 
-                                    onClick={() => bookmarkStore.toggleBookmark(article?.url || url)}
-                                    name="bookmark-outline">
-                                </ion-icon>
-                            </span>
-                            }
-                        </Fragment>
-                    }
+                                    <ion-icon
+                                        onClick={() => bookmarkStore.toggleBookmark(article?.url || url)}
+                                        name="bookmark-outline">
+                                    </ion-icon>
+                                </span>
+                        }
+                    </Fragment>
+
                 </div>
             </div>
             {
                 url.startsWith('data') ?
-                <div>
-                    {
-                        article.thumbnail &&
-                        <div className="article-thumbnail" style={{ backgroundImage: `url(${article.thumbnail})` }}></div>
-                    }
-                    <div className="article-title">
-                        { article.title }
+                    <div>
+                        {
+                            article.thumbnail &&
+                            <div className="article-thumbnail" style={{ backgroundImage: `url(${article.thumbnail})` }}></div>
+                        }
+                        <div className="article-title">
+                            {article.title}
+                        </div>
+                        <div className="article-label">
+                            <div>Author: {article.author}</div>
+                            <div>Published at: {article.date}</div>
+                        </div>
+                        <hr />
+                        <div className="article-content" dangerouslySetInnerHTML={{ __html: article.content }}></div>
+                        <hr />
+                        <div className="article-link">
+                            <a href={article.url} target="_blank">
+                                <span>Original Source</span>
+                                <span>&nbsp;</span>
+                                <ion-icon name="arrow-forward-circle"></ion-icon>
+                            </a>
+                        </div>
+                    </div> :
+                    <div class='iframe-container'>
+                        <iframe type="text/html" src={`${url}`} width="100%" height="100%" />
                     </div>
-                    <div className="article-label">
-                        <div>Author: { article.author }</div>
-                        <div>Published at: { article.date }</div>
-                    </div>
-                    <hr />
-                    <div className="article-content" dangerouslySetInnerHTML={{ __html: article.content }}></div>
-                    <hr />
-                    <div className="article-link">
-                        <a href={article.url} target="_blank">
-                            <span>Original Source</span>
-                            <span>&nbsp;</span>
-                            <ion-icon name="arrow-forward-circle"></ion-icon>
-                        </a>
-                    </div>
-                </div> : 
-                <div class='iframe-container'>
-                    <iframe type="text/html" src={`${url}`} width="100%" height="100%" />
-                </div>
             }
-            
+
         </div>
     )
 }
