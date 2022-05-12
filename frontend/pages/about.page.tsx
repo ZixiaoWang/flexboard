@@ -80,7 +80,7 @@ export const AboutPage = (props: RoutePage) => {
                 </div>
                 <div className="about-bubble right six">
                     <blockquote>
-                        Flexboard makes making glable trade easy easier
+                        Flexboard makes making global trade easy easier
                     </blockquote>
                     <b>Yin Liao</b>
                 </div>
