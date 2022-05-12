@@ -1284,6 +1284,18 @@
   display: flex;
 }
 
+.setting-google-btn-simulator {
+  width: 240px;
+  height: 49px;
+  background-color: #dae3f3;
+  border-radius: 28px;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  display: flex;
+  box-shadow: 0 0 8px #0000004d;
+}
+
 .search {
   padding-top: 18px;
   padding-left: 18px;
@@ -1835,6 +1847,18 @@
 
 .seed-top > .card:last-of-type {
   margin-right: 0 !important;
+}
+
+.seed-load-more {
+  color: #326089;
+  text-align: center;
+  background-image: radial-gradient(#f7f9fd, #dae3f3);
+  border: 2px solid #326089;
+  border-radius: 8px;
+  margin: 42px 0 0;
+  padding: 14px;
+  font-size: 18px;
+  box-shadow: 0 0 12px #0006;
 }
 
 .bookmarks {
