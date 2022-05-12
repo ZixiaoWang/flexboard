@@ -39,4 +39,16 @@
             }
         }
     }
+
+    &-load-more {
+        padding: 14px;
+        color: $blue50;
+        margin: 42px 0px 0px 0px;
+        text-align: center;
+        border-radius: 8px;
+        font-size: 18px;
+        background-image: radial-gradient($grey10, $grey20);
+        box-shadow: 0px 0px 12px rgba(black, 0.4);
+        border: 2px solid $blue50;
+    }
 }

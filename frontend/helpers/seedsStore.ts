@@ -5,6 +5,7 @@ import { HookClass } from "./hookClass";
 
 class SeedsStore extends HookClass  {
     seeds: SeedArticleItem[] = [];
+    seedsToDisplay: SeedArticleItem[] = [];
 
     private lastTimeGetSeeds: number = -1;
 
@@ -20,6 +21,7 @@ class SeedsStore extends HookClass  {
                 .then((response: AxiosResponse) => {
                     const seeds: SeedResponse = response.data;
                     this.seeds = seeds.articles;
+                    this.seedsToDisplay = this.seeds.slice(0, 24);
                     this.invokeCallbacks();
                 })
         } else {
@@ -54,6 +56,11 @@ class SeedsStore extends HookClass  {
         return this.seeds.find((seed: SeedArticleItem) => {
             return seed.url === url;
         });
+    }
+
+    loadMoreSeeds(): void {
+        this.seedsToDisplay = this.seeds.slice(0, this.seedsToDisplay.length + 10);
+        this.invokeCallbacks();
     }
 }
 

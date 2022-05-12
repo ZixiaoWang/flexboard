@@ -46,14 +46,14 @@
   },
   "scripts": {
     "ensure:dist": "mkdir -p dist",
-    "generate:data:index": "node scripts/run-python-script.js && node scripts/generate-data-index.js",
+    "generate:data:index": "node scripts/generate-data-index.js",
     "copy:data": "yarn generate:data:index && cp -R data/ dist/data/",
     "build": "yarn ensure:dist && yarn copy:data && parcel build --no-cache --no-source-maps --dist-dir=dist frontend/index.html && yarn workbox generateSW workbox-config.js ",
     "serve": "yarn ensure:dist && yarn copy:data && parcel serve --no-cache --no-source-maps frontend/index.html && yarn workbox generateSW workbox-config.js ",
     "watch": "yarn copy:data && parcel watch --no-source-maps frontend/index.html",
     "deploy": "rm -rf ./dist && mkdir dist && yarn build && cp CNAME dist/CNAME && gh-pages --dist dist",
     "build:backend": "yarn tsc --project tsconfig.backend.json",
-    "run:backend": "node backend-dist/index.js",
+    "run:backend": "node scripts/run-python-script.js && node backend-dist/index.js",
     "backend": "yarn build:backend && yarn run:backend"
   }
 }

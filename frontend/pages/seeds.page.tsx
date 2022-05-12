@@ -29,11 +29,12 @@ const Section = (props: SectionProps) => (
 export const SeedsPage = (props: RoutePage) => {
     const {seedsStore, loading, getSeeds} = useSeedsStore();
     const [source, setSource] = useState("ALL");
-    const seeds = seedsStore.seeds;
+    // const seeds = seedsStore.seeds;
+    const seeds = seedsStore.seedsToDisplay;
 
     useEffect(() => {
         getSeeds();
-    }, [])
+    }, []);
 
     if (loading) {
         return <Loader />
@@ -96,6 +97,13 @@ export const SeedsPage = (props: RoutePage) => {
                                 }
                             })
                             .map((seed: SeedArticleItem) => <CardComponent size="small" seed={seed} />)
+                    }
+                    {
+                        seedsStore.seedsToDisplay.length < seedsStore.seeds.length &&
+                        <div className="seed-load-more" 
+                            onClick={() => seedsStore.loadMoreSeeds()}>
+                            Load more
+                        </div>
                     }
                 </Section>
             </div>

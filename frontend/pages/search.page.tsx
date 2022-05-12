@@ -34,11 +34,13 @@ export const SearchPage = (props: RoutePage) => {
     }
 
     const search = (event: Event) => {
+        event.preventDefault();
+        
         if (!keywords) {
             return null;
         }
         
-        if (keywords.toLocaleLowerCase() === "ryan petersen") {
+        if (keywords.toLocaleLowerCase() === "ryan petersen" || keywords.toLocaleLowerCase() === "ryan peterson") {
             const ryan = document.getElementById("ryanpetersen");
             if (ryan) {
                 ryan.classList.add("show");
@@ -54,7 +56,6 @@ export const SearchPage = (props: RoutePage) => {
                 }, 3000);
             }
         } else {
-            event.preventDefault();
             setStatus(SearchPageEnum.LOADING);
             setTimeout(() => {
                 const resultArr = seedsStore.findByKeywords(keywords);

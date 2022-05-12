@@ -90,9 +90,11 @@ const rss_json_file = path.resolve(data_dir, "rss.json");
     the_load_star_meta.sort(sortByDate);
     rss_meta.sort(sortByDate);
     
-    const first_half_meta = freight_waves_meta.slice(0, 10).concat(the_load_star_meta.slice(0, 10)).sort((a, b) => 0.5 - Math.random())
-
-    const article_meta = first_half_meta.concat(joc_meta.slice(0, 10), rss_meta.slice(0, 3));
+    // const first_half_meta = freight_waves_meta.slice(0, 10).concat(the_load_star_meta.slice(0, 10)).sort((a, b) => 0.5 - Math.random())
+    // const article_meta = first_half_meta.concat(joc_meta.slice(0, 10), rss_meta.slice(0, 3));
+    
+    const first_half_meta = freight_waves_meta.concat(the_load_star_meta)
+    const article_meta = first_half_meta.concat(joc_meta, rss_meta).sort((a, b) => 0.5 - Math.random());
 
 
     await fs.writeJson(manifest_dir, {
